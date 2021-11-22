@@ -17,7 +17,7 @@ import rehypeRemark from 'rehype-remark'
 import remarkStringify from 'remark-stringify'
 import { visit } from 'unist-util-visit'
 import { Content, ElementContent } from 'hast'
-import { Content as MdastContent } from 'mdast'
+import { BlockContent, Heading, Content as MdastContent } from 'mdast'
 
 import { similarity } from './findSimilarity'
 
@@ -66,7 +66,12 @@ const rehypeProcessor = unified()
           const listItemContents = listItem?.children
 
           const heading = listItemContents?.[0]
-          const headingWord = heading?.children?.[0]?.value
+          if (heading.type !== 'paragraph') return listItem.children
+
+          const headingWordNode = heading?.children?.[0]
+          if (headingWordNode.type !== 'text') return listItem.children
+
+          const headingWord = headingWordNode.value
 
           if (!headingWord?.includes(':')) return listItem.children
 
@@ -146,6 +151,8 @@ const bigFileProcessor = (f, dir: string) =>
           return comparedNames(dirContents[dir], cleanerLink)?.[0]?.filename
         }
         const newLink = goodLinks()
+        if (!link?.properties?.href) return
+
         link.properties.href = newLink || cleanerLink
       })
     })
@@ -172,7 +179,9 @@ const bigFileProcessor = (f, dir: string) =>
               !firstHeader
             ) {
               firstHeader = elementItem!
-              item.tagName = 'h2'
+              if (item.type === 'element') {
+                item.tagName = 'h2'
+              }
               const headerTitle = toString(elementItem)
               const pref = getPrefix(headerTitle).prefix
               if (pref.length === 4) {
