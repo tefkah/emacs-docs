@@ -12,7 +12,7 @@ const config = {
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
+  favicon: "img/favicon.svg",
   organizationName: "ThomasFKJorna", // Usually your GitHub org/user name.
   projectName: "emacs-docs", // Usually your repo name.
   trailingSlash: false,
@@ -41,7 +41,6 @@ const config = {
               numberPrefixParser,
             });
             const dirs = createSidebarDirs(numberPrefixParser, initialItems);
-            // console.log(dirs);
             return dirs;
           },
           sidebarPath: require.resolve("./sidebars.js"),
@@ -68,12 +67,12 @@ const config = {
         title: "Emacs Docs",
         logo: {
           alt: "Emacs",
-          src: "img/logo.svg",
+          src: "img/favicon.svg",
         },
         items: [
           {
             type: "doc",
-            docId: "intro",
+            docId: "emacs/1 The Organization of the Screen",
             position: "left",
             label: "Emacs",
           },
@@ -85,7 +84,7 @@ const config = {
           },
           {
             type: "doc",
-            docId: "intro",
+            docId: "org/1 Introduction",
             position: "left",
             label: "Org-Mode",
           },
@@ -174,10 +173,6 @@ function prefixParser(file) {
 }
 
 function createSidebarDirs(numberPrefixParser, unsortedItems) {
-  // console.log(items);
-  //console.log(Object.entries(items));
-  //items.forEach((i) => console.log(i));
-
   const items = unsortedItems.sort((a, b) => {
     const prefa = prefixParser(a.id).prefix.split(".");
     const prefb = prefixParser(b.id).prefix.split(".");
@@ -195,15 +190,6 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
   const itemsWhichNeedCategories = Array.from(
     new Set(
       items.map((item) => {
-        // if (manual.type !== "category") return manual;
-        // return {
-        //   label: manual.label,
-        //   collapsed: true,
-        //   collapsible: true,
-        //   type: "category",
-        // items:
-        //       manual?.items?.map((item) => {
-        // console.log(numberPrefixParser(item));
         if (item.type === "category") return undefined;
 
         const [prefix, filename] =
@@ -222,20 +208,10 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
       })
     )
   )?.map((prefix) => {
-    //   if (!manual.items) return;
-
     const categoryName = items.find((item) => {
       const namePrefix = prefixParser(item.id).prefix;
       return namePrefix === prefix;
     });
-
-    // const category = {
-    //   type: "category",
-    //   label: categoryName?.id?.replaceAll(/\w+\//g, "") || "uhh",
-    //   collapsed: true,
-    //   collapsable: true,
-    //   items: [],
-    // };
 
     return {
       type: "category",
@@ -246,18 +222,11 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
     };
   });
 
-  // const thingsAddedInDirs = itemsWhichNeedCategories.map((manual, index) => {
-  //   if (manual.type !== "category") return manual;
   const manualLabelPrefixes = itemsWhichNeedCategories.map(
     ({ label }) => prefixParser(label).prefix
   );
-  //console.log(manualLabelPrefixes);
-  // return {
-  // ...manual,
-  // items:
   const thingsAddedInDirs = itemsWhichNeedCategories.map((category) => {
     const catPrefix = prefixParser(category.label).prefix;
-    //console.log(catPrefix);
     const directDescendant = items.find((item) => {
       const itemPrefix = prefixParser(item.id).prefix;
       return catPrefix === itemPrefix;
@@ -281,12 +250,13 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
       const itemPrefix = prefixParser(item.id).prefix;
       const splitItemPrefix = itemPrefix.split(".");
 
-      if (forbiddenPrefixes.includes(itemPrefix)) return acc;
+      // if (forbiddenPrefixes.includes(itemPrefix)) return acc;
       if (splitItemPrefix.length <= splitCatPrefix.length) return acc;
 
       if (splitCatPrefix.length > 1 && splitItemPrefix.length > 2) {
-        itemPrefix !== catPrefix && splitItemPrefix.length > 2;
-        splitItemPrefix[0] === splitCatPrefix[0] &&
+        itemPrefix !== catPrefix &&
+          splitItemPrefix.length > 2 &&
+          splitItemPrefix[0] === splitCatPrefix[0] &&
           splitItemPrefix[1] === splitCatPrefix[1] &&
           acc.push(item);
         return acc;
@@ -299,9 +269,7 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
       return acc;
     }, []);
 
-    //console.log(introfiedDirectDescendant);
     return { ...category, items: [introfiedDirectDescendant, ...subItems] };
-    //const itemsWhichNeedToGoIntoCategory = "";
   });
 
   const { dirs, subdirs } = thingsAddedInDirs.reduce(
@@ -315,7 +283,6 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
     },
     { dirs: [], subdirs: [] }
   );
-  console.log(dirs);
 
   const final = dirs.map((dir) => ({
     ...dir,
@@ -324,18 +291,14 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
 
       acc.push(curr);
       const currPrefix = prefixParser(curr.id).prefix.split(".");
-      console.log(currPrefix);
-      console.log("-----------------------------");
 
       const nextDir = subdirs.find((subdir) => {
         const subdirPrefix = prefixParser(subdir.label).prefix.split(".");
-        console.log(subdirPrefix);
         return (
           subdirPrefix[0] === currPrefix[0] &&
           parseInt(subdirPrefix[1]) === parseInt(currPrefix[1]) + 1
         );
       });
-      console.log(nextDir);
 
       nextDir && acc.push(nextDir);
 
@@ -343,7 +306,51 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
     }, []),
   }));
 
-  return final;
+  // filter out all the double categories/entries
+
+  const filtered = final.map((cat) => {
+    if (!cat.items?.length) {
+      return cat;
+    }
+    return {
+      ...cat,
+      items: cat.items.filter((item) => {
+        if (item.type === "category") return true;
+
+        return !cat.items.some(
+          (sub) => sub?.label === item?.id?.replaceAll(/\w+\//g, "")
+        );
+      }),
+    };
+  });
+
+  const withoutPrefs = filtered.map((cat) => {
+    const catLabel = prefixParser(cat.label).filename;
+    if (!cat.items?.length) {
+      return { ...cat, label: catLabel };
+    }
+    return {
+      ...cat,
+      label: catLabel,
+      items: cat?.items?.map((subCat) => {
+        const subCatLabel = prefixParser(subCat.label || subCat.id).filename;
+        if (subCat.type === "doc") {
+          if (subCat.label) return subCat;
+          return { ...subCat, label: subCatLabel };
+        }
+        return {
+          ...subCat,
+          label: subCatLabel,
+          items: subCat?.items?.map((subsubCat) => {
+            const subsubCatLabel = prefixParser(subsubCat.id).filename;
+            if (subsubCat.label) return subsubCat;
+            return { ...subsubCat, label: subsubCatLabel };
+          }),
+        };
+      }),
+    };
+  });
+  return withoutPrefs;
 }
 
 module.exports = config;
