@@ -5,7 +5,7 @@ import remarkMdx from "remark-mdx";
 import mdxMetadata from "remark-mdx-metadata";
 import rehypeAttributes from "rehype-attributes";
 import { select } from "unist-util-select";
-import { toString } from "hast-util-to-string";
+import { Node, Element, Root, toString } from "hast-util-to-string";
 //export const converter = (dir) =>
 
 import remarkFrontmatter from "remark-frontmatter";
@@ -16,8 +16,9 @@ import rehypeParse from "rehype-parse";
 import rehypeRemark from "rehype-remark";
 import remarkStringify from "remark-stringify";
 import { visit } from "unist-util-visit";
+import { ElementContent } from "hast";
 
-import { similarity } from "./findSimilarity.js";
+import { similarity } from "./findSimilarity";
 
 const homedir = "../raw_manuals/";
 
@@ -96,7 +97,7 @@ const singleFileProcessor = unified()
     visit(node, "element", (element) => {
       if (
         element.tagName === "div" &&
-        element.properties?.className?.includes("header")
+        (element.properties?.className as string).includes("header")
       ) {
         element.children = [];
       }
@@ -113,7 +114,7 @@ const dirContents = dirs.reduce((acc, dir) => {
   return acc;
 }, {});
 
-const bigFileProcessor = (f, dir) =>
+const bigFileProcessor = (f, dir: string) =>
   unified()
     .use(rehypeParse, {
       emitParseErrors: true,
@@ -122,10 +123,11 @@ const bigFileProcessor = (f, dir) =>
     .use(() => (node) => {
       visit(node, "element", (link) => {
         if (link.tagName !== "a") return;
+        const href = link?.properties?.href as string;
 
-        if (link.properties?.href?.includes("FOOT")) return;
+        if (href?.includes("FOOT")) return;
 
-        const cleanerLink = link.properties.href.replaceAll(/.*?#/g, "");
+        const cleanerLink = href?.replaceAll(/.*?#/g, "");
 
         const comparedNames = (list, name) => {
           const unsorted = list.map((filename) => ({
@@ -152,26 +154,29 @@ const bigFileProcessor = (f, dir) =>
       visit(node, "element", (bod) => {
         if (bod.properties?.id !== "content") return;
         let isCollecting = false;
-        let nodes = [];
-        let firstHeader = null;
+        let nodes: ElementContent[] = [];
+        let firstHeader: Element | null = null;
 
-        let alreadyDone = [];
+        let alreadyDone: string[] = [];
         fs.writeFileSync("bod", JSON.stringify(bod, null, 2));
         const content = bod.children;
 
-        content.forEach((item) => {
+        content.forEach((item: ElementContent) => {
+          const elementItem = item as Element;
           const isHeader =
-            item.tagName === "div" &&
-            item.properties?.className?.includes("header");
+            elementItem?.tagName === "div" &&
+            (elementItem?.properties?.className as string)?.includes("header");
 
           if (!isHeader) {
             if (
-              ["h1", "h2", "h3", "h4", "h5", "h6"].includes(item.tagName) &&
+              ["h1", "h2", "h3", "h4", "h5", "h6"].includes(
+                elementItem?.tagName
+              ) &&
               !firstHeader
             ) {
-              firstHeader = item;
+              firstHeader = elementItem!;
               item.tagName = "h2";
-              const headerTitle = toString(item);
+              const headerTitle = toString(elementItem);
               const pref = getPrefix(headerTitle).prefix;
               if (pref.length === 4) {
                 nodes.push(item);
@@ -183,7 +188,7 @@ const bigFileProcessor = (f, dir) =>
             return;
           }
 
-          const newTree = {
+          const newTree: Root = {
             type: "root",
             children: [
               {
@@ -247,9 +252,9 @@ big.forEach((filepath) => {
     encoding: "utf8",
   });
 
-  const tree = bigFileProcessor().parse(file);
-
   const dir = `${path.basename(filepath, ".html")}`;
+  const proc = bigFileProcessor(file, dir);
+  const tree = proc.parse();
 
   const newProc = bigFileProcessor(tree, dir);
   newProc.data("type", dir);
