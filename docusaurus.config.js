@@ -15,6 +15,7 @@ const config = {
   favicon: "img/favicon.ico",
   organizationName: "ThomasFKJorna", // Usually your GitHub org/user name.
   projectName: "emacs-docs", // Usually your repo name.
+  trailingSlash: false,
 
   presets: [
     [
