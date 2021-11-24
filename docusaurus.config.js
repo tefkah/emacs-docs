@@ -174,18 +174,26 @@ const config = {
 }
 
 function prefixParser(file) {
-  const [prefix, filename] = file?.replaceAll(/(\w+\/)?([\d\.]+) (.*?)/g, '$2@$3')?.split('@') || []
+  const [prefix, filename] =
+    file?.replaceAll(/(\w+\/)?(Appendix )?([A-G]?[\d\.]+) (.*?)/g, '$3@$4')?.split('@') || []
 
   return { prefix, filename }
 }
 
 function createSidebarDirs(numberPrefixParser, unsortedItems) {
   const items = unsortedItems.sort((a, b) => {
-    const prefa = prefixParser(a.id).prefix?.split('.') || ['0']
-    const prefb = prefixParser(b.id).prefix?.split('.') || ['0']
+    const compareUnits = [a, b]
+    const [newa, newb] = compareUnits.map((unit) => {
+      let pref = prefixParser(unit.id).prefix?.split('.') || ['0']
 
-    const newa = parseInt(prefa.map((p) => (p.length === 1 ? '0' + p : p)).join(''))
-    const newb = parseInt(prefb.map((p) => (p.length === 1 ? '0' + p : p)).join(''))
+      pref[0] =
+        (pref[0].replaceAll(/[^A-G]/g, '')
+          ? pref[0] === 'G'
+            ? '17'
+            : parseInt('x0' + pref[0]).toString()
+          : pref[0]) + 50
+      return parseInt(pref.map((p) => (p.length === 1 ? '0' + p : p)).join(''))
+    })
 
     return newa - newb
   })
@@ -195,8 +203,7 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
       items.map((item) => {
         if (item.type === 'category') return undefined
 
-        const [prefix, filename] =
-          item?.id?.replaceAll(/\w+\/([\d\.]+) (.*?)/g, '$1@$2')?.split('@') || []
+        const { prefix, filename } = prefixParser(item?.id)
 
         if (!prefix) return undefined
 
@@ -210,10 +217,16 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
       }),
     ),
   )?.map((prefix) => {
-    const categoryName = items.find((item) => {
+    const categories = items.filter((item) => {
       const namePrefix = prefixParser(item.id).prefix
       return namePrefix === prefix
     })
+
+    const categoryName = categories[0]
+
+    if (categories.length === 1) {
+      return categoryName
+    }
 
     return {
       type: 'category',
@@ -224,9 +237,11 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
     }
   })
 
+  console.log(itemsWhichNeedCategories)
   const manualLabelPrefixes = itemsWhichNeedCategories.map(
     ({ label }) => prefixParser(label).prefix,
   )
+
   const thingsAddedInDirs = itemsWhichNeedCategories.map((category) => {
     const catPrefix = prefixParser(category.label).prefix
     const directDescendant = items.find((item) => {
@@ -240,13 +255,14 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
     }
 
     const splitCatPrefix = catPrefix.split('.')
-    const forbiddenPrefixes = manualLabelPrefixes.reduce((acc, labelPrefix) => {
-      if (splitCatPrefix.length > 1) return []
 
-      const splitLabelPrefix = labelPrefix.split('.')
-      splitLabelPrefix[0] === splitCatPrefix[0] && acc.push(labelPrefix)
-      return acc
-    }, [])
+    // const forbiddenPrefixes = manualLabelPrefixes.reduce((acc, labelPrefix) => {
+    //   if (splitCatPrefix.length > 1) return []
+
+    //   const splitLabelPrefix = labelPrefix.split('.')
+    //   splitLabelPrefix[0] === splitCatPrefix[0] && acc.push(labelPrefix)
+    //   return acc
+    // }, [])
 
     const subItems = items.reduce((acc, item) => {
       const itemPrefix = prefixParser(item.id).prefix
@@ -273,7 +289,9 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
 
     return { ...category, items: [introfiedDirectDescendant, ...subItems] }
   })
+  console.log(thingsAddedInDirs)
 
+  // prepare lists of dirs and subdirs so we can put the former in the latter later
   const { dirs, subdirs } = thingsAddedInDirs.reduce(
     (acc, curr) => {
       const { dirs, subdirs } = acc
@@ -286,6 +304,7 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
     { dirs: [], subdirs: [] },
   )
 
+  //put dirs in subdirs
   const final = dirs.map((dir) => ({
     ...dir,
     items: dir.items.reduce((acc, curr, index) => {
@@ -309,7 +328,6 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
   }))
 
   // filter out all the double categories/entries
-
   const filtered = final.map((cat) => {
     if (!cat.items?.length) {
       return cat
@@ -323,15 +341,17 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
       }),
     }
   })
+  console.dir(filtered)
 
+  // now that we have sorted everything nicely we can get rid of all the prefixes
   const withoutPrefs = filtered.map((cat) => {
     const catLabel = prefixParser(cat.label).filename
     if (!cat.items?.length) {
-      return { ...cat, label: catLabel }
+      return { ...cat, label: catLabel || cat.label }
     }
     return {
       ...cat,
-      label: catLabel,
+      label: catLabel || cat.label,
       items: cat?.items?.map((subCat) => {
         const subCatLabel = prefixParser(subCat.label || subCat.id).filename
         if (subCat.type === 'doc') {
@@ -340,7 +360,7 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
         }
         return {
           ...subCat,
-          label: subCatLabel,
+          label: subCatLabel || subCat.label,
           items: subCat?.items?.map((subsubCat) => {
             const subsubCatLabel = prefixParser(subsubCat.id).filename
             if (subsubCat.label) return subsubCat
@@ -350,6 +370,7 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
       }),
     }
   })
+  console.dir(withoutPrefs, { depth: null })
   return withoutPrefs
 }
 
