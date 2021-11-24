@@ -17,13 +17,10 @@ import rehypeRemark from 'rehype-remark'
 import remarkStringify from 'remark-stringify'
 import { visit } from 'unist-util-visit'
 import { Content, ElementContent } from 'hast'
+import fetch from 'node-fetch'
 import { BlockContent, Heading, Content as MdastContent } from 'mdast'
 
 import { similarity } from './findSimilarity'
-
-const homedir = '../raw_manuals/'
-
-const dir = fs.readdirSync(homedir)
 
 const license =
   'This is the GNU Emacs Lisp Reference Manual\ncorresponding to Emacs version 27.2.\n\nCopyright (C) 1990-1996, 1998-2021 Free Software Foundation,\nInc.\n\nPermission is granted to copy, distribute and/or modify this document\nunder the terms of the GNU Free Documentation License, Version 1.3 or\nany later version published by the Free Software Foundation; with the\nInvariant Sections being "GNU General Public License," with the\nFront-Cover Texts being "A GNU Manual," and with the Back-Cover\nTexts as in (a) below.  A copy of the license is included in the\nsection entitled "GNU Free Documentation License."\n\n(a) The FSF\'s Back-Cover Text is: "You have the freedom to copy and\nmodify this GNU manual.  Buying copies from the FSF supports it in\ndeveloping GNU and promoting software freedom." '
@@ -94,32 +91,15 @@ const rehypeProcessor = unified()
   .use(() => (tree) => fs.writeFileSync('test', JSON.stringify(tree, null, 2)))
   .use(remarkStringify)
 
-const singleFileProcessor = unified()
-  .use(rehypeParse, {
-    emitParseErrors: true,
-    duplicateAttribute: false,
-  })
-  .use(() => (node) => {
-    visit(node, 'element', (element) => {
-      if (
-        element.tagName === 'div' &&
-        (element.properties?.className as string).includes('header')
-      ) {
-        element.children = []
-      }
-      //  element.properties.lang = 'lisp'
-    })
-  })
-  .use(() => (tree) => fs.writeFileSync('rehype', JSON.stringify(tree, null, 2)))
-
-const dirs = ['org', 'elisp', 'emacs']
-const dirContents = dirs.reduce((acc, dir) => {
-  acc[dir] = JSON.parse(fs.readFileSync(`${dir}.json`, { encoding: 'utf8' }))
-  return acc
-}, {})
-
-const bigFileProcessor = (f, dir: string) =>
-  unified()
+interface BigFileProcessor {
+  parseThing: any
+  dir: string
+  dirContents: { [dir: string]: string[] }
+  destDir: string
+}
+const bigFileProcessor = (props: BigFileProcessor) => {
+  const { parseThing, dir, dirContents, destDir } = props
+  return unified()
     .use(rehypeParse, {
       emitParseErrors: true,
       duplicateAttribute: false,
@@ -228,8 +208,9 @@ const bigFileProcessor = (f, dir: string) =>
             
             ${String(rawFile)}`
 
+            // This is kind of jank but it works 🤷‍♀️
             if (prefix.length > 3) {
-              const directory = fs.readdirSync(dir)
+              const directory = fs.readdirSync(destDir)
               const ogFile = directory.find((file) => {
                 const filePrefix = getPrefix(file).prefix
                 return (
@@ -238,34 +219,57 @@ const bigFileProcessor = (f, dir: string) =>
                   filePrefix[2] === prefix[2]
                 )
               })
-              ogFile && fs.appendFileSync(`${dir}/${ogFile}`, rawFile)
+              ogFile && fs.appendFileSync(`${destDir}/${ogFile}`, rawFile)
               return
             }
 
-            fs.writeFileSync(`${dir}/${cleanTitle}.md`, fileWithMetadata)
+            fs.writeFileSync(`${destDir}/${cleanTitle}.md`, fileWithMetadata)
           })
         })
       })
     })
+}
 
-const big = fs.readdirSync(`../raw_manuals`)
+const main = () => {
+  const manualBaseUrl = 'https://www.gnu.org/software/emacs/manual/html_mono/'
+  const rawDir = '../raw_manuals/'
+  const destDir = '../docs.'
+  const dirs = ['org', 'elisp', 'emacs']
 
-big.forEach((filepath) => {
-  const file = fs.readFileSync(`../raw_manuals/${filepath}`, {
-    encoding: 'utf8',
+  const dirContents = dirs.reduce<{ [dir: string]: string[] }>((acc, dir) => {
+    acc[dir] = JSON.parse(fs.readFileSync(`${rawDir}/${dir}.json`, { encoding: 'utf8' }))
+    return acc
+  }, {})
+
+  const big = fs.readdirSync(rawDir)
+
+  dirs.forEach((manualName) => {
+    const rawHTML = fetch(`${manualBaseUrl}/${manualName}.html`)
+      .then((res) => res.text())
+      .then((file) => {
+        // const file = fs.readFileSync(`${rawDir}/${filepath}`, {
+        //   encoding: 'utf8',
+        // })
+
+        const proc = bigFileProcessor({ parseThing: file, dir: manualName, dirContents, destDir })
+        const tree = proc.parse()
+
+        const newProc = bigFileProcessor({
+          parseThing: tree,
+          dir: manualName,
+          dirContents,
+          destDir,
+        })
+        newProc.data('type', manualName)
+
+        fs.existsSync(`${destDir}/${manualName}`) || fs.mkdirSync(`${destDir}/${manualName}`)
+
+        newProc.run(tree).then((r) => {})
+      })
   })
+}
 
-  const dir = `${path.basename(filepath, '.html')}`
-  const proc = bigFileProcessor(file, dir)
-  const tree = proc.parse()
-
-  const newProc = bigFileProcessor(tree, dir)
-  newProc.data('type', dir)
-
-  fs.existsSync(dir) || fs.mkdirSync(dir)
-
-  newProc.run(tree).then((r) => {})
-})
+main()
 
 export function getPrefix(str) {
   const [pref, title] = str.replaceAll(/(\w+\/)?([\d\.]+) (.*?)/g, '$2@$3').split('@')

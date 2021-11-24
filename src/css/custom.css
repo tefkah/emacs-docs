@@ -6,14 +6,46 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #711b9d;
-  --ifm-color-primary-dark: rgb(33, 175, 144);
-  --ifm-color-primary-darker: rgb(31, 165, 136);
-  --ifm-color-primary-darkest: rgb(26, 136, 112);
-  --ifm-color-primary-light: rgb(70, 203, 174);
-  --ifm-color-primary-lighter: rgb(102, 212, 189);
-  --ifm-color-primary-lightest: rgb(146, 224, 208);
+  --ifm-color-primary: #9226d1;
+  --ifm-color-primary-dark: #8322bc;
+  --ifm-color-primary-darker: #7c20b2;
+  --ifm-color-primary-darkest: #661b92;
+  --ifm-color-primary-light: #9e35da;
+  --ifm-color-primary-lighter: #a340dc;
+  --ifm-color-primary-lightest: #b25fe2;
+  --ifm-color-primary-background: hsl(277, 20%, 99%);
+  --ifm-color-primary-background-border: hsl(277, 40%, 99%);
+
   --ifm-code-font-size: 95%;
+  --l: 100%;
+
+  --ifm-car-color: rgb(187, 104, 229);
+  --gh-icon: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
+}
+
+html[data-theme='dark'] {
+  --doom-green: #88b453;
+  --doom-pale: #988cda;
+  --doom-purple: #b85dd5;
+  --doom-pink: #d39ae5;
+  --doom-blue: #439EEC;
+  --doom-orange: #E7B268;
+
+  --ifm-color-primary: var(--doom-pale);
+  --ifm-color-primary-dark: #5a91ea;
+  --ifm-car-color: var(--doom-pale);
+  --ifm-background-surface-color: #1e2127;
+  --ifm-background-color: #191b20;
+  --ifm-hover-overlay: rgba(255, 255, 255, 0.05);
+  --ifm-color-primary-background: var(--ifm-background-surface-color);
+  --ifm-color-primary-background-border: var(--ifm-background-surface-color);
+  /* any other colors you wish to overwrite */
+  --fun-tag: var(--doom-blue)
+  --var-tag: var(--doom-orange)
+  --user-option-tag: var(--doom-pink)
+  --macro-tag: var(--doom-purple)
+  --special-tag: var(--doom-pale)
+  --gh-icon: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E");
 }
 
 .docusaurus-highlight-code-line {
@@ -23,6 +55,88 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
-html[data-theme="dark"] .docusaurus-highlight-code-line {
+html[data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+.github-icon::before {
+  background:var(--gh-icon);
+  content: '';
+  display: flex;
+  height: 24px;
+  width: 24px;
+}
+
+.feature-card {
+  transition: all 0.3s ease-out;
+}
+
+.feature-card {
+  display: block;
+  top: 0px;
+  position: relative;
+  background-color: var(--ifm-color-primary-background);
+  border-radius: 8px;
+  padding: 32px 24px;
+  margin: 12px;
+  text-decoration: none;
+  overflow: hidden;
+  height: 100%;
+  border: 1px solid var(--ifm-color-primary-background-border);
+}
+/* .card3 .go-corner {
+  opacity: 0.7;
+} */
+.feature-card:hover {
+  border: 1px solid var(--ifm-color-primary-dark);
+  /* box-shadow: 0px 0px 999px 999px rgba(255, 255, 255, 0.5); */
+  z-index: 500;
+}
+
+.feature-card:hover p {
+  color: var(--ifm-color-primary-dark);
+}
+.feature-card:hover .go-corner {
+  transition: opactiy 0.3s linear;
+  opacity: 1;
+}
+
+.token.car {
+  color: var(--ifm-car-color);
+}
+
+.tag {
+  font-weight: 400 !important;
+  font-size: 80%;
+  padding: 5px;
+  font-family: monospace !important;
+  border-radius: 4px;
+  margin-right: 0.5em;
+}
+
+h3 {
+  font-weight: 400;
+}
+
+.tag.function {
+  color: black;
+  background-color: var(--doom-blue) !important;
+}
+
+.tag.macro {
+  color: var(--ifm-color-primary-darker);
+  background-color: var(--doom-purple) !important;
+}
+
+.tag.user-option {
+  color: var(--ifm-color-primary-darker);
+  background-color: var(--doom-pink) !important;
+}
+.tag.specialform {
+  color: var(--ifm-color-primary-darker);
+  background-color: var(--doom-pale) !important;
+}
+.tag.variable {
+  color: var(--ifm-color-primary-darker);
+  background-color: var(--doom-orange) !important;
 }
