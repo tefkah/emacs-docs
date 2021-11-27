@@ -72,27 +72,38 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'emacs/1 The Organization of the Screen',
+            docId: 'emacs/The Emacs Editor',
             position: 'left',
             label: 'Emacs',
           },
           {
             type: 'doc',
-            docId: 'elisp/1 Introduction',
+            docId: 'elisp/Emacs Lisp',
             position: 'left',
             label: 'Elisp',
           },
           {
             type: 'doc',
-            docId: 'org/1 Introduction',
+            docId: 'org/The Org Manual',
             position: 'left',
             label: 'Org-Mode',
+          },
+          {
+            type: 'doc',
+            docId: 'auctex/AUCTeX',
+            position: 'left',
+            label: 'AUCTeX',
+          },
+          {
+            type: 'doc',
+            docId: 'magit/1 Introduction',
+            position: 'left',
+            label: 'Magit',
           },
           //{ to: "/blog", label: "Blog", position: "left" },
           {
             href: 'https://github.com/ThomasFKJorna/emacsdocs',
             className: 'github-icon',
-            //label: ' ',
             position: 'right',
             icon: 'github',
           },
@@ -105,24 +116,32 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Emacs',
+                to: '/docs/emacs/The-Emacs-Editor',
+              },
+              {
+                label: 'Elisp',
+                to: '/docs/elisp/Emacs-Lisp',
+              },
+              {
+                label: 'Org-Mode',
+                to: '/docs/org/The-Org-Manual',
               },
             ],
           },
           {
-            title: 'Community',
+            title: 'FSF',
             items: [
               {
-                label: 'Stack Overflow',
+                label: 'GNU website',
                 href: 'https://stackoverflow.com/questions/tagged/docusaurus',
               },
               {
-                label: 'Discord',
+                label: 'FSF Shop',
                 href: 'https://discordapp.com/invite/docusaurus',
               },
               {
-                label: 'Twitter',
+                label: 'Donate to FSF',
                 href: 'https://twitter.com/docusaurus',
               },
             ],
@@ -136,12 +155,12 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/ThomasFKJorna/emacs-docs',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright Website © ${new Date().getFullYear()} Thomas F. K. Jorna. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
@@ -175,23 +194,20 @@ const config = {
 
 function prefixParser(file) {
   const [prefix, filename] =
-    file?.replaceAll(/(\w+\/)?(Appendix )?([A-G]?[\d\.]+) (.*?)/g, '$3@$4')?.split('@') || []
+    file?.replaceAll(/(\w+\/)?(Appendix )?([A-H\d\.]+) (.*?)/g, '$3@$4')?.split('@') || []
 
   return { prefix, filename }
 }
 
 function createSidebarDirs(numberPrefixParser, unsortedItems) {
+  const dir = unsortedItems[0].id.replaceAll(/(\w+\/).*/g, '$1')
+
   const items = unsortedItems.sort((a, b) => {
     const compareUnits = [a, b]
     const [newa, newb] = compareUnits.map((unit) => {
-      let pref = prefixParser(unit.id).prefix?.split('.') || ['0']
+      let pref = prefixParser(unit.id).prefix?.split('.') || ['300']
 
-      pref[0] =
-        (pref[0].replaceAll(/[^A-G]/g, '')
-          ? pref[0] === 'G'
-            ? '17'
-            : parseInt('x0' + pref[0]).toString()
-          : pref[0]) + 50
+      if (pref[0].replaceAll(/[^A-H]/g, '')) return 300
       return parseInt(pref.map((p) => (p.length === 1 ? '0' + p : p)).join(''))
     })
 
@@ -216,41 +232,39 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
         return undefined
       }),
     ),
-  )?.map((prefix) => {
-    const categories = items.filter((item) => {
-      const namePrefix = prefixParser(item.id).prefix
-      return namePrefix === prefix
+  )
+    ?.map((prefix) => {
+      const categoryName = items.find((item) => {
+        const namePrefix = prefixParser(item.id).prefix
+        return namePrefix === prefix
+      })
+      const lab = categoryName?.id?.replaceAll(/\w+\//g, '') || undefined
+      return {
+        type: 'category',
+        label: lab,
+        collapsed: true,
+        collapsible: true,
+        items: [],
+      }
     })
+    .filter((cat) => cat.label)
 
-    const categoryName = categories[0]
-
-    if (categories.length === 1) {
-      return categoryName
-    }
-
-    return {
-      type: 'category',
-      label: categoryName?.id?.replaceAll(/\w+\//g, '') || 'uhh',
-      collapsed: true,
-      collapsible: true,
-      items: [],
-    }
-  })
-
-  console.log(itemsWhichNeedCategories)
   const manualLabelPrefixes = itemsWhichNeedCategories.map(
     ({ label }) => prefixParser(label).prefix,
   )
 
+  // add the docs to their corresponding categories
   const thingsAddedInDirs = itemsWhichNeedCategories.map((category) => {
     const catPrefix = prefixParser(category.label).prefix
+
     const directDescendant = items.find((item) => {
       const itemPrefix = prefixParser(item.id).prefix
       return catPrefix === itemPrefix
     })
 
+    const backupDesc = { type: 'doc', id: `${dir}${category.label}` }
     const introfiedDirectDescendant = {
-      ...directDescendant,
+      ...(directDescendant || backupDesc),
       label: 'Introduction',
     }
 
@@ -266,7 +280,7 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
 
     const subItems = items.reduce((acc, item) => {
       const itemPrefix = prefixParser(item.id).prefix
-      const splitItemPrefix = itemPrefix?.split('.') || ['0']
+      const splitItemPrefix = itemPrefix?.split('.')
 
       // if (forbiddenPrefixes.includes(itemPrefix)) return acc;
       if (splitItemPrefix.length <= splitCatPrefix.length) return acc
@@ -289,7 +303,7 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
 
     return { ...category, items: [introfiedDirectDescendant, ...subItems] }
   })
-  console.log(thingsAddedInDirs)
+  //console.dir(thingsAddedInDirs.slice(-10), { depth: null })
 
   // prepare lists of dirs and subdirs so we can put the former in the latter later
   const { dirs, subdirs } = thingsAddedInDirs.reduce(
@@ -326,6 +340,7 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
       return acc
     }, []),
   }))
+  //console.log(final)
 
   // filter out all the double categories/entries
   const filtered = final.map((cat) => {
@@ -341,17 +356,19 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
       }),
     }
   })
-  console.dir(filtered)
 
   // now that we have sorted everything nicely we can get rid of all the prefixes
   const withoutPrefs = filtered.map((cat) => {
-    const catLabel = prefixParser(cat.label).filename
+    const { prefix: catPrefix, filename: catLabel } = prefixParser(cat.label)
+    const isAppendix = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'].includes(catPrefix[0])
+    const categoryLabel = isAppendix ? `Appendix ${cat.label}` : catLabel || cat.label
+
     if (!cat.items?.length) {
-      return { ...cat, label: catLabel || cat.label }
+      return { ...cat, label: categoryLabel }
     }
     return {
       ...cat,
-      label: catLabel || cat.label,
+      label: categoryLabel,
       items: cat?.items?.map((subCat) => {
         const subCatLabel = prefixParser(subCat.label || subCat.id).filename
         if (subCat.type === 'doc') {
@@ -370,8 +387,39 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
       }),
     }
   })
-  console.dir(withoutPrefs, { depth: null })
-  return withoutPrefs
+
+  const withNoOneMemberCategories = withoutPrefs.map((category) => {
+    if (!category?.items?.length) return category
+    if (category?.items?.length > 1) return category
+
+    return { label: category.label, type: 'doc', id: category.items?.[0]?.id || 'intro' }
+  })
+
+  const firstItems = [
+    'The Emacs Editor',
+    'The Org Manual',
+    'Emacs Lisp',
+    'Magit User Manual',
+    'Table of Contents',
+    'AUCTeX',
+    'Copying',
+  ]
+
+  const notAppendices = ['Function Index', 'Footnotes', 'Copying', 'Concept Index']
+
+  const withSpecialItems = withNoOneMemberCategories.reduce((acc, item) => {
+    const label = item.label.replaceAll(/Appendix /g, '')
+    if (firstItems.includes(label)) {
+      return [{ ...item, label: label }, ...acc]
+    }
+    if (notAppendices.includes(label)) {
+      return [...acc, { ...item, label: label }]
+    }
+    acc.push(item)
+    return acc
+  }, [])
+
+  return withSpecialItems
 }
 
 module.exports = config

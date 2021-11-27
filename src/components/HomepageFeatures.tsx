@@ -21,12 +21,12 @@ const FeatureList: FeatureItem[] = [
     title: 'GNU Emacs Manual',
     image: '/img/Emacs-logo.svg',
     description: <>An extensible, customizable, free/libre text editor — and more.</>,
-    link: 'docs/emacs/The-Organization-Of-The-Screen',
+    link: 'docs/emacs/The-Emacs-Editor',
   },
   {
     title: 'Elisp Manual',
     image: '/img/favicon.svg',
-    link: 'docs/elisp/Introduction',
+    link: 'docs/elisp/Emacs-Lisp',
     description: (
       <>LISP... for Emacs! Complete, authoritative reference for extending and programming Emacs.</>
     ),
@@ -34,7 +34,7 @@ const FeatureList: FeatureItem[] = [
   {
     title: 'Org-Mode manual',
     image: '/img/org-mode-unicorn.svg',
-    link: 'docs/org/Introduction',
+    link: 'docs/org/The-Org-Manual',
     description: <>Organize your life in plain text.</>,
   },
 ]
