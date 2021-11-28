@@ -18,19 +18,19 @@ Source code blocks are one of many Org block types, which also include “center
 
 Details of Org’s facilities for working with source code are described in the following sections.
 
-|                                                                          |    |                                                        |
-| :----------------------------------------------------------------------- | -- | :----------------------------------------------------- |
-| • [Features Overview](Features-Overview)                                 |    | Enjoy the versatility of source blocks.                |
-| • [Structure of Code Blocks](Structure-of-Code-Blocks)                   |    | Code block syntax described.                           |
-| • [Using Header Arguments](Using-Header-Arguments)                       |    | Different ways to set header arguments.                |
-| • [Environment of a Code Block](Environment-of-a-Code-Block)             |    | Arguments, sessions, working directory...              |
-| • [Evaluating Code Blocks](Evaluating-Code-Blocks)                       |    | Place results of evaluation in the Org buffer.         |
-| • [Results of Evaluation](Results-of-Evaluation)                         |    | Choosing a results type, post-processing...            |
-| • [Exporting Code Blocks](Exporting-Code-Blocks)                         |    | Export contents and/or results.                        |
-| • [Extracting Source Code](Extracting-Source-Code)                       |    | Create pure source code files.                         |
-| • [Languages](Languages)                                                 |    | List of supported code block languages.                |
-| • [Editing Source Code](Editing-Source-Code)                             |    | Language major-mode editing.                           |
-| • [Noweb Reference Syntax](Noweb-Reference-Syntax)                       |    | Literate programming in Org mode.                      |
-| • [Library of Babel](Library-of-Babel)                                   |    | Use and contribute to a library of useful code blocks. |
-| • [Key bindings and Useful Functions](Key-bindings-and-Useful-Functions) |    | Work quickly with code blocks.                         |
-| • [Batch Execution](Batch-Execution)                                     |    | Call functions from the command line.                  |
+|                                                                                    |    |                                                        |
+| :--------------------------------------------------------------------------------- | -- | :----------------------------------------------------- |
+| • [Features Overview](/docs/org/Features-Overview)                                 |    | Enjoy the versatility of source blocks.                |
+| • [Structure of Code Blocks](/docs/org/Structure-of-Code-Blocks)                   |    | Code block syntax described.                           |
+| • [Using Header Arguments](/docs/org/Using-Header-Arguments)                       |    | Different ways to set header arguments.                |
+| • [Environment of a Code Block](/docs/org/Environment-of-a-Code-Block)             |    | Arguments, sessions, working directory...              |
+| • [Evaluating Code Blocks](/docs/org/Evaluating-Code-Blocks)                       |    | Place results of evaluation in the Org buffer.         |
+| • [Results of Evaluation](/docs/org/Results-of-Evaluation)                         |    | Choosing a results type, post-processing...            |
+| • [Exporting Code Blocks](/docs/org/Exporting-Code-Blocks)                         |    | Export contents and/or results.                        |
+| • [Extracting Source Code](/docs/org/Extracting-Source-Code)                       |    | Create pure source code files.                         |
+| • [Languages](/docs/org/Languages)                                                 |    | List of supported code block languages.                |
+| • [Editing Source Code](/docs/org/Editing-Source-Code)                             |    | Language major-mode editing.                           |
+| • [Noweb Reference Syntax](/docs/org/Noweb-Reference-Syntax)                       |    | Literate programming in Org mode.                      |
+| • [Library of Babel](/docs/org/Library-of-Babel)                                   |    | Use and contribute to a library of useful code blocks. |
+| • [Key bindings and Useful Functions](/docs/org/Key-bindings-and-Useful-Functions) |    | Work quickly with code blocks.                         |
+| • [Batch Execution](/docs/org/Batch-Execution)                                     |    | Call functions from the command line.                  |

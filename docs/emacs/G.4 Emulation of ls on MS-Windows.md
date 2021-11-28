@@ -2,7 +2,7 @@
 slug: ls-in-Lisp
 ---
 
-Dired normally uses the external program `ls` to produce the directory listing displayed in Dired buffers (see [Dired](Dired)). However, MS-Windows and MS-DOS systems don’t come with such a program, although several ports of GNU `ls` are available. Therefore, Emacs on those systems *emulates* `ls` in Lisp, by using the `ls-lisp.el` package. While `ls-lisp.el` provides a reasonably full emulation of `ls`, there are some options and features peculiar to that emulation; they are described in this section.
+Dired normally uses the external program `ls` to produce the directory listing displayed in Dired buffers (see [Dired](/docs/emacs/Dired)). However, MS-Windows and MS-DOS systems don’t come with such a program, although several ports of GNU `ls` are available. Therefore, Emacs on those systems *emulates* `ls` in Lisp, by using the `ls-lisp.el` package. While `ls-lisp.el` provides a reasonably full emulation of `ls`, there are some options and features peculiar to that emulation; they are described in this section.
 
 The `ls` emulation supports many of the `ls` switches, but it doesn’t support all of them. Here’s the list of the switches it does support: `-A`, `-a`, `-B`, `-C`, `-c`, `-G`, `-g`, `-h`, `-i`, `-n`, `-R`, `-r`, `-S`, `-s`, `-t`, `-U`, `-u`, `-v`, and `-X`. The `-F` switch is partially supported (it appends the character that classifies the file, but does not prevent symlink following).
 

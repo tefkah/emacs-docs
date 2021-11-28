@@ -16,4 +16,4 @@ When passing a font name to Emacs on the command line, you may need to quote it,
 emacs -fn "DejaVu Sans Mono-12"
 ```
 
-See [Fonts](Fonts), for details about font names and other ways to specify the default font.
+See [Fonts](/docs/emacs/Fonts), for details about font names and other ways to specify the default font.

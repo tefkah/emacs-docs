@@ -8,11 +8,11 @@ GNUstep is free software; macOS is not. Because it is a non-free operating syste
 
 We support GNU Emacs on proprietary operating systems because we hope this taste of freedom will inspire users to escape from them.
 
-For various historical and technical reasons, Emacs uses the term ‘`Nextstep`’ internally, instead of “Cocoa" or “macOS"; for instance, most of the commands and variables described in this section begin with ‘`ns-`’, which is short for ‘`Nextstep`’. NeXTstep was an application interface released by NeXT Inc. during the 1980s, of which Cocoa is a direct descendant. Apart from Cocoa, there is another NeXTstep-style system: GNUstep, which is free software. As of this writing, Emacs GNUstep support is in alpha status (see [GNUstep Support](GNUstep-Support)), but we hope to improve it in the future.
+For various historical and technical reasons, Emacs uses the term ‘`Nextstep`’ internally, instead of “Cocoa" or “macOS"; for instance, most of the commands and variables described in this section begin with ‘`ns-`’, which is short for ‘`Nextstep`’. NeXTstep was an application interface released by NeXT Inc. during the 1980s, of which Cocoa is a direct descendant. Apart from Cocoa, there is another NeXTstep-style system: GNUstep, which is free software. As of this writing, Emacs GNUstep support is in alpha status (see [GNUstep Support](/docs/emacs/GNUstep-Support)), but we hope to improve it in the future.
 
-|                                                                  |    |                                           |
-| :--------------------------------------------------------------- | -- | :---------------------------------------- |
-| • [Mac / GNUstep Basics](Mac-_002f-GNUstep-Basics)               |    | Basic Emacs usage under GNUstep or macOS. |
-| • [Mac / GNUstep Customization](Mac-_002f-GNUstep-Customization) |    | Customizations under GNUstep or macOS.    |
-| • [Mac / GNUstep Events](Mac-_002f-GNUstep-Events)               |    | How window system events are handled.     |
-| • [GNUstep Support](GNUstep-Support)                             |    | Details on status of GNUstep support.     |
+|                                                                              |    |                                           |
+| :--------------------------------------------------------------------------- | -- | :---------------------------------------- |
+| • [Mac / GNUstep Basics](/docs/emacs/Mac-_002f-GNUstep-Basics)               |    | Basic Emacs usage under GNUstep or macOS. |
+| • [Mac / GNUstep Customization](/docs/emacs/Mac-_002f-GNUstep-Customization) |    | Customizations under GNUstep or macOS.    |
+| • [Mac / GNUstep Events](/docs/emacs/Mac-_002f-GNUstep-Events)               |    | How window system events are handled.     |
+| • [GNUstep Support](/docs/emacs/GNUstep-Support)                             |    | Details on status of GNUstep support.     |

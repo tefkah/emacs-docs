@@ -53,7 +53,7 @@ Here are some tips and conventions for the writing of documentation strings. You
 
     See [Quotation Marks](https://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Quotation-Marks) in The GNU Emacs Manual, for how to enter curved single quotes.
 
-    Documentation strings can also use an older single-quoting convention, which quotes symbols with grave accent `` ` `` and apostrophe `'`: `` `like-this' `` rather than `‘like-this’`. This older convention was designed for now-obsolete displays in which grave accent and apostrophe were mirror images. Documentation using this convention is converted to the user’s preferred format when it is copied into a help buffer. See [Keys in Documentation](Keys-in-Documentation).
+    Documentation strings can also use an older single-quoting convention, which quotes symbols with grave accent `` ` `` and apostrophe `'`: `` `like-this' `` rather than `‘like-this’`. This older convention was designed for now-obsolete displays in which grave accent and apostrophe were mirror images. Documentation using this convention is converted to the user’s preferred format when it is copied into a help buffer. See [Keys in Documentation](/docs/elisp/Keys-in-Documentation).
 
     Help mode automatically creates a hyperlink when a documentation string uses a single-quoted symbol name, if the symbol has either a function or a variable definition. You do not need to do anything special to make use of this feature. However, when a symbol has both a function definition and a variable definition, and you want to refer to just one of them, you can specify which one by writing one of the words ‘`variable`’, ‘`option`’, ‘`function`’, or ‘`command`’, immediately before the symbol name. (Case makes no difference in recognizing these indicator words.) For example, if you write
 
@@ -90,7 +90,7 @@ Here are some tips and conventions for the writing of documentation strings. You
     `https://www.gnu.org/').
     ```
 
-*   Don’t write key sequences directly in documentation strings. Instead, use the ‘`\\[…]`’ construct to stand for them. For example, instead of writing ‘`C-f`’, write the construct ‘`\\[forward-char]`’. When Emacs displays the documentation string, it substitutes whatever key is currently bound to `forward-char`. (This is normally ‘`C-f`’, but it may be some other character if the user has moved key bindings.) See [Keys in Documentation](Keys-in-Documentation).
+*   Don’t write key sequences directly in documentation strings. Instead, use the ‘`\\[…]`’ construct to stand for them. For example, instead of writing ‘`C-f`’, write the construct ‘`\\[forward-char]`’. When Emacs displays the documentation string, it substitutes whatever key is currently bound to `forward-char`. (This is normally ‘`C-f`’, but it may be some other character if the user has moved key bindings.) See [Keys in Documentation](/docs/elisp/Keys-in-Documentation).
 
 *   In documentation strings for a major mode, you will want to refer to the key bindings of that mode’s local map, rather than global ones. Therefore, use the construct ‘`\\<…>`’ once in the documentation string to specify which key map to use. Do this before the first use of ‘`\\[…]`’. The text inside the ‘`\\<…>`’ should be the name of the variable containing the local keymap for the major mode.
 
@@ -114,7 +114,7 @@ Here are some tips and conventions for the writing of documentation strings. You
     In Dired, visit the file or directory named on this line.
     ```
 
-*   When you define a variable that represents an option users might want to set, use `defcustom`. See [Defining Variables](Defining-Variables).
+*   When you define a variable that represents an option users might want to set, use `defcustom`. See [Defining Variables](/docs/elisp/Defining-Variables).
 
 *   The documentation string for a variable that is a yes-or-no flag should start with words such as “Non-nil means", to make it clear that all non-`nil` values are equivalent and indicate explicitly what `nil` and non-`nil` mean.
 

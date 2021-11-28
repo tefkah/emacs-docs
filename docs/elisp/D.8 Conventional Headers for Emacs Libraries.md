@@ -79,11 +79,11 @@ These lines state the homepage of the library.
 
 ### ‘`Package-Version`’
 
-If ‘`Version`’ is not suitable for use by the package manager, then a package can define ‘`Package-Version`’; it will be used instead. This is handy if ‘`Version`’ is an RCS id or something else that cannot be parsed by `version-to-list`. See [Packaging Basics](Packaging-Basics).
+If ‘`Version`’ is not suitable for use by the package manager, then a package can define ‘`Package-Version`’; it will be used instead. This is handy if ‘`Version`’ is an RCS id or something else that cannot be parsed by `version-to-list`. See [Packaging Basics](/docs/elisp/Packaging-Basics).
 
 ### ‘`Package-Requires`’
 
-If this exists, it names packages on which the current package depends for proper operation. See [Packaging Basics](Packaging-Basics). This is used by the package manager both at download time (to ensure that a complete set of packages is downloaded) and at activation time (to ensure that a package is only activated if all its dependencies have been).
+If this exists, it names packages on which the current package depends for proper operation. See [Packaging Basics](/docs/elisp/Packaging-Basics). This is used by the package manager both at download time (to ensure that a complete set of packages is downloaded) and at activation time (to ensure that a package is only activated if all its dependencies have been).
 
 Its format is a list of lists on a single line. The `car` of each sub-list is the name of a package, as a symbol. The `cadr` of each sub-list is the minimum acceptable version number, as a string that can be parsed by `version-to-list`. An entry that lacks a version (i.e., an entry which is just a symbol, or a sub-list of one element) is equivalent to entry with version "0". For instance:
 

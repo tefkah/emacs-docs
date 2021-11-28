@@ -12,11 +12,11 @@ Here is a table of action arguments:
 
 ### ‘`--visit=file`’
 
-Visit the specified `file`. See [Visiting](Visiting).
+Visit the specified `file`. See [Visiting](/docs/emacs/Visiting).
 
-When Emacs starts up, it displays the startup buffer in one window, and the buffer visiting `file` in another window (see [Windows](Windows)). If you supply more than one file argument, the displayed file is the last one specified on the command line; the other files are visited but their buffers are not shown.
+When Emacs starts up, it displays the startup buffer in one window, and the buffer visiting `file` in another window (see [Windows](/docs/emacs/Windows)). If you supply more than one file argument, the displayed file is the last one specified on the command line; the other files are visited but their buffers are not shown.
 
-If the startup buffer is disabled (see [Entering Emacs](Entering-Emacs)), then starting Emacs with one file argument displays the buffer visiting `file` in a single window. With two file arguments, Emacs displays the files in two different windows. With more than two file arguments, Emacs displays the last file specified in one window, plus another window with a Buffer Menu showing all the other files (see [Several Buffers](Several-Buffers)). To inhibit using the Buffer Menu for this, change the variable `inhibit-startup-buffer-menu` to `t`.
+If the startup buffer is disabled (see [Entering Emacs](/docs/emacs/Entering-Emacs)), then starting Emacs with one file argument displays the buffer visiting `file` in a single window. With two file arguments, Emacs displays the files in two different windows. With more than two file arguments, Emacs displays the last file specified in one window, plus another window with a Buffer Menu showing all the other files (see [Several Buffers](/docs/emacs/Several-Buffers)). To inhibit using the Buffer Menu for this, change the variable `inhibit-startup-buffer-menu` to `t`.
 
 ### ‘`+linenum file`’
 
@@ -30,7 +30,7 @@ Visit the specified `file`, then go to line number `linenum` and put point at co
 
 ### ‘`--load=file`’
 
-Load a Lisp library named `file` with the function `load`. If `file` is not an absolute file name, Emacs first looks for it in the current directory, then in the directories listed in `load-path` (see [Lisp Libraries](Lisp-Libraries)).
+Load a Lisp library named `file` with the function `load`. If `file` is not an absolute file name, Emacs first looks for it in the current directory, then in the directories listed in `load-path` (see [Lisp Libraries](/docs/emacs/Lisp-Libraries)).
 
 **Warning:** If previous command-line arguments have visited files, the current directory is the directory of the last file visited.
 
@@ -54,7 +54,7 @@ Evaluate Lisp expression `expression`.
 
 ### ‘`--insert=file`’
 
-Insert the contents of `file` into the buffer that is current when this command-line argument is processed. Usually, this is the `*scratch*` buffer (see [Lisp Interaction](Lisp-Interaction)), but if arguments earlier on the command line visit files or switch buffers, that might be a different buffer. The effect of this command-line argument is like what `M-x insert-file` does (see [Misc File Ops](Misc-File-Ops)).
+Insert the contents of `file` into the buffer that is current when this command-line argument is processed. Usually, this is the `*scratch*` buffer (see [Lisp Interaction](/docs/emacs/Lisp-Interaction)), but if arguments earlier on the command line visit files or switch buffers, that might be a different buffer. The effect of this command-line argument is like what `M-x insert-file` does (see [Misc File Ops](/docs/emacs/Misc-File-Ops)).
 
 ### ‘`--kill`’
 

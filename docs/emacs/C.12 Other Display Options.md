@@ -30,4 +30,4 @@ Disable the blinking cursor on graphical displays.
 
 Disable the menu-bar, the tool-bar, the scroll-bars, tool tips, and turn off font-lock-mode and the blinking cursor. This can be useful for making a test case that simplifies debugging of display problems.
 
-The ‘`--xrm`’ option (see [Resources](Resources)) specifies additional X resource values.
+The ‘`--xrm`’ option (see [Resources](/docs/emacs/Resources)) specifies additional X resource values.

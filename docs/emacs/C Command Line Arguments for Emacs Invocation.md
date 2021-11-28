@@ -2,7 +2,7 @@
 slug: Emacs-Invocation
 ---
 
-Emacs supports command line arguments to request various actions when invoking Emacs. These are for compatibility with other editors and for sophisticated activities. We don’t recommend using them for ordinary editing (See [Emacs Server](Emacs-Server), for a way to access an existing Emacs job from the command line).
+Emacs supports command line arguments to request various actions when invoking Emacs. These are for compatibility with other editors and for sophisticated activities. We don’t recommend using them for ordinary editing (See [Emacs Server](/docs/emacs/Emacs-Server), for a way to access an existing Emacs job from the command line).
 
 Arguments starting with ‘`-`’ are *options*, and so is ‘`+linenum`’. All other arguments specify files to visit. Emacs visits the specified files while it starts up. The last file specified on the command line becomes the current buffer; the other files are also visited in other buffers. As with most programs, the special argument ‘`--`’ says that all subsequent arguments are file names, not options, even if they start with ‘`-`’.
 
@@ -14,17 +14,17 @@ The long forms with ‘`--`’ are easier to remember, but longer to type. Howev
 
 Most options specify how to initialize Emacs, or set parameters for the Emacs session. We call them *initial options*. A few options specify things to do, such as loading libraries or calling Lisp functions. These are called *action options*. These and file names together are called *action arguments*. The action arguments are stored as a list of strings in the variable `command-line-args`. (Actually, when Emacs starts up, `command-line-args` contains all the arguments passed from the command line; during initialization, the initial arguments are removed from this list when they are processed, leaving only the action arguments.)
 
-|                                        |    |                                                               |
-| :------------------------------------- | -- | :------------------------------------------------------------ |
-| • [Action Arguments](Action-Arguments) |    | Arguments to visit files, load libraries, and call functions. |
-| • [Initial Options](Initial-Options)   |    | Arguments that take effect while starting Emacs.              |
-| • [Command Example](Command-Example)   |    | Examples of using command line arguments.                     |
-| • [Environment](Environment)           |    | Environment variables that Emacs uses.                        |
-| • [Display X](Display-X)               |    | Changing the default display and using remote login.          |
-| • [Font X](Font-X)                     |    | Choosing a font for text, under X.                            |
-| • [Colors X](Colors-X)                 |    | Choosing display colors.                                      |
-| • [Window Size X](Window-Size-X)       |    | Start-up window size, under X.                                |
-| • [Borders X](Borders-X)               |    | Internal and outer borders, under X.                          |
-| • [Title X](Title-X)                   |    | Specifying the initial frame’s title.                         |
-| • [Icons X](Icons-X)                   |    | Choosing what sort of icon to use, under X.                   |
-| • [Misc X](Misc-X)                     |    | Other display options.                                        |
+|                                                    |    |                                                               |
+| :------------------------------------------------- | -- | :------------------------------------------------------------ |
+| • [Action Arguments](/docs/emacs/Action-Arguments) |    | Arguments to visit files, load libraries, and call functions. |
+| • [Initial Options](/docs/emacs/Initial-Options)   |    | Arguments that take effect while starting Emacs.              |
+| • [Command Example](/docs/emacs/Command-Example)   |    | Examples of using command line arguments.                     |
+| • [Environment](/docs/emacs/Environment)           |    | Environment variables that Emacs uses.                        |
+| • [Display X](/docs/emacs/Display-X)               |    | Changing the default display and using remote login.          |
+| • [Font X](/docs/emacs/Font-X)                     |    | Choosing a font for text, under X.                            |
+| • [Colors X](/docs/emacs/Colors-X)                 |    | Choosing display colors.                                      |
+| • [Window Size X](/docs/emacs/Window-Size-X)       |    | Start-up window size, under X.                                |
+| • [Borders X](/docs/emacs/Borders-X)               |    | Internal and outer borders, under X.                          |
+| • [Title X](/docs/emacs/Title-X)                   |    | Specifying the initial frame’s title.                         |
+| • [Icons X](/docs/emacs/Icons-X)                   |    | Choosing what sort of icon to use, under X.                   |
+| • [Misc X](/docs/emacs/Misc-X)                     |    | Other display options.                                        |

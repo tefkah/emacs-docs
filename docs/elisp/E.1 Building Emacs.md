@@ -14,7 +14,7 @@ Because it takes some time to load the standard Lisp files, the `temacs` executa
 
 ### ‘`pdump`’
 
-Record the preloaded Lisp data in a *dump file*. This method produces an additional data file which Emacs will load at startup. The produced dump file is usually called `emacs.pdmp`, and is installed in the Emacs `exec-directory` (see [Help Functions](Help-Functions)). This method is the most preferred one, as it does not require Emacs to employ any special techniques of memory allocation, which might get in the way of various memory-layout techniques used by modern systems to enhance security and privacy.
+Record the preloaded Lisp data in a *dump file*. This method produces an additional data file which Emacs will load at startup. The produced dump file is usually called `emacs.pdmp`, and is installed in the Emacs `exec-directory` (see [Help Functions](/docs/elisp/Help-Functions)). This method is the most preferred one, as it does not require Emacs to employ any special techniques of memory allocation, which might get in the way of various memory-layout techniques used by modern systems to enhance security and privacy.
 
 ### ‘`pbootstrap`’
 
@@ -40,7 +40,7 @@ You can specify additional files to preload by writing a library named `site-loa
 
 to make `n` added bytes of pure space to hold the additional files; see `src/puresize.h`. (Try adding increments of 20000 until it is big enough.) However, the advantage of preloading additional files decreases as machines get faster. On modern machines, it is usually not advisable.
 
-After `loadup.el` reads `site-load.el`, it finds the documentation strings for primitive and preloaded functions (and variables) in the file `etc/DOC` where they are stored, by calling `Snarf-documentation` (see [Accessing Documentation](Definition-of-Snarf_002ddocumentation)).
+After `loadup.el` reads `site-load.el`, it finds the documentation strings for primitive and preloaded functions (and variables) in the file `etc/DOC` where they are stored, by calling `Snarf-documentation` (see [Accessing Documentation](/docs/elisp/Definition-of-Snarf_002ddocumentation)).
 
 You can specify other Lisp expressions to execute just before dumping by putting them in a library named `site-init.el`. This file is executed after the documentation strings are found.
 
@@ -50,7 +50,7 @@ If you want to preload function or variable definitions, there are three ways yo
 *   Load the files with `site-init.el`, then copy the files into the installation directory for Lisp files when you install Emacs.
 *   Specify a `nil` value for `byte-compile-dynamic-docstrings` as a local variable in each of these files, and load them with either `site-load.el` or `site-init.el`. (This method has the drawback that the documentation strings take up space in Emacs all the time.)
 
-It is not advisable to put anything in `site-load.el` or `site-init.el` that would alter any of the features that users expect in an ordinary unmodified Emacs. If you feel you must override normal features for your site, do it with `default.el`, so that users can override your changes if they wish. See [Startup Summary](Startup-Summary). Note that if either `site-load.el` or `site-init.el` changes `load-path`, the changes will be lost after dumping. See [Library Search](Library-Search). To make a permanent change to `load-path`, use the `--enable-locallisppath` option of `configure`.
+It is not advisable to put anything in `site-load.el` or `site-init.el` that would alter any of the features that users expect in an ordinary unmodified Emacs. If you feel you must override normal features for your site, do it with `default.el`, so that users can override your changes if they wish. See [Startup Summary](/docs/elisp/Startup-Summary). Note that if either `site-load.el` or `site-init.el` changes `load-path`, the changes will be lost after dumping. See [Library Search](/docs/elisp/Library-Search). To make a permanent change to `load-path`, use the `--enable-locallisppath` option of `configure`.
 
 In a package that can be preloaded, it is sometimes necessary (or useful) to delay certain evaluations until Emacs subsequently starts up. The vast majority of such cases relate to the values of customizable variables. For example, `tutorial-directory` is a variable defined in `startup.el`, which is preloaded. The default value is set based on `data-directory`. The variable needs to access the value of `data-directory` when Emacs starts, not when it is dumped, because the Emacs executable has probably been installed in a different location since it was dumped.
 
@@ -58,7 +58,7 @@ In a package that can be preloaded, it is sometimes necessary (or useful) to del
 
 This function delays the initialization of `symbol` to the next Emacs start. You normally use this function by specifying it as the `:initialize` property of a customizable variable. (The argument `value` is unused, and is provided only for compatibility with the form Custom expects.)
 
-In the unlikely event that you need a more general functionality than `custom-initialize-delay` provides, you can use `before-init-hook` (see [Startup Summary](Startup-Summary)).
+In the unlikely event that you need a more general functionality than `custom-initialize-delay` provides, you can use `before-init-hook` (see [Startup Summary](/docs/elisp/Startup-Summary)).
 
 ### <span className="tag function">`function`</span> **dump-emacs-portable** *to-file \&optional track-referrers*
 

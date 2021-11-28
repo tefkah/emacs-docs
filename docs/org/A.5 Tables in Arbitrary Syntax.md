@@ -6,8 +6,8 @@ Due to Org’s success in handling tables with Orgtbl, a frequently requested fe
 
 This approach involves implementing a custom *translate* function that operates on a native Org *source table* to produce a table in another format. This strategy would keep the excellently working Orgtbl simple and isolate complications, if any, confined to the translate function. To add more alien table formats, we just add more translate functions. Also the burden of developing custom translate functions for new table formats is in the hands of those who know those formats best.
 
-|                                                |    |                                     |
-| :--------------------------------------------- | -- | :---------------------------------- |
-| • [Radio tables](Radio-tables)                 |    | Sending and receiving radio tables. |
-| • [A LaTeX example](A-LaTeX-example)           |    | Step by step, almost a tutorial.    |
-| • [Translator functions](Translator-functions) |    | Copy and modify.                    |
+|                                                          |    |                                     |
+| :------------------------------------------------------- | -- | :---------------------------------- |
+| • [Radio tables](/docs/org/Radio-tables)                 |    | Sending and receiving radio tables. |
+| • [A LaTeX example](/docs/org/A-LaTeX-example)           |    | Step by step, almost a tutorial.    |
+| • [Translator functions](/docs/org/Translator-functions) |    | Copy and modify.                    |

@@ -10,18 +10,18 @@ The loaded file must contain Lisp expressions, either as source code or as byte-
 
 Emacs can also load compiled dynamic modules: shared libraries that provide additional functionality for use in Emacs Lisp programs, just like a package written in Emacs Lisp would. When a dynamic module is loaded, Emacs calls a specially-named initialization function which the module needs to implement, and which exposes the additional functions and variables to Emacs Lisp programs.
 
-For on-demand loading of external libraries which are known in advance to be required by certain Emacs primitives, see [Dynamic Libraries](Dynamic-Libraries).
+For on-demand loading of external libraries which are known in advance to be required by certain Emacs primitives, see [Dynamic Libraries](/docs/elisp/Dynamic-Libraries).
 
-|                                                      |    |                                                                |
-| :--------------------------------------------------- | -- | :------------------------------------------------------------- |
-| • [How Programs Do Loading](How-Programs-Do-Loading) |    | The `load` function and others.                                |
-| • [Load Suffixes](Load-Suffixes)                     |    | Details about the suffixes that `load` tries.                  |
-| • [Library Search](Library-Search)                   |    | Finding a library to load.                                     |
-| • [Loading Non-ASCII](Loading-Non_002dASCII)         |    | Non-ASCII characters in Emacs Lisp files.                      |
-| • [Autoload](Autoload)                               |    | Setting up a function to autoload.                             |
-| • [Repeated Loading](Repeated-Loading)               |    | Precautions about loading a file twice.                        |
-| • [Named Features](Named-Features)                   |    | Loading a library if it isn’t already loaded.                  |
-| • [Where Defined](Where-Defined)                     |    | Finding which file defined a certain symbol.                   |
-| • [Unloading](Unloading)                             |    | How to unload a library that was loaded.                       |
-| • [Hooks for Loading](Hooks-for-Loading)             |    | Providing code to be run when particular libraries are loaded. |
-| • [Dynamic Modules](Dynamic-Modules)                 |    | Modules provide additional Lisp primitives.                    |
+|                                                                  |    |                                                                |
+| :--------------------------------------------------------------- | -- | :------------------------------------------------------------- |
+| • [How Programs Do Loading](/docs/elisp/How-Programs-Do-Loading) |    | The `load` function and others.                                |
+| • [Load Suffixes](/docs/elisp/Load-Suffixes)                     |    | Details about the suffixes that `load` tries.                  |
+| • [Library Search](/docs/elisp/Library-Search)                   |    | Finding a library to load.                                     |
+| • [Loading Non-ASCII](/docs/elisp/Loading-Non_002dASCII)         |    | Non-ASCII characters in Emacs Lisp files.                      |
+| • [Autoload](/docs/elisp/Autoload)                               |    | Setting up a function to autoload.                             |
+| • [Repeated Loading](/docs/elisp/Repeated-Loading)               |    | Precautions about loading a file twice.                        |
+| • [Named Features](/docs/elisp/Named-Features)                   |    | Loading a library if it isn’t already loaded.                  |
+| • [Where Defined](/docs/elisp/Where-Defined)                     |    | Finding which file defined a certain symbol.                   |
+| • [Unloading](/docs/elisp/Unloading)                             |    | How to unload a library that was loaded.                       |
+| • [Hooks for Loading](/docs/elisp/Hooks-for-Loading)             |    | Providing code to be run when particular libraries are loaded. |
+| • [Dynamic Modules](/docs/elisp/Dynamic-Modules)                 |    | Modules provide additional Lisp primitives.                    |

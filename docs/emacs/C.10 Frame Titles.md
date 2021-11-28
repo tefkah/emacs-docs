@@ -12,4 +12,4 @@ You can specify a non-default title for the initial Emacs frame with a command l
 
 Specify `title` as the title for the initial Emacs frame.
 
-The ‘`--name`’ option (see [Resources](Resources)) also specifies the title for the initial Emacs frame.
+The ‘`--name`’ option (see [Resources](/docs/emacs/Resources)) also specifies the title for the initial Emacs frame.

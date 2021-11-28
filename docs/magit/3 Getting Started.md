@@ -32,6 +32,6 @@ So far we have mentioned the commit, push, and log menu commands. These are prob
 
 The key bindings in that menu correspond to the bindings in Magit buffers, including but not limited to the status buffer. So you could type `h d` to bring up the diff menu, but once you remember that "d" stands for "diff", you would usually do so by just typing `d`. But this "prefix of prefixes" is useful even once you have memorized all the bindings, as it can provide easy access to Magit commands from non-Magit buffers. The global binding is `C-x M-g`.
 
-In file visiting buffers `C-c M-g` brings up a similar menu featuring commands that act on just the visited file, see [Commands for Buffers Visiting Files](Commands-for-Buffers-Visiting-Files).
+In file visiting buffers `C-c M-g` brings up a similar menu featuring commands that act on just the visited file, see [Commands for Buffers Visiting Files](/docs/magit/Commands-for-Buffers-Visiting-Files).
 
 It is not necessary that you do so now, but if you stick with Magit, then it is highly recommended that you read the next section too.

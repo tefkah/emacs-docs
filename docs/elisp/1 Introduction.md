@@ -12,10 +12,10 @@ Generally speaking, the earlier chapters describe features of Emacs Lisp that ha
 
 This is the GNU Emacs Lisp Reference Manual, corresponding to Emacs version 27.2.
 
-|                                      |    |                                                    |
-| :----------------------------------- | -- | :------------------------------------------------- |
-| • [Caveats](Caveats)                 |    | Flaws and a request for help.                      |
-| • [Lisp History](Lisp-History)       |    | Emacs Lisp is descended from Maclisp.              |
-| • [Conventions](Conventions)         |    | How the manual is formatted.                       |
-| • [Version Info](Version-Info)       |    | Which Emacs version is running?                    |
-| • [Acknowledgments](Acknowledgments) |    | The authors, editors, and sponsors of this manual. |
+|                                                  |    |                                                    |
+| :----------------------------------------------- | -- | :------------------------------------------------- |
+| • [Caveats](/docs/elisp/Caveats)                 |    | Flaws and a request for help.                      |
+| • [Lisp History](/docs/elisp/Lisp-History)       |    | Emacs Lisp is descended from Maclisp.              |
+| • [Conventions](/docs/elisp/Conventions)         |    | How the manual is formatted.                       |
+| • [Version Info](/docs/elisp/Version-Info)       |    | Which Emacs version is running?                    |
+| • [Acknowledgments](/docs/elisp/Acknowledgments) |    | The authors, editors, and sponsors of this manual. |

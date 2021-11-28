@@ -10,12 +10,12 @@ You define a keyboard macro by executing and recording the commands which are it
 
 Keyboard macros differ from ordinary Emacs commands in that they are written in the Emacs command language rather than in Lisp. This makes it easier for the novice to write them, and makes them more convenient as temporary hacks. However, the Emacs command language is not powerful enough as a programming language to be useful for writing anything intelligent or general. For such things, Lisp must be used.
 
-|                                                            |    |                                                       |
-| :--------------------------------------------------------- | -- | :---------------------------------------------------- |
-| • [Basic Keyboard Macro](Basic-Keyboard-Macro)             |    | Defining and running keyboard macros.                 |
-| • [Keyboard Macro Ring](Keyboard-Macro-Ring)               |    | Where previous keyboard macros are saved.             |
-| • [Keyboard Macro Counter](Keyboard-Macro-Counter)         |    | Inserting incrementing numbers in macros.             |
-| • [Keyboard Macro Query](Keyboard-Macro-Query)             |    | Making keyboard macros do different things each time. |
-| • [Save Keyboard Macro](Save-Keyboard-Macro)               |    | Giving keyboard macros names; saving them in files.   |
-| • [Edit Keyboard Macro](Edit-Keyboard-Macro)               |    | Editing keyboard macros.                              |
-| • [Keyboard Macro Step-Edit](Keyboard-Macro-Step_002dEdit) |    | Interactively executing and editing a keyboard macro. |
+|                                                                        |    |                                                       |
+| :--------------------------------------------------------------------- | -- | :---------------------------------------------------- |
+| • [Basic Keyboard Macro](/docs/emacs/Basic-Keyboard-Macro)             |    | Defining and running keyboard macros.                 |
+| • [Keyboard Macro Ring](/docs/emacs/Keyboard-Macro-Ring)               |    | Where previous keyboard macros are saved.             |
+| • [Keyboard Macro Counter](/docs/emacs/Keyboard-Macro-Counter)         |    | Inserting incrementing numbers in macros.             |
+| • [Keyboard Macro Query](/docs/emacs/Keyboard-Macro-Query)             |    | Making keyboard macros do different things each time. |
+| • [Save Keyboard Macro](/docs/emacs/Save-Keyboard-Macro)               |    | Giving keyboard macros names; saving them in files.   |
+| • [Edit Keyboard Macro](/docs/emacs/Edit-Keyboard-Macro)               |    | Editing keyboard macros.                              |
+| • [Keyboard Macro Step-Edit](/docs/emacs/Keyboard-Macro-Step_002dEdit) |    | Interactively executing and editing a keyboard macro. |

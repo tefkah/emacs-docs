@@ -2,9 +2,9 @@
 slug: Mac-_002f-GNUstep-Basics
 ---
 
-By default, the `Alt` and `Option` keys are the same as `Meta`. The Mac `Cmd` key is the same as `Super`, and Emacs provides a set of key bindings using this modifier key that mimic other Mac / GNUstep applications (see [Mac / GNUstep Events](Mac-_002f-GNUstep-Events)). You can change these bindings in the usual way (see [Key Bindings](Key-Bindings)). The modifiers themselves can be customized; see [Mac / GNUstep Customization](Mac-_002f-GNUstep-Customization).
+By default, the `Alt` and `Option` keys are the same as `Meta`. The Mac `Cmd` key is the same as `Super`, and Emacs provides a set of key bindings using this modifier key that mimic other Mac / GNUstep applications (see [Mac / GNUstep Events](/docs/emacs/Mac-_002f-GNUstep-Events)). You can change these bindings in the usual way (see [Key Bindings](/docs/emacs/Key-Bindings)). The modifiers themselves can be customized; see [Mac / GNUstep Customization](/docs/emacs/Mac-_002f-GNUstep-Customization).
 
-`S-mouse-1` adjusts the region to the click position, just like `mouse-3` (`mouse-save-then-kill`); it does not pop up a menu for changing the default face, as `S-mouse-1` normally does (see [Text Scale](Text-Scale)). This change makes Emacs behave more like other Mac / GNUstep applications.
+`S-mouse-1` adjusts the region to the click position, just like `mouse-3` (`mouse-save-then-kill`); it does not pop up a menu for changing the default face, as `S-mouse-1` normally does (see [Text Scale](/docs/emacs/Text-Scale)). This change makes Emacs behave more like other Mac / GNUstep applications.
 
 When you open or save files using the menus, or using the `Cmd-o` and `Cmd-S` bindings, Emacs uses graphical file dialogs to read file names. However, if you use the regular Emacs key sequences, such as `C-x C-f`, Emacs uses the minibuffer to read file names.
 

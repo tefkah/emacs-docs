@@ -6,14 +6,14 @@ The functionality provided by Magit can be roughly divided into three groups: in
 
 Of course other distinctions make sense too, e.g. Git’s distinction between porcelain and plumbing commands, which for the most part is equivalent to Emacs’ distinction between interactive commands and non-interactive functions. All of the sections mentioned before are mainly concerned with the porcelain – Magit’s plumbing layer is described later.
 
-|                                                         |    |    |
-| :------------------------------------------------------ | -- | :- |
-| • [Status Buffer](Status-Buffer):                       |    |    |
-| • [Repository List](Repository-List):                   |    |    |
-| • [Logging](Logging):                                   |    |    |
-| • [Diffing](Diffing):                                   |    |    |
-| • [Ediffing](Ediffing):                                 |    |    |
-| • [References Buffer](References-Buffer):               |    |    |
-| • [Bisecting](Bisecting):                               |    |    |
-| • [Visiting Files and Blobs](Visiting-Files-and-Blobs): |    |    |
-| • [Blaming](Blaming):                                   |    |    |
+|                                                                     |    |    |
+| :------------------------------------------------------------------ | -- | :- |
+| • [Status Buffer](/docs/magit/Status-Buffer):                       |    |    |
+| • [Repository List](/docs/magit/Repository-List):                   |    |    |
+| • [Logging](/docs/magit/Logging):                                   |    |    |
+| • [Diffing](/docs/magit/Diffing):                                   |    |    |
+| • [Ediffing](/docs/magit/Ediffing):                                 |    |    |
+| • [References Buffer](/docs/magit/References-Buffer):               |    |    |
+| • [Bisecting](/docs/magit/Bisecting):                               |    |    |
+| • [Visiting Files and Blobs](/docs/magit/Visiting-Files-and-Blobs): |    |    |
+| • [Blaming](/docs/magit/Blaming):                                   |    |    |

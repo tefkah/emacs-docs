@@ -2,15 +2,15 @@
 slug: Lucid-Resources
 ---
 
-If Emacs is compiled with the X toolkit support using Lucid widgets, you can use X resources to customize the appearance of the menu bar (see [Menu Bar](Menu-Bar)), pop-up menus, and dialog boxes (see [Dialog Boxes](Dialog-Boxes)). The resources for the menu bar fall in the ‘`pane.menubar`’ class (following, as always, either the name of the Emacs executable or ‘`Emacs`’ for all Emacs invocations). The resources for the pop-up menu are in the ‘`menu*`’ class. The resources for dialog boxes are in the ‘`dialog*`’ class.
+If Emacs is compiled with the X toolkit support using Lucid widgets, you can use X resources to customize the appearance of the menu bar (see [Menu Bar](/docs/emacs/Menu-Bar)), pop-up menus, and dialog boxes (see [Dialog Boxes](/docs/emacs/Dialog-Boxes)). The resources for the menu bar fall in the ‘`pane.menubar`’ class (following, as always, either the name of the Emacs executable or ‘`Emacs`’ for all Emacs invocations). The resources for the pop-up menu are in the ‘`menu*`’ class. The resources for dialog boxes are in the ‘`dialog*`’ class.
 
-For example, to display menu bar entries with the ‘`Courier-12`’ font (see [Fonts](Fonts)), write this:
+For example, to display menu bar entries with the ‘`Courier-12`’ font (see [Fonts](/docs/emacs/Fonts)), write this:
 
 ```lisp
 Emacs.pane.menubar.font: Courier-12
 ```
 
-Lucid widgets can display multilingual text in your locale. To enable this, specify a `fontSet` resource instead of a `font` resource. See [Fontsets](Fontsets). If both `font` and `fontSet` resources are specified, the `fontSet` resource is used.
+Lucid widgets can display multilingual text in your locale. To enable this, specify a `fontSet` resource instead of a `font` resource. See [Fontsets](/docs/emacs/Fontsets). If both `font` and `fontSet` resources are specified, the `fontSet` resource is used.
 
 Here is a list of resources for menu bars, pop-up menus, and dialogs:
 

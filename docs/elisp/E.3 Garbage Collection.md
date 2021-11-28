@@ -157,7 +157,7 @@ Total heap size, in `unit-size` units.
 
 Heap space which is not currently used, in `unit-size` units.
 
-If there was overflow in pure space (see [Pure Storage](Pure-Storage)), and Emacs was dumped using the (now obsolete) `unexec` method (see [Building Emacs](Building-Emacs)), then `garbage-collect` returns `nil`, because a real garbage collection cannot be done in that case.
+If there was overflow in pure space (see [Pure Storage](/docs/elisp/Pure-Storage)), and Emacs was dumped using the (now obsolete) `unexec` method (see [Building Emacs](/docs/elisp/Building-Emacs)), then `garbage-collect` returns `nil`, because a real garbage collection cannot be done in that case.
 
 ### <span className="tag useroption">`user option`</span> **garbage-collection-messages**
 

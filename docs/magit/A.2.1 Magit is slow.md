@@ -2,4 +2,4 @@
 slug: Magit-is-slow
 ---
 
-See [Performance](Performance).
+See [Performance](/docs/magit/Performance).

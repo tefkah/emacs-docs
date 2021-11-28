@@ -2,7 +2,7 @@
 slug: Superseding
 ---
 
-This section is directed to users of the native Texinfo mode switching to AUCTeX. It follows the summary of the native mode (see [(texinfo)Texinfo Mode Summary](Texinfo-Mode-Summary)) and lists which of its commands are no longer of use.
+This section is directed to users of the native Texinfo mode switching to AUCTeX. It follows the summary of the native mode (see [(texinfo)Texinfo Mode Summary](/docs/auctex/Texinfo-Mode-Summary)) and lists which of its commands are no longer of use.
 
 ### Insert commands
 

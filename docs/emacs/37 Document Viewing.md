@@ -14,12 +14,12 @@ When DocView mode starts, it displays a welcome screen and begins formatting the
 
 To kill the DocView buffer, type `k` (`doc-view-kill-proc-and-buffer`). To bury it, type `q` (`quit-window`).
 
-|                                    |    |                                               |
-| :--------------------------------- | -- | :-------------------------------------------- |
-| • [Navigation](DocView-Navigation) |    | Navigating DocView buffers.                   |
-| • [Searching](DocView-Searching)   |    | Searching inside documents.                   |
-| • [Slicing](DocView-Slicing)       |    | Specifying which part of a page is displayed. |
-| • [Conversion](DocView-Conversion) |    | Influencing and triggering conversion.        |
+|                                                |    |                                               |
+| :--------------------------------------------- | -- | :-------------------------------------------- |
+| • [Navigation](/docs/emacs/DocView-Navigation) |    | Navigating DocView buffers.                   |
+| • [Searching](/docs/emacs/DocView-Searching)   |    | Searching inside documents.                   |
+| • [Slicing](/docs/emacs/DocView-Slicing)       |    | Specifying which part of a page is displayed. |
+| • [Conversion](/docs/emacs/DocView-Conversion) |    | Influencing and triggering conversion.        |
 
 [^1]: For PostScript files, GhostScript is a hard requirement. For DVI files, `dvipdf` or `dvipdfm` is needed. For OpenDocument and Microsoft Office documents, the `unoconv` tool is needed.
 

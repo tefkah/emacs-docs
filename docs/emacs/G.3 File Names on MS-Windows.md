@@ -4,7 +4,7 @@ slug: Windows-Files
 
 MS-Windows and MS-DOS normally use a backslash, ‘`\`’, to separate name units within a file name, instead of the slash used on other systems. Emacs on MS-DOS/MS-Windows permits use of either slash or backslash, and also knows about drive letters in file names.
 
-On MS-DOS/MS-Windows, file names are case-insensitive, so Emacs by default ignores letter-case in file names during completion. To this end, the default value of `read-file-name-completion-ignore-case` is non-`nil` on MS-DOS/MS-Windows. See [Completion Options](Completion-Options).
+On MS-DOS/MS-Windows, file names are case-insensitive, so Emacs by default ignores letter-case in file names during completion. To this end, the default value of `read-file-name-completion-ignore-case` is non-`nil` on MS-DOS/MS-Windows. See [Completion Options](/docs/emacs/Completion-Options).
 
 The variable `w32-get-true-file-attributes` controls whether Emacs should issue additional system calls to determine more accurately file attributes in primitives like `file-attributes` and `directory-files-and-attributes`. These additional calls are needed to report correct file ownership, link counts and file types for special files such as pipes. Without these system calls, file ownership will be attributed to the current user, link counts will be always reported as 1, and special files will be reported as regular files.
 

@@ -92,6 +92,6 @@ This is the color for editable text. In Emacs, this color is used for the text f
 
 ### `font_name = "font"`
 
-This specifies the font for text in the widget. `font` is a GTK-style (or Pango) font name, like ‘`Sans Italic 10`’. See [Fonts](Fonts). The names are case insensitive.
+This specifies the font for text in the widget. `font` is a GTK-style (or Pango) font name, like ‘`Sans Italic 10`’. See [Fonts](/docs/emacs/Fonts). The names are case insensitive.
 
-There are three ways to specify a color: a color name, an RGB triplet, or a GTK-style RGB triplet. See [Colors](Colors), for a description of color names and RGB triplets. Color names should be enclosed with double quotes, e.g., ‘`"red"`’. RGB triplets should be written without double quotes, e.g., ‘`#ff0000`’. GTK-style RGB triplets have the form `{ r, g, b }`<!-- /@w -->, where `r`, `g` and `b` are either integers in the range 0–65535 or floats in the range 0.0–1.0.
+There are three ways to specify a color: a color name, an RGB triplet, or a GTK-style RGB triplet. See [Colors](/docs/emacs/Colors), for a description of color names and RGB triplets. Color names should be enclosed with double quotes, e.g., ‘`"red"`’. RGB triplets should be written without double quotes, e.g., ‘`#ff0000`’. GTK-style RGB triplets have the form `{ r, g, b }`<!-- /@w -->, where `r`, `g` and `b` are either integers in the range 0–65535 or floats in the range 0.0–1.0.

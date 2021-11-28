@@ -29,13 +29,13 @@ The following diagram shows the relationship between these types:
          |_____________________________________________|
 ```
 
-|                                            |    |                                                |
-| :----------------------------------------- | -- | :--------------------------------------------- |
-| • [Sequence Functions](Sequence-Functions) |    | Functions that accept any kind of sequence.    |
-| • [Arrays](Arrays)                         |    | Characteristics of arrays in Emacs Lisp.       |
-| • [Array Functions](Array-Functions)       |    | Functions specifically for arrays.             |
-| • [Vectors](Vectors)                       |    | Special characteristics of Emacs Lisp vectors. |
-| • [Vector Functions](Vector-Functions)     |    | Functions specifically for vectors.            |
-| • [Char-Tables](Char_002dTables)           |    | How to work with char-tables.                  |
-| • [Bool-Vectors](Bool_002dVectors)         |    | How to work with bool-vectors.                 |
-| • [Rings](Rings)                           |    | Managing a fixed-size ring of objects.         |
+|                                                        |    |                                                |
+| :----------------------------------------------------- | -- | :--------------------------------------------- |
+| • [Sequence Functions](/docs/elisp/Sequence-Functions) |    | Functions that accept any kind of sequence.    |
+| • [Arrays](/docs/elisp/Arrays)                         |    | Characteristics of arrays in Emacs Lisp.       |
+| • [Array Functions](/docs/elisp/Array-Functions)       |    | Functions specifically for arrays.             |
+| • [Vectors](/docs/elisp/Vectors)                       |    | Special characteristics of Emacs Lisp vectors. |
+| • [Vector Functions](/docs/elisp/Vector-Functions)     |    | Functions specifically for vectors.            |
+| • [Char-Tables](/docs/elisp/Char_002dTables)           |    | How to work with char-tables.                  |
+| • [Bool-Vectors](/docs/elisp/Bool_002dVectors)         |    | How to work with bool-vectors.                 |
+| • [Rings](/docs/elisp/Rings)                           |    | Managing a fixed-size ring of objects.         |

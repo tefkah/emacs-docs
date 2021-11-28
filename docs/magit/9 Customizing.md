@@ -12,7 +12,7 @@ Both Git and Emacs are highly customizable. Magit is both a Git porcelain as wel
 
 I intend to address these and similar issues in a future release.
 
-|                                                                     |    |    |
-| :------------------------------------------------------------------ | -- | :- |
-| • [Per-Repository Configuration](Per_002dRepository-Configuration): |    |    |
-| • [Essential Settings](Essential-Settings):                         |    |    |
+|                                                                                 |    |    |
+| :------------------------------------------------------------------------------ | -- | :- |
+| • [Per-Repository Configuration](/docs/magit/Per_002dRepository-Configuration): |    |    |
+| • [Essential Settings](/docs/magit/Essential-Settings):                         |    |    |

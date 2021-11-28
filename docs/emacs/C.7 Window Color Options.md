@@ -2,13 +2,13 @@
 slug: Colors-X
 ---
 
-You can use the following command-line options to specify the colors to use for various parts of the Emacs display. Colors may be specified using either color names or RGB triplets (see [Colors](Colors)).
+You can use the following command-line options to specify the colors to use for various parts of the Emacs display. Colors may be specified using either color names or RGB triplets (see [Colors](/docs/emacs/Colors)).
 
 ### ‘`-fg color`’
 
 ### ‘`--foreground-color=color`’
 
-Specify the foreground color, overriding the color specified by the `default` face (see [Faces](Faces)).
+Specify the foreground color, overriding the color specified by the `default` face (see [Faces](/docs/emacs/Faces)).
 
 ### ‘`-bg color`’
 

@@ -14,7 +14,7 @@ You can specify the display name explicitly when you run Emacs, either by changi
 emacs --display=glasperle:0 &
 ```
 
-You can inhibit the use of the X window system with the ‘`-nw`’ option. Then Emacs uses its controlling text terminal for display. See [Initial Options](Initial-Options).
+You can inhibit the use of the X window system with the ‘`-nw`’ option. Then Emacs uses its controlling text terminal for display. See [Initial Options](/docs/emacs/Initial-Options).
 
 Sometimes, security arrangements prevent a program on a remote system from displaying on your local system. In this case, trying to run Emacs produces messages like this:
 

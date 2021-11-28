@@ -2,11 +2,11 @@
 slug: M_002dx
 ---
 
-Every Emacs command has a name that you can use to run it. For convenience, many commands also have key bindings. You can run those commands by typing the keys, or run them by name. Most Emacs commands have no key bindings, so the only way to run them is by name. (See [Key Bindings](Key-Bindings), for how to set up key bindings.)
+Every Emacs command has a name that you can use to run it. For convenience, many commands also have key bindings. You can run those commands by typing the keys, or run them by name. Most Emacs commands have no key bindings, so the only way to run them is by name. (See [Key Bindings](/docs/emacs/Key-Bindings), for how to set up key bindings.)
 
 By convention, a command name consists of one or more words, separated by hyphens; for example, `auto-fill-mode` or `manual-entry`. Command names mostly use complete English words to make them easier to remember.
 
-To run a command by name, start with `M-x`, type the command name, then terminate it with `RET`. `M-x` uses the minibuffer to read the command name. The string ‘`M-x`’ appears at the beginning of the minibuffer as a *prompt* to remind you to enter a command name to be run. `RET` exits the minibuffer and runs the command. See [Minibuffer](Minibuffer), for more information on the minibuffer.
+To run a command by name, start with `M-x`, type the command name, then terminate it with `RET`. `M-x` uses the minibuffer to read the command name. The string ‘`M-x`’ appears at the beginning of the minibuffer as a *prompt* to remind you to enter a command name to be run. `RET` exits the minibuffer and runs the command. See [Minibuffer](/docs/emacs/Minibuffer), for more information on the minibuffer.
 
 You can use completion to enter the command name. For example, to invoke the command `forward-char`, you can type
 

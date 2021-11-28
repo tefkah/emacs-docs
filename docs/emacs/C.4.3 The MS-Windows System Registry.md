@@ -8,4 +8,4 @@ When Emacs starts, as well as checking the environment, it also checks the Syste
 
 To determine the value of those variables, Emacs goes through the following procedure. First, the environment is checked. If the variable is not found there, Emacs looks for registry keys by that name under `/Software/GNU/Emacs`; first in the `HKEY_CURRENT_USER` section of the registry, and if not found there, in the `HKEY_LOCAL_MACHINE` section. Finally, if Emacs still cannot determine the values, compiled-in defaults are used.
 
-In addition to the environment variables above, you can also add settings to the `/Software/GNU/Emacs` registry key to specify X resources (see [X Resources](X-Resources)). Most of the settings you can specify in your `.Xdefaults` file can be set from that registry key.
+In addition to the environment variables above, you can also add settings to the `/Software/GNU/Emacs` registry key to specify X resources (see [X Resources](/docs/emacs/X-Resources)). Most of the settings you can specify in your `.Xdefaults` file can be set from that registry key.

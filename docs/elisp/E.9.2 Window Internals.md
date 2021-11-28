@@ -62,7 +62,7 @@ The total width and height of the window measured in pixels.
 
 ### `start`
 
-A marker pointing to the position in the buffer that is the first character (in the logical order, see [Bidirectional Display](Bidirectional-Display)) displayed in the window.
+A marker pointing to the position in the buffer that is the first character (in the logical order, see [Bidirectional Display](/docs/elisp/Bidirectional-Display)) displayed in the window.
 
 ### `pointm`
 
@@ -194,7 +194,7 @@ This is the number of columns that the display in the window is scrolled horizon
 
 ### `min_hscroll`
 
-Minimum value of `hscroll`, set by the user via `set-window-hscroll` (see [Horizontal Scrolling](Horizontal-Scrolling)). When only the current line is hscrolled, this describes the horizontal scrolling of lines other than the current one.
+Minimum value of `hscroll`, set by the user via `set-window-hscroll` (see [Horizontal Scrolling](/docs/elisp/Horizontal-Scrolling)). When only the current line is hscrolled, this describes the horizontal scrolling of lines other than the current one.
 
 ### `vscroll`
 

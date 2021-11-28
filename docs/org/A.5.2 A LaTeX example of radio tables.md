@@ -52,7 +52,7 @@ Month & \multicolumn{1}{c}{Days} & Nr.\ sold & per day\\
 \end{comment}
 ```
 
-The LaTeX translator function `orgtbl-to-latex` is already part of Orgtbl mode and uses a ‘`tabular`’ environment to typeset the table and marks horizontal lines with `\hline`. For additional parameters to control output, see [Translator functions](Translator-functions):
+The LaTeX translator function `orgtbl-to-latex` is already part of Orgtbl mode and uses a ‘`tabular`’ environment to typeset the table and marks horizontal lines with `\hline`. For additional parameters to control output, see [Translator functions](/docs/org/Translator-functions):
 
 ### ‘`:splice BOOLEAN`’
 

@@ -2,7 +2,7 @@
 slug: Motif-Resources
 ---
 
-If Emacs is compiled with the X toolkit support using Motif or LessTif widgets, you can use X resources to customize the appearance of the menu bar (see [Menu Bar](Menu-Bar)), pop-up menus, and dialog boxes (see [Dialog Boxes](Dialog-Boxes)). However, the resources are organized differently from Lucid widgets.
+If Emacs is compiled with the X toolkit support using Motif or LessTif widgets, you can use X resources to customize the appearance of the menu bar (see [Menu Bar](/docs/emacs/Menu-Bar)), pop-up menus, and dialog boxes (see [Dialog Boxes](/docs/emacs/Dialog-Boxes)). However, the resources are organized differently from Lucid widgets.
 
 The resource names for the menu bar are in the ‘`pane.menubar`’ class, and they must be specified in this form:
 

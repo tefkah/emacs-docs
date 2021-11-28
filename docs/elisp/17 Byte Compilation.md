@@ -14,13 +14,13 @@ If you do not want a Lisp file to be compiled, ever, put a file-local variable b
 ;; -*-no-byte-compile: t; -*-
 ```
 
-|                                                  |    |                                                 |
-| :----------------------------------------------- | -- | :---------------------------------------------- |
-| • [Speed of Byte-Code](Speed-of-Byte_002dCode)   |    | An example of speedup from byte compilation.    |
-| • [Compilation Functions](Compilation-Functions) |    | Byte compilation functions.                     |
-| • [Docs and Compilation](Docs-and-Compilation)   |    | Dynamic loading of documentation strings.       |
-| • [Dynamic Loading](Dynamic-Loading)             |    | Dynamic loading of individual functions.        |
-| • [Eval During Compile](Eval-During-Compile)     |    | Code to be evaluated when you compile.          |
-| • [Compiler Errors](Compiler-Errors)             |    | Handling compiler error messages.               |
-| • [Byte-Code Objects](Byte_002dCode-Objects)     |    | The data type used for byte-compiled functions. |
-| • [Disassembly](Disassembly)                     |    | Disassembling byte-code; how to read byte-code. |
+|                                                              |    |                                                 |
+| :----------------------------------------------------------- | -- | :---------------------------------------------- |
+| • [Speed of Byte-Code](/docs/elisp/Speed-of-Byte_002dCode)   |    | An example of speedup from byte compilation.    |
+| • [Compilation Functions](/docs/elisp/Compilation-Functions) |    | Byte compilation functions.                     |
+| • [Docs and Compilation](/docs/elisp/Docs-and-Compilation)   |    | Dynamic loading of documentation strings.       |
+| • [Dynamic Loading](/docs/elisp/Dynamic-Loading)             |    | Dynamic loading of individual functions.        |
+| • [Eval During Compile](/docs/elisp/Eval-During-Compile)     |    | Code to be evaluated when you compile.          |
+| • [Compiler Errors](/docs/elisp/Compiler-Errors)             |    | Handling compiler error messages.               |
+| • [Byte-Code Objects](/docs/elisp/Byte_002dCode-Objects)     |    | The data type used for byte-compiled functions. |
+| • [Disassembly](/docs/elisp/Disassembly)                     |    | Disassembling byte-code; how to read byte-code. |

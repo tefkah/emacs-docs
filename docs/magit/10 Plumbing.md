@@ -8,9 +8,9 @@ A few of the low-level features used by Magit have been factored out into separa
 
 If you are trying to find an unused key that you can bind to a command provided by your own Magit extension, then checkout [https://github.com/magit/magit/wiki/Plugin-Dispatch-Key-Registry](https://github.com/magit/magit/wiki/Plugin-Dispatch-Key-Registry).
 
-|                                             |    |    |
-| :------------------------------------------ | -- | :- |
-| • [Calling Git](Calling-Git):               |    |    |
-| • [Section Plumbing](Section-Plumbing):     |    |    |
-| • [Refreshing Buffers](Refreshing-Buffers): |    |    |
-| • [Conventions](Conventions):               |    |    |
+|                                                         |    |    |
+| :------------------------------------------------------ | -- | :- |
+| • [Calling Git](/docs/magit/Calling-Git):               |    |    |
+| • [Section Plumbing](/docs/magit/Section-Plumbing):     |    |    |
+| • [Refreshing Buffers](/docs/magit/Refreshing-Buffers): |    |    |
+| • [Conventions](/docs/magit/Conventions):               |    |    |

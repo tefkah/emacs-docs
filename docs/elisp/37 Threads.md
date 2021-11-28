@@ -8,15 +8,15 @@ Currently, thread switching will occur upon explicit request via `thread-yield`,
 
 Emacs Lisp provides primitives to create and control threads, and also to create and control mutexes and condition variables, useful for thread synchronization.
 
-While global variables are shared among all Emacs Lisp threads, local variables are not—a dynamic `let` binding is local. Each thread also has its own current buffer (see [Current Buffer](Current-Buffer)) and its own match data (see [Match Data](Match-Data)).
+While global variables are shared among all Emacs Lisp threads, local variables are not—a dynamic `let` binding is local. Each thread also has its own current buffer (see [Current Buffer](/docs/elisp/Current-Buffer)) and its own match data (see [Match Data](/docs/elisp/Match-Data)).
 
 Note that `let` bindings are treated specially by the Emacs Lisp implementation. There is no way to duplicate this unwinding and rewinding behavior other than by using `let`. For example, a manual implementation of `let` written using `unwind-protect` cannot arrange for variable values to be thread-specific.
 
-In the case of lexical bindings (see [Variable Scoping](Variable-Scoping)), a closure is an object like any other in Emacs Lisp, and bindings in a closure are shared by any threads invoking the closure.
+In the case of lexical bindings (see [Variable Scoping](/docs/elisp/Variable-Scoping)), a closure is an object like any other in Emacs Lisp, and bindings in a closure are shared by any threads invoking the closure.
 
-|                                                    |    |                                         |
-| :------------------------------------------------- | -- | :-------------------------------------- |
-| • [Basic Thread Functions](Basic-Thread-Functions) |    | Basic thread functions.                 |
-| • [Mutexes](Mutexes)                               |    | Mutexes allow exclusive access to data. |
-| • [Condition Variables](Condition-Variables)       |    | Inter-thread events.                    |
-| • [The Thread List](The-Thread-List)               |    | Show the active threads.                |
+|                                                                |    |                                         |
+| :------------------------------------------------------------- | -- | :-------------------------------------- |
+| • [Basic Thread Functions](/docs/elisp/Basic-Thread-Functions) |    | Basic thread functions.                 |
+| • [Mutexes](/docs/elisp/Mutexes)                               |    | Mutexes allow exclusive access to data. |
+| • [Condition Variables](/docs/elisp/Condition-Variables)       |    | Inter-thread events.                    |
+| • [The Thread List](/docs/elisp/The-Thread-List)               |    | Show the active threads.                |

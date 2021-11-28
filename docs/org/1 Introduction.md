@@ -2,10 +2,10 @@
 slug: Introduction
 ---
 
-|                                |    |                                              |
-| :----------------------------- | -- | :------------------------------------------- |
-| • [Summary](Summary)           |    | Brief summary of what Org does.              |
-| • [Installation](Installation) |    | Installing Org.                              |
-| • [Activation](Activation)     |    | How to activate Org for certain buffers.     |
-| • [Feedback](Feedback)         |    | Bug reports, ideas, patches, etc.            |
-| • [Conventions](Conventions)   |    | Typesetting conventions used in this manual. |
+|                                          |    |                                              |
+| :--------------------------------------- | -- | :------------------------------------------- |
+| • [Summary](/docs/org/Summary)           |    | Brief summary of what Org does.              |
+| • [Installation](/docs/org/Installation) |    | Installing Org.                              |
+| • [Activation](/docs/org/Activation)     |    | How to activate Org for certain buffers.     |
+| • [Feedback](/docs/org/Feedback)         |    | Bug reports, ideas, patches, etc.            |
+| • [Conventions](/docs/org/Conventions)   |    | Typesetting conventions used in this manual. |

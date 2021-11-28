@@ -2,7 +2,7 @@
 slug: Module-Values
 ---
 
-With very few exceptions, most modules need to exchange data with Lisp programs that call them: accept arguments to module functions and return values from module functions. For this purpose, the module API provides the `emacs_value` type, which represents Emacs Lisp objects communicated via the API; it is the functional equivalent of the `Lisp_Object` type used in Emacs C primitives (see [Writing Emacs Primitives](Writing-Emacs-Primitives)). This section describes the parts of the module API that allow to create `emacs_value` objects corresponding to basic Lisp data types, and how to access from C data in `emacs_value` objects that correspond to Lisp objects.
+With very few exceptions, most modules need to exchange data with Lisp programs that call them: accept arguments to module functions and return values from module functions. For this purpose, the module API provides the `emacs_value` type, which represents Emacs Lisp objects communicated via the API; it is the functional equivalent of the `Lisp_Object` type used in Emacs C primitives (see [Writing Emacs Primitives](/docs/elisp/Writing-Emacs-Primitives)). This section describes the parts of the module API that allow to create `emacs_value` objects corresponding to basic Lisp data types, and how to access from C data in `emacs_value` objects that correspond to Lisp objects.
 
 All of the functions described below are actually *function pointers* provided via the pointer to the environment which every module function accepts. Therefore, module code should call these functions through the environment pointer, like this:
 
@@ -15,7 +15,7 @@ The `emacs_env` pointer will usually come from the first argument to the module 
 
 Most of the functions described below became available in Emacs 25, the first Emacs release that supported dynamic modules. For the few functions that became available in later Emacs releases, we mention the first Emacs version that supported them.
 
-The following API functions extract values of various C data types from `emacs_value` objects. They all raise the `wrong-type-argument` error condition (see [Type Predicates](Type-Predicates)) if the argument `emacs_value` object is not of the type expected by the function. See [Module Nonlocal](Module-Nonlocal), for details of how signaling errors works in Emacs modules, and how to catch error conditions inside the module before they are reported to Emacs. The API function `type_of` (see [type\_of](Module-Misc)) can be used to obtain the type of a `emacs_value` object.
+The following API functions extract values of various C data types from `emacs_value` objects. They all raise the `wrong-type-argument` error condition (see [Type Predicates](/docs/elisp/Type-Predicates)) if the argument `emacs_value` object is not of the type expected by the function. See [Module Nonlocal](/docs/elisp/Module-Nonlocal), for details of how signaling errors works in Emacs modules, and how to catch error conditions inside the module before they are reported to Emacs. The API function `type_of` (see [type\_of](/docs/elisp/Module-Misc)) can be used to obtain the type of a `emacs_value` object.
 
 ### <span className="tag function">`function`</span> *intmax\_t* **extract\_integer** *(emacs\_env \*`env`, emacs\_value `arg`)*
 
@@ -41,7 +41,7 @@ This function returns the value of a Lisp float specified by `arg`, as a C `doub
 
 ### <span className="tag function">`function`</span> *struct* **timespec** *extract\_time (emacs\_env \*`env`, emacs\_value `time`)*
 
-This function, which is available since Emacs 27, interprets `time` as an Emacs Lisp time value and returns the corresponding `struct timespec`. See [Time of Day](Time-of-Day). `struct timespec` represents a timestamp with nanosecond precision. It has the following members:
+This function, which is available since Emacs 27, interprets `time` as an Emacs Lisp time value and returns the corresponding `struct timespec`. See [Time of Day](/docs/elisp/Time-of-Day). `struct timespec` represents a timestamp with nanosecond precision. It has the following members:
 
 ### `time_t tv_sec`
 
@@ -55,13 +55,13 @@ See [(libc)Elapsed Time](https://www.gnu.org/software/libc/manual/html_mono/libc
 
 If `time` has higher precision than nanoseconds, then this function truncates it to nanosecond precision towards negative infinity. This function signals an error if `time` (truncated to nanoseconds) cannot be represented by `struct timespec`. For example, if `time_t` is a 32-bit integer type, then a `time` value of ten billion seconds would signal an error, but a `time` value of 600 picoseconds would get truncated to zero.
 
-If you need to deal with time values that are not representable by `struct timespec`, or if you want higher precision, call the Lisp function `encode-time` and work with its return value. See [Time Conversion](Time-Conversion).
+If you need to deal with time values that are not representable by `struct timespec`, or if you want higher precision, call the Lisp function `encode-time` and work with its return value. See [Time Conversion](/docs/elisp/Time-Conversion).
 
 ### <span className="tag function">`function`</span> *bool* **copy\_string\_contents** *(emacs\_env \*`env`, emacs\_value `arg`, char \*`buf`, ptrdiff\_t \*`len`)*
 
 This function stores the UTF-8 encoded text of a Lisp string specified by `arg` in the array of `char` pointed by `buf`, which should have enough space to hold at least `*len` bytes, including the terminating null byte. The argument `len` must not be a `NULL` pointer, and, when the function is called, it should point to a value that specifies the size of `buf` in bytes.
 
-If the buffer size specified by `*len` is large enough to hold the string’s text, the function stores in `*len` the actual number of bytes copied to `buf`, including the terminating null byte, and returns `true`. If the buffer is too small, the function raises the `args-out-of-range` error condition, stores the required number of bytes in `*len`, and returns `false`. See [Module Nonlocal](Module-Nonlocal), for how to handle pending error conditions.
+If the buffer size specified by `*len` is large enough to hold the string’s text, the function stores in `*len` the actual number of bytes copied to `buf`, including the terminating null byte, and returns `true`. If the buffer is too small, the function raises the `args-out-of-range` error condition, stores the required number of bytes in `*len`, and returns `false`. See [Module Nonlocal](/docs/elisp/Module-Nonlocal), for how to handle pending error conditions.
 
 The argument `buf` can be a `NULL` pointer, in which case the function stores in `*len` the number of bytes required for storing the contents of `arg`, and returns `true`. This is how you can determine the size of `buf` needed to store a particular string: first call `copy_string_contents` with `NULL` as `buf`, then allocate enough memory to hold the number of bytes stored by the function in `*len`, and call the function again with non-`NULL` `buf` to actually perform the text copying.
 
@@ -81,7 +81,7 @@ The following API functions create `emacs_value` objects from basic C data types
 
 ### <span className="tag function">`function`</span> *emacs\_value* **make\_integer** *(emacs\_env \*`env`, intmax\_t `n`)*
 
-This function takes an integer argument `n` and returns the corresponding `emacs_value` object. It returns either a fixnum or a bignum depending on whether the value of `n` is inside the limits set by `most-negative-fixnum` and `most-positive-fixnum` (see [Integer Basics](Integer-Basics)).
+This function takes an integer argument `n` and returns the corresponding `emacs_value` object. It returns either a fixnum or a bignum depending on whether the value of `n` is inside the limits set by `most-negative-fixnum` and `most-positive-fixnum` (see [Integer Basics](/docs/elisp/Integer-Basics)).
 
 ### <span className="tag function">`function`</span> *emacs\_value* **make\_big\_integer** *(emacs\_env \*`env`, int sign, ptrdiff\_t count, const emacs\_limb\_t \*magnitude)*
 
@@ -200,13 +200,13 @@ This function takes a `double` argument `d` and returns the corresponding Emacs 
 
 ### <span className="tag function">`function`</span> *emacs\_value* **make\_time** *(emacs\_env \*`env`, struct timespec `time`)*
 
-This function, which is available since Emacs 27, takes a `struct timespec` argument `time` and returns the corresponding Emacs timestamp as a pair `(ticks . hz)`. See [Time of Day](Time-of-Day). The return value represents exactly the same timestamp as `time`: all input values are representable, and there is never a loss of precision. `time.tv_sec` and `time.tv_nsec` can be arbitrary values. In particular, there’s no requirement that `time` be normalized. This means that `time.tv_nsec` can be negative or larger than 999,999,999.
+This function, which is available since Emacs 27, takes a `struct timespec` argument `time` and returns the corresponding Emacs timestamp as a pair `(ticks . hz)`. See [Time of Day](/docs/elisp/Time-of-Day). The return value represents exactly the same timestamp as `time`: all input values are representable, and there is never a loss of precision. `time.tv_sec` and `time.tv_nsec` can be arbitrary values. In particular, there’s no requirement that `time` be normalized. This means that `time.tv_nsec` can be negative or larger than 999,999,999.
 
 ### <span className="tag function">`function`</span> *emacs\_value* **make\_string** *(emacs\_env \*`env`, const char \*`str`, ptrdiff\_t `strlen`)*
 
 This function creates an Emacs string from C text string pointed by `str` whose length in bytes, not including the terminating null byte, is `strlen`. The original string in `str` can be either an ASCII string or a UTF-8 encoded non-ASCII string; it can include embedded null bytes, and doesn’t have to end in a terminating null byte at `str[strlen]`. The function raises the `overflow-error` error condition if `strlen` is negative or exceeds the maximum length of an Emacs string.
 
-The API does not provide functions to manipulate Lisp data structures, for example, create lists with `cons` and `list` (see [Building Lists](Building-Lists)), extract list members with `car` and `cdr` (see [List Elements](List-Elements)), create vectors with `vector` (see [Vector Functions](Vector-Functions)), etc. For these, use `intern` and `funcall`, described in the next subsection, to call the corresponding Lisp functions.
+The API does not provide functions to manipulate Lisp data structures, for example, create lists with `cons` and `list` (see [Building Lists](/docs/elisp/Building-Lists)), extract list members with `car` and `cdr` (see [List Elements](/docs/elisp/List-Elements)), create vectors with `vector` (see [Vector Functions](/docs/elisp/Vector-Functions)), etc. For these, use `intern` and `funcall`, described in the next subsection, to call the corresponding Lisp functions.
 
 Normally, `emacs_value` objects have a rather short lifetime: it ends when the `emacs_env` pointer used for their creation goes out of scope. Occasionally, you may need to create *global references*: `emacs_value` objects that live as long as you wish. Use the following two functions to manage such objects.
 
@@ -218,7 +218,7 @@ This function returns a global reference for `value`.
 
 This function frees the `global_value` previously created by `make_global_ref`. The `global_value` is no longer valid after the call. Your module code should pair each call to `make_global_ref` with the corresponding `free_global_ref`.
 
-An alternative to keeping around C data structures that need to be passed to module functions later is to create *user pointer* objects. A user pointer, or `user-ptr`, object is a Lisp object that encapsulates a C pointer and can have an associated finalizer function, which is called when the object is garbage-collected (see [Garbage Collection](Garbage-Collection)). The module API provides functions to create and access `user-ptr` objects. These functions raise the `wrong-type-argument` error condition if they are called on `emacs_value` that doesn’t represent a `user-ptr` object.
+An alternative to keeping around C data structures that need to be passed to module functions later is to create *user pointer* objects. A user pointer, or `user-ptr`, object is a Lisp object that encapsulates a C pointer and can have an associated finalizer function, which is called when the object is garbage-collected (see [Garbage Collection](/docs/elisp/Garbage-Collection)). The module API provides functions to create and access `user-ptr` objects. These functions raise the `wrong-type-argument` error condition if they are called on `emacs_value` that doesn’t represent a `user-ptr` object.
 
 ### <span className="tag function">`function`</span> *emacs\_value* **make\_user\_ptr** *(emacs\_env \*`env`, emacs\_finalizer `fin`, void \*`ptr`)*
 

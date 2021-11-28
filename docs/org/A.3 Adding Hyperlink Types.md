@@ -2,7 +2,7 @@
 slug: Adding-Hyperlink-Types
 ---
 
-Org has many built-in hyperlink types (see [Hyperlinks](Hyperlinks)), and an interface for adding new link types. The following example shows the process of adding Org links to Unix man pages, which look like this
+Org has many built-in hyperlink types (see [Hyperlinks](/docs/org/Hyperlinks)), and an interface for adding new link types. The following example shows the process of adding Org links to Unix man pages, which look like this
 
 ```lisp
 [[man:printf][The printf manual]]
@@ -77,4 +77,4 @@ A review of ‘`ol-man.el`’:
 
 3.  The rest of the file implements necessary variables and functions.
 
-    For example, `org-man-store-link` is responsible for storing a link when `org-store-link` (see [Handling Links](Handling-Links)) is called from a buffer displaying a man page. It first checks if the major mode is appropriate. If check fails, the function returns `nil`, which means it isn’t responsible for creating a link to the current buffer. Otherwise the function makes a link string by combining the ‘`man:`’ prefix with the man topic. It also provides a default description. The function `org-insert-link` can insert it back into an Org buffer later on.
+    For example, `org-man-store-link` is responsible for storing a link when `org-store-link` (see [Handling Links](/docs/org/Handling-Links)) is called from a buffer displaying a man page. It first checks if the major mode is appropriate. If check fails, the function returns `nil`, which means it isn’t responsible for creating a link to the current buffer. Otherwise the function makes a link string by combining the ‘`man:`’ prefix with the man topic. It also provides a default description. The function `org-insert-link` can insert it back into an Org buffer later on.

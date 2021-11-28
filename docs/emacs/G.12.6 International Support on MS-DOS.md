@@ -2,7 +2,7 @@
 slug: MS_002dDOS-and-MULE
 ---
 
-Emacs on MS-DOS supports the same international character sets as it does on GNU, Unix and other platforms (see [International](International)), including coding systems for converting between the different character sets. However, due to incompatibilities between MS-DOS/MS-Windows and other systems, there are several DOS-specific aspects of this support that you should be aware of. This section describes these aspects.
+Emacs on MS-DOS supports the same international character sets as it does on GNU, Unix and other platforms (see [International](/docs/emacs/International)), including coding systems for converting between the different character sets. However, due to incompatibilities between MS-DOS/MS-Windows and other systems, there are several DOS-specific aspects of this support that you should be aware of. This section describes these aspects.
 
 The description below is largely specific to the MS-DOS port of Emacs, especially where it talks about practical implications for Emacs users.
 
@@ -22,9 +22,9 @@ The Far-Eastern codepages can directly display one of the MULE character sets fo
 
 For the codepages that correspond to one of the ISO character sets, Emacs knows the character set based on the codepage number. Emacs automatically creates a coding system to support reading and writing files that use the current codepage, and uses this coding system by default. The name of this coding system is `cpnnn`, where `nnn` is the codepage number.[^2]
 
-All the `cpnnn` coding systems use the letter ‘`D`’ (for “DOS") as their mode-line mnemonic. Since both the terminal coding system and the default coding system for file I/O are set to the proper `cpnnn` coding system at startup, it is normal for the mode line on MS-DOS to begin with ‘`-DD\-`’. See [Mode Line](Mode-Line). Far-Eastern DOS terminals do not use the `cpnnn` coding systems, and thus their initial mode line looks like the Emacs default.
+All the `cpnnn` coding systems use the letter ‘`D`’ (for “DOS") as their mode-line mnemonic. Since both the terminal coding system and the default coding system for file I/O are set to the proper `cpnnn` coding system at startup, it is normal for the mode line on MS-DOS to begin with ‘`-DD\-`’. See [Mode Line](/docs/emacs/Mode-Line). Far-Eastern DOS terminals do not use the `cpnnn` coding systems, and thus their initial mode line looks like the Emacs default.
 
-Since the codepage number also indicates which script you are using, Emacs automatically runs `set-language-environment` to select the language environment for that script (see [Language Environments](Language-Environments)).
+Since the codepage number also indicates which script you are using, Emacs automatically runs `set-language-environment` to select the language environment for that script (see [Language Environments](/docs/emacs/Language-Environments)).
 
 If a buffer contains a character belonging to some other ISO 8859 character set, not the one that the chosen DOS codepage supports, Emacs displays it using a sequence of ASCII characters. For example, if the current codepage doesn’t have a glyph for the letter ‘`ò`’ (small ‘`o`’ with a grave accent), it is displayed as ‘``{`o}``’, where the braces serve as a visual indication that this is a single character. (This may look awkward for some non-Latin characters, such as those from Greek or Hebrew alphabets, but it is still readable by a person who knows the language.) Even though the character may occupy several columns on the screen, it is really still just a single character, and all Emacs commands treat it as one.
 

@@ -4,7 +4,7 @@ slug: Standard-Keymaps
 
 In this section we list some of the more general keymaps. Many of these exist when Emacs is first started, but some are loaded only when the respective feature is accessed.
 
-There are many other, more specialized, maps than these; in particular those associated with major and minor modes. The minibuffer uses several keymaps (see [Completion Commands](Completion-Commands)). For more details on keymaps, see [Keymaps](Keymaps).
+There are many other, more specialized, maps than these; in particular those associated with major and minor modes. The minibuffer uses several keymaps (see [Completion Commands](/docs/elisp/Completion-Commands)). For more details on keymaps, see [Keymaps](/docs/elisp/Keymaps).
 
 ### `2C-mode-map`
 
@@ -19,7 +19,7 @@ See [Defining Abbrevs](https://www.gnu.org/software/emacs/manual/html_mono/emacs
 ### `button-buffer-map`
 
 A sparse keymap useful for buffers containing buffers.\
-You may want to use this as a parent keymap. See [Buttons](Buttons).
+You may want to use this as a parent keymap. See [Buttons](/docs/elisp/Buttons).
 
 ### `button-map`
 
@@ -66,7 +66,7 @@ A sparse keymap used for the `M-g` prefix key.
 ### `help-map`
 
 A sparse keymap for the keys following the help character `C-h`.\
-See [Help Functions](Help-Functions).
+See [Help Functions](/docs/elisp/Help-Functions).
 
 ### `Helper-help-map`
 
@@ -76,11 +76,11 @@ It has the same keymap in its value cell and in its function cell.
 ### `input-decode-map`
 
 The keymap for translating keypad and function keys.\
-If there are none, then it contains an empty sparse keymap. See [Translation Keymaps](Translation-Keymaps).
+If there are none, then it contains an empty sparse keymap. See [Translation Keymaps](/docs/elisp/Translation-Keymaps).
 
 ### `key-translation-map`
 
-A keymap for translating keys. This one overrides ordinary key bindings, unlike `local-function-key-map`. See [Translation Keymaps](Translation-Keymaps).
+A keymap for translating keys. This one overrides ordinary key bindings, unlike `local-function-key-map`. See [Translation Keymaps](/docs/elisp/Translation-Keymaps).
 
 ### `kmacro-keymap`
 
@@ -90,7 +90,7 @@ See [Keyboard Macros](https://www.gnu.org/software/emacs/manual/html_mono/emacs.
 ### `local-function-key-map`
 
 The keymap for translating key sequences to preferred alternatives.\
-If there are none, then it contains an empty sparse keymap. See [Translation Keymaps](Translation-Keymaps).
+If there are none, then it contains an empty sparse keymap. See [Translation Keymaps](/docs/elisp/Translation-Keymaps).
 
 ### `menu-bar-file-menu`
 
@@ -105,7 +105,7 @@ If there are none, then it contains an empty sparse keymap. See [Translation Key
 ### `menu-bar-help-menu`
 
 These keymaps display the main, top-level menus in the menu bar.\
-Some of them contain sub-menus. For example, the Edit menu contains `menu-bar-search-menu`, etc. See [Menu Bar](Menu-Bar).
+Some of them contain sub-menus. For example, the Edit menu contains `menu-bar-search-menu`, etc. See [Menu Bar](/docs/elisp/Menu-Bar).
 
 ### `minibuffer-inactive-mode-map`
 
@@ -119,7 +119,7 @@ See [Editing in the Minibuffer](https://www.gnu.org/software/emacs/manual/html_m
 ### `mode-line-column-line-number-mode-map`
 
 These keymaps control various areas of the mode line.\
-See [Mode Line Format](Mode-Line-Format).
+See [Mode Line Format](/docs/elisp/Mode-Line-Format).
 
 ### `mode-specific-map`
 
@@ -140,13 +140,13 @@ A sparse keymap for subcommands of the prefix `C-x n`.
 ### `prog-mode-map`
 
 The keymap used by Prog mode.\
-See [Basic Major Modes](Basic-Major-Modes).
+See [Basic Major Modes](/docs/elisp/Basic-Major-Modes).
 
 ### `query-replace-map`
 
 ### `multi-query-replace-map`
 
-A sparse keymap used for responses in `query-replace` and related commands; also for `y-or-n-p` and `map-y-or-n-p`. The functions that use this map do not support prefix keys; they look up one event at a time. `multi-query-replace-map` extends `query-replace-map` for multi-buffer replacements. See [query-replace-map](Search-and-Replace).
+A sparse keymap used for responses in `query-replace` and related commands; also for `y-or-n-p` and `map-y-or-n-p`. The functions that use this map do not support prefix keys; they look up one event at a time. `multi-query-replace-map` extends `query-replace-map` for multi-buffer replacements. See [query-replace-map](/docs/elisp/Search-and-Replace).
 
 ### `search-map`
 
@@ -155,7 +155,7 @@ A sparse keymap that provides global bindings for search-related commands.
 ### `special-mode-map`
 
 The keymap used by Special mode.\
-See [Basic Major Modes](Basic-Major-Modes).
+See [Basic Major Modes](/docs/elisp/Basic-Major-Modes).
 
 ### `tab-prefix-map`
 
@@ -170,12 +170,12 @@ See [Tab Bars](https://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Ta
 ### `tool-bar-map`
 
 The keymap defining the contents of the tool bar.\
-See [Tool Bar](Tool-Bar).
+See [Tool Bar](/docs/elisp/Tool-Bar).
 
 ### `universal-argument-map`
 
 A sparse keymap used while processing `C-u`.\
-See [Prefix Command Arguments](Prefix-Command-Arguments).
+See [Prefix Command Arguments](/docs/elisp/Prefix-Command-Arguments).
 
 ### `vc-prefix-map`
 

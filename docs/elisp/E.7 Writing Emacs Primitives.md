@@ -69,7 +69,7 @@ This is the maximum number of arguments that the function accepts, if there is a
 
 ### `interactive`
 
-This is an interactive specification, a string such as might be used as the argument of `interactive` in a Lisp function (see [Using Interactive](Using-Interactive)). In the case of `or`, it is `0` (a null pointer), indicating that `or` cannot be called interactively. A value of `""` indicates a function that should receive no arguments when called interactively. If the value begins with a ‘`"(`’, the string is evaluated as a Lisp form. For example:
+This is an interactive specification, a string such as might be used as the argument of `interactive` in a Lisp function (see [Using Interactive](/docs/elisp/Using-Interactive)). In the case of `or`, it is `0` (a null pointer), indicating that `or` cannot be called interactively. A value of `""` indicates a function that should receive no arguments when called interactively. If the value begins with a ‘`"(`’, the string is evaluated as a Lisp form. For example:
 
 ```lisp
 DEFUN ("foo", Ffoo, Sfoo, 0, 3,
@@ -87,7 +87,7 @@ If the last line of the documentation string begins with the keyword ‘`usage:`
 
 Some primitives have multiple definitions, one per platform (e.g., `x-create-frame`). In such cases, rather than writing the same documentation string in each definition, only one definition has the actual documentation. The others have placeholders beginning with ‘`SKIP`’, which are ignored by the function that parses the `DOC` file.
 
-All the usual rules for documentation strings in Lisp code (see [Documentation Tips](Documentation-Tips)) apply to C code documentation strings too.
+All the usual rules for documentation strings in Lisp code (see [Documentation Tips](/docs/elisp/Documentation-Tips)) apply to C code documentation strings too.
 
 The documentation string can be followed by a list of C function attributes for the C function that implements the primitive, like this:
 
@@ -111,13 +111,13 @@ Declares that the function does not examine any values except its arguments, and
 
 This corresponds to `__attribute__ ((__noinline__))`<!-- /@w --> attribute of GCC, which prevents the function from being considered for inlining. This might be needed, e.g., to countermand effects of link-time optimizations on stack-based variables.
 
-After the call to the `DEFUN` macro, you must write the argument list for the C function, including the types for the arguments. If the primitive accepts a fixed maximum number of Lisp arguments, there must be one C argument for each Lisp argument, and each argument must be of type `Lisp_Object`. (Various macros and functions for creating values of type `Lisp_Object` are declared in the file `lisp.h`.) If the primitive is a special form, it must accept a Lisp list containing its unevaluated Lisp arguments as a single argument of type `Lisp_Object`. If the primitive has no upper limit on the number of evaluated Lisp arguments, it must have exactly two C arguments: the first is the number of Lisp arguments, and the second is the address of a block containing their values. These have types `ptrdiff_t` and `Lisp_Object *`<!-- /@w -->, respectively. Since `Lisp_Object` can hold any Lisp object of any data type, you can determine the actual data type only at run time; so if you want a primitive to accept only a certain type of argument, you must check the type explicitly using a suitable predicate (see [Type Predicates](Type-Predicates)).
+After the call to the `DEFUN` macro, you must write the argument list for the C function, including the types for the arguments. If the primitive accepts a fixed maximum number of Lisp arguments, there must be one C argument for each Lisp argument, and each argument must be of type `Lisp_Object`. (Various macros and functions for creating values of type `Lisp_Object` are declared in the file `lisp.h`.) If the primitive is a special form, it must accept a Lisp list containing its unevaluated Lisp arguments as a single argument of type `Lisp_Object`. If the primitive has no upper limit on the number of evaluated Lisp arguments, it must have exactly two C arguments: the first is the number of Lisp arguments, and the second is the address of a block containing their values. These have types `ptrdiff_t` and `Lisp_Object *`<!-- /@w -->, respectively. Since `Lisp_Object` can hold any Lisp object of any data type, you can determine the actual data type only at run time; so if you want a primitive to accept only a certain type of argument, you must check the type explicitly using a suitable predicate (see [Type Predicates](/docs/elisp/Type-Predicates)).
 
 Within the function `For` itself, the local variable `args` refers to objects controlled by Emacs’s stack-marking garbage collector. Although the garbage collector does not reclaim objects reachable from C `Lisp_Object` stack variables, it may move some of the components of an object, such as the contents of a string or the text of a buffer. Therefore, functions that access these components must take care to refetch their addresses after performing Lisp evaluation. This means that instead of keeping C pointers to string contents or buffer text, the code should keep the buffer or string position, and recompute the C pointer from the position after performing Lisp evaluation. Lisp evaluation can occur via calls to `eval_sub` or `Feval`, either directly or indirectly.
 
 Note the call to `maybe_quit` inside the loop: this function checks whether the user pressed `C-g`, and if so, aborts the processing. You should do that in any loop that can potentially require a large number of iterations; in this case, the list of arguments could be very long. This increases Emacs responsiveness and improves user experience.
 
-You must not use C initializers for static or global variables unless the variables are never written once Emacs is dumped. These variables with initializers are allocated in an area of memory that becomes read-only (on certain operating systems) as a result of dumping Emacs. See [Pure Storage](Pure-Storage).
+You must not use C initializers for static or global variables unless the variables are never written once Emacs is dumped. These variables with initializers are allocated in an area of memory that becomes read-only (on certain operating systems) as a result of dumping Emacs. See [Pure Storage](/docs/elisp/Pure-Storage).
 
 Defining the C function is not enough to make a Lisp primitive available; you must also create the Lisp symbol for the primitive and store a suitable subr object in its function cell. The code looks like this:
 
@@ -143,7 +143,7 @@ The name of the variable in the C sources.
 
 ### `doc`
 
-The documentation for the variable, as a C comment. See [Documentation Basics](Documentation-Basics), for more details.
+The documentation for the variable, as a C comment. See [Documentation Basics](/docs/elisp/Documentation-Basics), for more details.
 
 By convention, when defining variables of a “native" type (`int` and `bool`), the name of the C variable is the name of the Lisp variable with `-` replaced by `_`. When the variable has type `Lisp_Object`, the convention is to also prefix the C variable name with `V`. i.e.
 
@@ -167,7 +167,7 @@ To perform the actual binding:
 specbind (Qmy_lisp_variable, Qt);
 ```
 
-In Lisp symbols sometimes need to be quoted, to achieve the same effect in C you again use the corresponding constant symbol `Qmy_lisp_variable`. For example, when creating a buffer-local variable (see [Buffer-Local Variables](Buffer_002dLocal-Variables)) in Lisp you would write:
+In Lisp symbols sometimes need to be quoted, to achieve the same effect in C you again use the corresponding constant symbol `Qmy_lisp_variable`. For example, when creating a buffer-local variable (see [Buffer-Local Variables](/docs/elisp/Buffer_002dLocal-Variables)) in Lisp you would write:
 
 ```lisp
 (make-variable-buffer-local 'my-lisp-variable)
@@ -180,7 +180,7 @@ DEFSYM (Qmy_lisp_variable, "my-lisp-variable");
 Fmake_variable_buffer_local (Qmy_lisp_variable);
 ```
 
-If you want to make a Lisp variable that is defined in C behave like one declared with `defcustom`, add an appropriate entry to `cus-start.el`. See [Variable Definitions](Variable-Definitions), for a description of the format to use.
+If you want to make a Lisp variable that is defined in C behave like one declared with `defcustom`, add an appropriate entry to `cus-start.el`. See [Variable Definitions](/docs/elisp/Variable-Definitions), for a description of the format to use.
 
 If you directly define a file-scope C variable of type `Lisp_Object`, you must protect it from garbage-collection by calling `staticpro` in `syms_of_filename`, like this:
 
@@ -264,4 +264,4 @@ The C functions `call0`, `call1`, `call2`, and so on, provide handy ways to call
 
 `eval.c` is a very good file to look through for examples; `lisp.h` contains the definitions for some important macros and functions.
 
-If you define a function which is side-effect free or pure, give it a non-`nil` `side-effect-free` or `pure` property, respectively (see [Standard Properties](Standard-Properties)).
+If you define a function which is side-effect free or pure, give it a non-`nil` `side-effect-free` or `pure` property, respectively (see [Standard Properties](/docs/elisp/Standard-Properties)).

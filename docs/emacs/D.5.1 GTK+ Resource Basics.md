@@ -8,7 +8,7 @@ In a GTK+ 2 resource file (usually `~/.emacs.d/gtkrc`), the simplest kind of a r
 gtk-font-name = "courier 12"
 ```
 
-Note that in this case the font name must be supplied as a GTK font pattern (also called a *Pango font name*), not as a Fontconfig-style font name or XLFD. See [Fonts](Fonts).
+Note that in this case the font name must be supplied as a GTK font pattern (also called a *Pango font name*), not as a Fontconfig-style font name or XLFD. See [Fonts](/docs/emacs/Fonts).
 
 To customize widgets you first define a *style*, and then apply the style to the widgets. Here is an example that sets the font for menus (‘`#`’ characters indicate comments):
 

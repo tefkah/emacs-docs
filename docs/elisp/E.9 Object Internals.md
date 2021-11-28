@@ -32,8 +32,8 @@ These types are the first-class citizens of an internal type system. Since the t
 
 Below there is a description of a few subtypes of `Lisp_Vectorlike`. Buffer object represents the text to display and edit. Window is the part of display structure which shows the buffer or is used as a container to recursively place other windows on the same frame. (Do not confuse Emacs Lisp window object with the window as an entity managed by the user interface system like X; in Emacs terminology, the latter is called frame.) Finally, process object is used to manage the subprocesses.
 
-|                                          |    |                                    |
-| :--------------------------------------- | -- | :--------------------------------- |
-| • [Buffer Internals](Buffer-Internals)   |    | Components of a buffer structure.  |
-| • [Window Internals](Window-Internals)   |    | Components of a window structure.  |
-| • [Process Internals](Process-Internals) |    | Components of a process structure. |
+|                                                      |    |                                    |
+| :--------------------------------------------------- | -- | :--------------------------------- |
+| • [Buffer Internals](/docs/elisp/Buffer-Internals)   |    | Components of a buffer structure.  |
+| • [Window Internals](/docs/elisp/Window-Internals)   |    | Components of a window structure.  |
+| • [Process Internals](/docs/elisp/Process-Internals) |    | Components of a process structure. |

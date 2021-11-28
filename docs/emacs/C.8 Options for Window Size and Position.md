@@ -44,11 +44,11 @@ The default frame width is 80 characters and the default height is between 35 an
 
 If you start the geometry with ‘`+`’ or ‘`-`’, that introduces an offset, which means both sizes are omitted. Thus, ‘`-3`’ specifies the `xoffset` only. (If you give just one offset, it is always `xoffset`.) ‘`+3-3`’ specifies both the `xoffset` and the `yoffset`, placing the frame near the bottom left of the screen.
 
-You can specify a default for any or all of the fields in your X resource file (see [Resources](Resources)), and then override selected fields with a ‘`--geometry`’ option.
+You can specify a default for any or all of the fields in your X resource file (see [Resources](/docs/emacs/Resources)), and then override selected fields with a ‘`--geometry`’ option.
 
 Since the mode line and the echo area occupy the last 2 lines of the frame, the height of the initial text window is 2 less than the height specified in your geometry. In non-X-toolkit versions of Emacs, the menu bar also takes one line of the specified number. But in the X toolkit version, the menu bar is additional and does not count against the specified height. The tool bar, if present, is also additional.
 
-Enabling or disabling the menu bar or tool bar alters the amount of space available for ordinary text. Therefore, if Emacs starts up with a tool bar (which is the default), and handles the geometry specification assuming there is a tool bar, and then your initialization file disables the tool bar, you will end up with a frame geometry different from what you asked for. To get the intended size with no tool bar, use an X resource to specify “no tool bar" (see [Table of Resources](Table-of-Resources)); then Emacs will already know there’s no tool bar when it processes the specified geometry.
+Enabling or disabling the menu bar or tool bar alters the amount of space available for ordinary text. Therefore, if Emacs starts up with a tool bar (which is the default), and handles the geometry specification assuming there is a tool bar, and then your initialization file disables the tool bar, you will end up with a frame geometry different from what you asked for. To get the intended size with no tool bar, use an X resource to specify “no tool bar" (see [Table of Resources](/docs/emacs/Table-of-Resources)); then Emacs will already know there’s no tool bar when it processes the specified geometry.
 
 When using one of ‘`--fullscreen`’, ‘`--maximized`’, ‘`--fullwidth`’ or ‘`--fullheight`’, some window managers require you to set the variable `frame-resize-pixelwise` to a non-`nil` value to make a frame appear truly maximized or full-screen.
 

@@ -6,11 +6,11 @@ The table below lists the X resource names that Emacs recognizes. Note that some
 
 ### `background` (class `Background`)
 
-Background color (see [Colors](Colors)).
+Background color (see [Colors](/docs/emacs/Colors)).
 
 ### `bitmapIcon` (class `BitmapIcon`)
 
-Tell the window manager to display the Emacs icon if ‘`on`’; don’t do so if ‘`off`’. See [Icons X](Icons-X), for a description of the icon.
+Tell the window manager to display the Emacs icon if ‘`on`’; don’t do so if ‘`off`’. See [Icons X](/docs/emacs/Icons-X), for a description of the icon.
 
 ### `borderColor` (class `BorderColor`)
 
@@ -22,15 +22,15 @@ Width of the frame’s external border, in pixels. This has no effect if Emacs i
 
 ### `cursorBlink` (class `CursorBlink`)
 
-If the value of this resource is ‘`off`’ or ‘`false`’ or ‘`0`’ at startup, Emacs disables Blink Cursor mode (see [Cursor Display](Cursor-Display)).
+If the value of this resource is ‘`off`’ or ‘`false`’ or ‘`0`’ at startup, Emacs disables Blink Cursor mode (see [Cursor Display](/docs/emacs/Cursor-Display)).
 
 ### `cursorColor` (class `Foreground`)
 
-Text cursor color. If this resource is specified when Emacs starts up, Emacs sets its value as the background color of the `cursor` face (see [Faces](Faces)).
+Text cursor color. If this resource is specified when Emacs starts up, Emacs sets its value as the background color of the `cursor` face (see [Faces](/docs/emacs/Faces)).
 
 ### `font` (class `Font`)
 
-Font name for the `default` face (see [Fonts](Fonts)). You can also specify a fontset name (see [Fontsets](Fontsets)).
+Font name for the `default` face (see [Fonts](/docs/emacs/Fonts)). You can also specify a fontset name (see [Fontsets](/docs/emacs/Fontsets)).
 
 ### `fontBackend` (class `FontBackend`)
 
@@ -42,11 +42,11 @@ Default foreground color for text.
 
 ### `fullscreen` (class `Fullscreen`)
 
-The desired fullscreen size. The value can be one of `fullboth`, `maximized`, `fullwidth` or `fullheight`, which correspond to the command-line options ‘`-fs`’, ‘`-mm`’, ‘`-fw`’, and ‘`-fh`’ (see [Window Size X](Window-Size-X)). Note that this applies to the initial frame only.
+The desired fullscreen size. The value can be one of `fullboth`, `maximized`, `fullwidth` or `fullheight`, which correspond to the command-line options ‘`-fs`’, ‘`-mm`’, ‘`-fw`’, and ‘`-fh`’ (see [Window Size X](/docs/emacs/Window-Size-X)). Note that this applies to the initial frame only.
 
 ### `geometry` (class `Geometry`)
 
-Window size and position. The value should be a size and position specification, of the same form as in the ‘`-g`’ or ‘`--geometry`’ command-line option (see [Window Size X](Window-Size-X)).
+Window size and position. The value should be a size and position specification, of the same form as in the ‘`-g`’ or ‘`--geometry`’ command-line option (see [Window Size X](/docs/emacs/Window-Size-X)).
 
 The size applies to all frames in the Emacs session, but the position applies only to the initial Emacs frame (or, in the case of a resource for a specific frame name, only that frame).
 
@@ -54,7 +54,7 @@ Be careful not to specify this resource as ‘`emacs*geometry`’, as that may a
 
 ### `horizontalScrollBars` (class `ScrollBars`)
 
-If the value of this resource is ‘`off`’ or ‘`false`’ or ‘`0`’, Emacs disables Horizontal Scroll Bar mode at startup (see [Scroll Bars](Scroll-Bars)).
+If the value of this resource is ‘`off`’ or ‘`false`’ or ‘`0`’, Emacs disables Horizontal Scroll Bar mode at startup (see [Scroll Bars](/docs/emacs/Scroll-Bars)).
 
 ### `iconName` (class `Title`)
 
@@ -70,11 +70,11 @@ Additional space between lines, in pixels.
 
 ### `menuBackground` (class `Background`)
 
-The background color of the menus in non-toolkit versions of Emacs. (For toolkit versions, see [Lucid Resources](Lucid-Resources), also see [Motif Resources](Motif-Resources), and see [GTK resources](GTK-resources).)
+The background color of the menus in non-toolkit versions of Emacs. (For toolkit versions, see [Lucid Resources](/docs/emacs/Lucid-Resources), also see [Motif Resources](/docs/emacs/Motif-Resources), and see [GTK resources](/docs/emacs/GTK-resources).)
 
 ### `menuBar` (class `MenuBar`)
 
-If the value of this resource is ‘`off`’ or ‘`false`’ or ‘`0`’, Emacs disables Menu Bar mode at startup (see [Menu Bars](Menu-Bars)).
+If the value of this resource is ‘`off`’ or ‘`false`’ or ‘`0`’, Emacs disables Menu Bar mode at startup (see [Menu Bars](/docs/emacs/Menu-Bars)).
 
 ### `minibuffer` (class `Minibuffer`)
 
@@ -82,11 +82,11 @@ If ‘`none`’, Emacs will not make a minibuffer in this frame; it will use a s
 
 ### `paneFont` (class `Font`)
 
-Font name for menu pane titles, in non-toolkit versions of Emacs. (For toolkit versions, see [Lucid Resources](Lucid-Resources), also see [Motif Resources](Motif-Resources), and see [GTK resources](GTK-resources).)
+Font name for menu pane titles, in non-toolkit versions of Emacs. (For toolkit versions, see [Lucid Resources](/docs/emacs/Lucid-Resources), also see [Motif Resources](/docs/emacs/Motif-Resources), and see [GTK resources](/docs/emacs/GTK-resources).)
 
 ### `paneForeground` (class `Foreground`)
 
-Foreground color for menu pane titles, in non-toolkit versions of Emacs. (For toolkit versions, see [Lucid Resources](Lucid-Resources), also see [Motif Resources](Motif-Resources), and see [GTK resources](GTK-resources).)
+Foreground color for menu pane titles, in non-toolkit versions of Emacs. (For toolkit versions, see [Lucid Resources](/docs/emacs/Lucid-Resources), also see [Motif Resources](/docs/emacs/Motif-Resources), and see [GTK resources](/docs/emacs/GTK-resources).)
 
 ### `pointerColor` (class `Foreground`)
 
@@ -106,7 +106,7 @@ Gamma correction for colors, equivalent to the frame parameter `screen-gamma`.
 
 ### `scrollBar` (class `ScrollBar`)
 
-If the value of this resource is ‘`off`’ or ‘`false`’ or ‘`0`’, Emacs disables Scroll Bar mode at startup (see [Scroll Bars](Scroll-Bars)).
+If the value of this resource is ‘`off`’ or ‘`false`’ or ‘`0`’, Emacs disables Scroll Bar mode at startup (see [Scroll Bars](/docs/emacs/Scroll-Bars)).
 
 ### `scrollBarWidth` (class `ScrollBarWidth`)
 
@@ -114,11 +114,11 @@ The scroll bar width in pixels, equivalent to the frame parameter `scroll-bar-wi
 
 ### `selectionFont` (class `SelectionFont`)
 
-Font name for pop-up menu items, in non-toolkit versions of Emacs. (For toolkit versions, see [Lucid Resources](Lucid-Resources), also see [Motif Resources](Motif-Resources), and see [GTK resources](GTK-resources).)
+Font name for pop-up menu items, in non-toolkit versions of Emacs. (For toolkit versions, see [Lucid Resources](/docs/emacs/Lucid-Resources), also see [Motif Resources](/docs/emacs/Motif-Resources), and see [GTK resources](/docs/emacs/GTK-resources).)
 
 ### `selectionForeground` (class `SelectionForeground`)
 
-Foreground color for pop-up menu items, in non-toolkit versions of Emacs. (For toolkit versions, see [Lucid Resources](Lucid-Resources), also see [Motif Resources](Motif-Resources), and see [GTK resources](GTK-resources).)
+Foreground color for pop-up menu items, in non-toolkit versions of Emacs. (For toolkit versions, see [Lucid Resources](/docs/emacs/Lucid-Resources), also see [Motif Resources](/docs/emacs/Motif-Resources), and see [GTK resources](/docs/emacs/GTK-resources).)
 
 ### `selectionTimeout` (class `SelectionTimeout`)
 
@@ -134,11 +134,11 @@ Name to display in the title bar of the initial Emacs frame.
 
 ### `toolBar` (class `ToolBar`)
 
-If the value of this resource is ‘`off`’ or ‘`false`’ or ‘`0`’, Emacs disables Tool Bar mode at startup (see [Tool Bars](Tool-Bars)).
+If the value of this resource is ‘`off`’ or ‘`false`’ or ‘`0`’, Emacs disables Tool Bar mode at startup (see [Tool Bars](/docs/emacs/Tool-Bars)).
 
 ### `tabBar` (class `TabBar`)
 
-If the value of this resource is ‘`on`’ or ‘`yes`’ or ‘`1`’, Emacs enables Tab Bar mode at startup (see [Tab Bars](Tab-Bars)).
+If the value of this resource is ‘`on`’ or ‘`yes`’ or ‘`1`’, Emacs enables Tab Bar mode at startup (see [Tab Bars](/docs/emacs/Tab-Bars)).
 
 ### `useXIM` (class `UseXIM`)
 
@@ -146,10 +146,10 @@ Disable use of X input methods (XIM) if ‘`false`’ or ‘`off`’. This is on
 
 ### `verticalScrollBars` (class `ScrollBars`)
 
-Give frames scroll bars on the left if ‘`left`’, on the right if ‘`right`’; don’t have scroll bars if ‘`off`’ (see [Scroll Bars](Scroll-Bars)).
+Give frames scroll bars on the left if ‘`left`’, on the right if ‘`right`’; don’t have scroll bars if ‘`off`’ (see [Scroll Bars](/docs/emacs/Scroll-Bars)).
 
 ### `visualClass` (class `VisualClass`)
 
 The *visual class* for X color display. If specified, the value should start with one of ‘`TrueColor`’, ‘`PseudoColor`’, ‘`DirectColor`’, ‘`StaticColor`’, ‘`GrayScale`’, and ‘`StaticGray`’, followed by ‘`-depth`’, where `depth` is the number of color planes.
 
-You can also use X resources to customize individual Emacs faces (see [Faces](Faces)). For example, setting the resource ‘`face.attributeForeground`’ is equivalent to customizing the ‘`foreground`’ attribute of the face `face`. However, we recommend customizing faces from within Emacs, instead of using X resources. See [Face Customization](Face-Customization).
+You can also use X resources to customize individual Emacs faces (see [Faces](/docs/emacs/Faces)). For example, setting the resource ‘`face.attributeForeground`’ is equivalent to customizing the ‘`foreground`’ attribute of the face `face`. However, we recommend customizing faces from within Emacs, instead of using X resources. See [Face Customization](/docs/emacs/Face-Customization).

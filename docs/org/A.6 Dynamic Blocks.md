@@ -4,7 +4,7 @@ slug: Dynamic-Blocks
 
 Org supports *dynamic blocks* in Org documents. They are inserted with begin and end markers like any other code block, but the contents are updated automatically by a user function.
 
-You can insert a dynamic block with `org-dynamic-block-insert-dblock`, which is bound to `C-c C-x x` by default. For example, `C-c C-x x c l o c k t a b l e RET` inserts a table that updates the work time (see [Clocking Work Time](Clocking-Work-Time)).
+You can insert a dynamic block with `org-dynamic-block-insert-dblock`, which is bound to `C-c C-x x` by default. For example, `C-c C-x x c l o c k t a b l e RET` inserts a table that updates the work time (see [Clocking Work Time](/docs/org/Clocking-Work-Time)).
 
 Dynamic blocks can have names and function parameters. The syntax is similar to source code block specifications:
 

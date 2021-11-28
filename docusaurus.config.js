@@ -63,6 +63,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      onBrokenLinks: 'warn',
       hideableSidebar: true,
       navbar: {
         hideOnScroll: true,

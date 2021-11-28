@@ -2,11 +2,11 @@
 slug: MS_002dDOS-Display
 ---
 
-Display on MS-DOS cannot use font variants, like bold or italic, but it does support multiple faces, each of which can specify a foreground and a background color. Therefore, you can get the full functionality of Emacs packages that use fonts (such as `font-lock`, Enriched Text mode, and others) by defining the relevant faces to use different colors. Use the `list-colors-display` command (see [Colors](Colors)) and the `list-faces-display` command (see [Faces](Faces)) to see what colors and faces are available and what they look like.
+Display on MS-DOS cannot use font variants, like bold or italic, but it does support multiple faces, each of which can specify a foreground and a background color. Therefore, you can get the full functionality of Emacs packages that use fonts (such as `font-lock`, Enriched Text mode, and others) by defining the relevant faces to use different colors. Use the `list-colors-display` command (see [Colors](/docs/emacs/Colors)) and the `list-faces-display` command (see [Faces](/docs/emacs/Faces)) to see what colors and faces are available and what they look like.
 
-See [MS-DOS and MULE](MS_002dDOS-and-MULE), later in this chapter, for information on how Emacs displays glyphs and characters that aren’t supported by the native font built into the DOS display.
+See [MS-DOS and MULE](/docs/emacs/MS_002dDOS-and-MULE), later in this chapter, for information on how Emacs displays glyphs and characters that aren’t supported by the native font built into the DOS display.
 
-When Emacs starts, it changes the cursor shape to a solid box. This is for compatibility with other systems, where the box cursor is the default in Emacs. This default shape can be changed to a bar by specifying the `cursor-type` parameter in the variable `default-frame-alist` (see [Creating Frames](Creating-Frames)). The MS-DOS terminal doesn’t support a vertical-bar cursor, so the bar cursor is horizontal, and the `width` parameter, if specified by the frame parameters, actually determines its height. For this reason, the `bar` and `hbar` cursor types produce the same effect on MS-DOS. As an extension, the bar cursor specification can include the starting scan line of the cursor as well as its width, like this:
+When Emacs starts, it changes the cursor shape to a solid box. This is for compatibility with other systems, where the box cursor is the default in Emacs. This default shape can be changed to a bar by specifying the `cursor-type` parameter in the variable `default-frame-alist` (see [Creating Frames](/docs/emacs/Creating-Frames)). The MS-DOS terminal doesn’t support a vertical-bar cursor, so the bar cursor is horizontal, and the `width` parameter, if specified by the frame parameters, actually determines its height. For this reason, the `bar` and `hbar` cursor types produce the same effect on MS-DOS. As an extension, the bar cursor specification can include the starting scan line of the cursor as well as its width, like this:
 
 ```lisp
  '(cursor-type bar width . start)
@@ -14,7 +14,7 @@ When Emacs starts, it changes the cursor shape to a solid box. This is for compa
 
 In addition, if the `width` parameter is negative, the cursor bar begins at the top of the character cell.
 
-The MS-DOS terminal can only display a single frame at a time. The Emacs frame facilities work on MS-DOS much as they do on text terminals (see [Frames](Frames)). When you run Emacs from a DOS window on MS-Windows, you can make the visible frame smaller than the full screen, but Emacs still cannot display more than a single frame at a time.
+The MS-DOS terminal can only display a single frame at a time. The Emacs frame facilities work on MS-DOS much as they do on text terminals (see [Frames](/docs/emacs/Frames)). When you run Emacs from a DOS window on MS-Windows, you can make the visible frame smaller than the full screen, but Emacs still cannot display more than a single frame at a time.
 
 The `dos-mode4350` command switches the display to 43 or 50 lines, depending on your hardware; the `dos-mode25` command switches to the default 80x25 screen size.
 

@@ -13,11 +13,11 @@ This chapter describes Emacs features for maintaining medium- to large-size prog
 
 If you are maintaining a large Lisp program, then in addition to the features described here, you may find the Emacs Lisp Regression Testing (ERT) library useful (see [ERT](https://www.gnu.org/software/emacs/manual/html_mono/ert.html#Top) in Emacs Lisp Regression Testing).
 
-|                                      |    |                                                                                            |
-| :----------------------------------- | -- | :----------------------------------------------------------------------------------------- |
-| • [Version Control](Version-Control) |    | Using version control systems.                                                             |
-| • [Projects](Projects)               |    | Commands for handling source files in a project.                                           |
-| • [Change Log](Change-Log)           |    | Maintaining a change history for your program.                                             |
-| • [Xref](Xref)                       |    | Find definitions and references of any function, method, struct, macro, … in your program. |
-| • [EDE](EDE)                         |    | An integrated development environment for Emacs.                                           |
-| • [Emerge](Emerge)                   |    | A convenient way of merging two versions of a program.                                     |
+|                                                  |    |                                                                                            |
+| :----------------------------------------------- | -- | :----------------------------------------------------------------------------------------- |
+| • [Version Control](/docs/emacs/Version-Control) |    | Using version control systems.                                                             |
+| • [Projects](/docs/emacs/Projects)               |    | Commands for handling source files in a project.                                           |
+| • [Change Log](/docs/emacs/Change-Log)           |    | Maintaining a change history for your program.                                             |
+| • [Xref](/docs/emacs/Xref)                       |    | Find definitions and references of any function, method, struct, macro, … in your program. |
+| • [EDE](/docs/emacs/EDE)                         |    | An integrated development environment for Emacs.                                           |
+| • [Emerge](/docs/emacs/Emerge)                   |    | A convenient way of merging two versions of a program.                                     |

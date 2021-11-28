@@ -18,11 +18,11 @@ Here are conventions that you should follow when writing Emacs Lisp code intende
 
     If one prefix is insufficient, your package can use two or three alternative common prefixes, so long as they make sense.
 
-*   We recommend enabling `lexical-binding` in new code, and converting existing Emacs Lisp code to enable `lexical-binding` if it doesn’t already. See [Using Lexical Binding](Using-Lexical-Binding).
+*   We recommend enabling `lexical-binding` in new code, and converting existing Emacs Lisp code to enable `lexical-binding` if it doesn’t already. See [Using Lexical Binding](/docs/elisp/Using-Lexical-Binding).
 
-*   Put a call to `provide` at the end of each separate Lisp file. See [Named Features](Named-Features).
+*   Put a call to `provide` at the end of each separate Lisp file. See [Named Features](/docs/elisp/Named-Features).
 
-*   If a file requires certain other Lisp programs to be loaded beforehand, then the comments at the beginning of the file should say so. Also, use `require` to make sure they are loaded. See [Named Features](Named-Features).
+*   If a file requires certain other Lisp programs to be loaded beforehand, then the comments at the beginning of the file should say so. Also, use `require` to make sure they are loaded. See [Named Features](/docs/elisp/Named-Features).
 
 *   If a file `foo` uses a macro defined in another file `bar`, but does not use any functions or variables defined in `bar`, then `foo` should contain the following expression:
 
@@ -30,7 +30,7 @@ Here are conventions that you should follow when writing Emacs Lisp code intende
     (eval-when-compile (require 'bar))
     ```
 
-    This tells Emacs to load `bar` just before byte-compiling `foo`, so that the macro definition is available during compilation. Using `eval-when-compile` avoids loading `bar` when the compiled version of `foo` is *used*. It should be called before the first use of the macro in the file. See [Compiling Macros](Compiling-Macros).
+    This tells Emacs to load `bar` just before byte-compiling `foo`, so that the macro definition is available during compilation. Using `eval-when-compile` avoids loading `bar` when the compiled version of `foo` is *used*. It should be called before the first use of the macro in the file. See [Compiling Macros](/docs/elisp/Compiling-Macros).
 
 *   Avoid loading additional libraries at run time unless they are really needed. If your file simply cannot work without some other library, then just `require` that library at the top-level and be done with it. But if your file contains several independent features, and only one or two require the extra library, then consider putting `require` statements inside the relevant functions rather than at the top-level. Or use `autoload` statements to load the extra library when needed. This way people who don’t use those aspects of your file do not need to load the extra library.
 
@@ -38,15 +38,15 @@ Here are conventions that you should follow when writing Emacs Lisp code intende
 
     There is no problem with using the `cl` package at *compile* time, with `(eval-when-compile (require 'cl))`. That’s sufficient for using the macros in the `cl` package, because the compiler expands them before generating the byte-code. It is still better to use the more modern `cl-lib` in this case, though.
 
-*   When defining a major mode, please follow the major mode conventions. See [Major Mode Conventions](Major-Mode-Conventions).
+*   When defining a major mode, please follow the major mode conventions. See [Major Mode Conventions](/docs/elisp/Major-Mode-Conventions).
 
-*   When defining a minor mode, please follow the minor mode conventions. See [Minor Mode Conventions](Minor-Mode-Conventions).
+*   When defining a minor mode, please follow the minor mode conventions. See [Minor Mode Conventions](/docs/elisp/Minor-Mode-Conventions).
 
 *   If the purpose of a function is to tell you whether a certain condition is true or false, give the function a name that ends in ‘`p`’ (which stands for “predicate"). If the name is one word, add just ‘`p`’; if the name is multiple words, add ‘`-p`’. Examples are `framep` and `frame-live-p`. We recommend to avoid using this `-p` suffix in boolean variable names, unless the variable is bound to a predicate function; instead, use a `-flag` suffix or names like `is-foo`.
 
-*   If the purpose of a variable is to store a single function, give it a name that ends in ‘`-function`’. If the purpose of a variable is to store a list of functions (i.e., the variable is a hook), please follow the naming conventions for hooks. See [Hooks](Hooks).
+*   If the purpose of a variable is to store a single function, give it a name that ends in ‘`-function`’. If the purpose of a variable is to store a list of functions (i.e., the variable is a hook), please follow the naming conventions for hooks. See [Hooks](/docs/elisp/Hooks).
 
-*   If loading the file adds functions to hooks, define a function `feature-unload-function`, where `feature` is the name of the feature the package provides, and make it undo any such changes. Using `unload-feature` to unload the file will run this function. See [Unloading](Unloading).
+*   If loading the file adds functions to hooks, define a function `feature-unload-function`, where `feature` is the name of the feature the package provides, and make it undo any such changes. Using `unload-feature` to unload the file will run this function. See [Unloading](/docs/elisp/Unloading).
 
 *   It is a bad idea to define aliases for the Emacs primitives. Normally you should use the standard names instead. The case where an alias may be useful is where it facilitates backwards compatibility or portability.
 
@@ -61,9 +61,9 @@ Here are conventions that you should follow when writing Emacs Lisp code intende
 
 *   Redefining or advising an Emacs primitive is a bad idea. It may do the right thing for a particular program, but there is no telling what other programs might break as a result.
 
-*   It is likewise a bad idea for one Lisp package to advise a function in another Lisp package (see [Advising Functions](Advising-Functions)).
+*   It is likewise a bad idea for one Lisp package to advise a function in another Lisp package (see [Advising Functions](/docs/elisp/Advising-Functions)).
 
-*   Avoid using `eval-after-load` and `with-eval-after-load` in libraries and packages (see [Hooks for Loading](Hooks-for-Loading)). This feature is meant for personal customizations; using it in a Lisp program is unclean, because it modifies the behavior of another Lisp file in a way that’s not visible in that file. This is an obstacle for debugging, much like advising a function in the other package.
+*   Avoid using `eval-after-load` and `with-eval-after-load` in libraries and packages (see [Hooks for Loading](/docs/elisp/Hooks-for-Loading)). This feature is meant for personal customizations; using it in a Lisp program is unclean, because it modifies the behavior of another Lisp file in a way that’s not visible in that file. This is an obstacle for debugging, much like advising a function in the other package.
 
 *   If a file does replace any of the standard functions or library programs of Emacs, prominent comments at the beginning of the file should say which functions are replaced, and how the behavior of the replacements differs from that of the originals.
 
@@ -71,12 +71,12 @@ Here are conventions that you should follow when writing Emacs Lisp code intende
 
 *   In some other systems there is a convention of choosing variable names that begin and end with ‘`*`’. We don’t use that convention in Emacs Lisp, so please don’t use it in your programs. (Emacs uses such names only for special-purpose buffers.) People will find Emacs more coherent if all libraries use the same conventions.
 
-*   The default file coding system for Emacs Lisp source files is UTF-8 (see [Text Representations](Text-Representations)). In the rare event that your program contains characters which are *not* in UTF-8, you should specify an appropriate coding system in the source file’s ‘`-*-`’ line or local variables list. See [Local Variables in Files](https://www.gnu.org/software/emacs/manual/html_mono/emacs.html#File-Variables) in The GNU Emacs Manual.
+*   The default file coding system for Emacs Lisp source files is UTF-8 (see [Text Representations](/docs/elisp/Text-Representations)). In the rare event that your program contains characters which are *not* in UTF-8, you should specify an appropriate coding system in the source file’s ‘`-*-`’ line or local variables list. See [Local Variables in Files](https://www.gnu.org/software/emacs/manual/html_mono/emacs.html#File-Variables) in The GNU Emacs Manual.
 
 *   Indent the file using the default indentation parameters.
 
 *   Don’t make a habit of putting close-parentheses on lines by themselves; Lisp programmers find this disconcerting.
 
-*   Please put a copyright notice and copying permission notice on the file if you distribute copies. See [Library Headers](Library-Headers).
+*   Please put a copyright notice and copying permission notice on the file if you distribute copies. See [Library Headers](/docs/elisp/Library-Headers).
 
 [^1]: The benefits of a Common Lisp-style package system are considered not to outweigh the costs.

@@ -6,13 +6,13 @@ Org mode does not maintain TODO lists as separate documents[^1]. Instead, TODO i
 
 Of course, this technique for managing TODO items scatters them throughout your notes file. Org mode compensates for this by providing methods to give you an overview of all the things that you have to do.
 
-|                                              |    |                                             |
-| :------------------------------------------- | -- | :------------------------------------------ |
-| • [TODO Basics](TODO-Basics)                 |    | Marking and displaying TODO entries.        |
-| • [TODO Extensions](TODO-Extensions)         |    | Workflow and assignments.                   |
-| • [Progress Logging](Progress-Logging)       |    | Dates and notes for progress.               |
-| • [Priorities](Priorities)                   |    | Some things are more important than others. |
-| • [Breaking Down Tasks](Breaking-Down-Tasks) |    | Splitting a task into manageable pieces.    |
-| • [Checkboxes](Checkboxes)                   |    | Tick-off lists.                             |
+|                                                        |    |                                             |
+| :----------------------------------------------------- | -- | :------------------------------------------ |
+| • [TODO Basics](/docs/org/TODO-Basics)                 |    | Marking and displaying TODO entries.        |
+| • [TODO Extensions](/docs/org/TODO-Extensions)         |    | Workflow and assignments.                   |
+| • [Progress Logging](/docs/org/Progress-Logging)       |    | Dates and notes for progress.               |
+| • [Priorities](/docs/org/Priorities)                   |    | Some things are more important than others. |
+| • [Breaking Down Tasks](/docs/org/Breaking-Down-Tasks) |    | Splitting a task into manageable pieces.    |
+| • [Checkboxes](/docs/org/Checkboxes)                   |    | Tick-off lists.                             |
 
 [^1]: Of course, you can make a document that contains only long lists of TODO items, but this is not required.

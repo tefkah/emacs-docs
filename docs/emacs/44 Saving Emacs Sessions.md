@@ -6,9 +6,9 @@ Use the desktop library to save the state of Emacs from one session to another. 
 
 Information about buffers visiting remote files is not saved by default. Customize the variable `desktop-files-not-to-save` to change this.
 
-When the desktop restores the frame and window configuration, it uses the recorded values of frame parameters, disregarding any settings for those parameters you have in your init file (see [Init File](Init-File)). This means that frame parameters such as fonts and faces for the restored frames will come from the desktop file, where they were saved when you exited your previous Emacs session; any settings for those parameters in your init file will be ignored. To disable this, customize the value of `frameset-filter-alist` to filter out the frame parameters you don’t want to be restored.
+When the desktop restores the frame and window configuration, it uses the recorded values of frame parameters, disregarding any settings for those parameters you have in your init file (see [Init File](/docs/emacs/Init-File)). This means that frame parameters such as fonts and faces for the restored frames will come from the desktop file, where they were saved when you exited your previous Emacs session; any settings for those parameters in your init file will be ignored. To disable this, customize the value of `frameset-filter-alist` to filter out the frame parameters you don’t want to be restored.
 
-You can save the desktop manually with the command `M-x desktop-save`. You can also enable automatic saving of the desktop when you exit Emacs, and automatic restoration of the last saved desktop when Emacs starts: use the Customization buffer (see [Easy Customization](Easy-Customization)) to set `desktop-save-mode` to `t` for future sessions, or add this line in your init file (see [Init File](Init-File)):
+You can save the desktop manually with the command `M-x desktop-save`. You can also enable automatic saving of the desktop when you exit Emacs, and automatic restoration of the last saved desktop when Emacs starts: use the Customization buffer (see [Easy Customization](/docs/emacs/Easy-Customization)) to set `desktop-save-mode` to `t` for future sessions, or add this line in your init file (see [Init File](/docs/emacs/Init-File)):
 
 ```lisp
 (desktop-save-mode 1)

@@ -72,6 +72,6 @@ where the sort keys were ‘`Emacs`’, ‘`If`’, ‘`buffer`’, ‘`systems`
 
 For example, to sort a table by information found in columns 10 to 15, you could put the mark on column 10 in the first line of the table, and point on column 15 in the last line of the table, and then run `sort-columns`. Equivalently, you could run it with the mark on column 15 in the first line and point on column 10 in the last line.
 
-This can be thought of as sorting the rectangle specified by point and the mark, except that the text on each line to the left or right of the rectangle moves along with the text inside the rectangle. See [Rectangles](Rectangles).
+This can be thought of as sorting the rectangle specified by point and the mark, except that the text on each line to the left or right of the rectangle moves along with the text inside the rectangle. See [Rectangles](/docs/emacs/Rectangles).
 
 Many of the sort commands ignore case differences when comparing, if `sort-fold-case` is non-`nil`.

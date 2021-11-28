@@ -12,18 +12,18 @@ Moreover, you can focus in a specific portion of the code by narrowing the buffe
 
 AUCTeX also provides some WYSIWYG features.
 
-First, you can customize `font-latex-fontify-script` to enable special formatting of `^` superscripts and `_` subscripts (see [Font Locking](Font-Locking)).
+First, you can customize `font-latex-fontify-script` to enable special formatting of `^` superscripts and `_` subscripts (see [Font Locking](/docs/auctex/Font-Locking)).
 
-Secondly, AUCTeX with GNU Emacs 25 or later can display certain math macros using Unicode characters, e.g., `\alpha` as α. This is called prettification and is lightweight and reasonable robust (see [Prettifying](Prettifying)).
+Secondly, AUCTeX with GNU Emacs 25 or later can display certain math macros using Unicode characters, e.g., `\alpha` as α. This is called prettification and is lightweight and reasonable robust (see [Prettifying](/docs/auctex/Prettifying)).
 
-A more accurate approach is provided by preview-latex, a subsystem of AUCTeX, see [(preview-latex)Top](Top) section ‘Introduction’ in The preview-latex Manual. This system uses LaTeX to generate images that are then displayed in your buffer. It is extremely accurate but can be fragile with some packages (like older pgf versions).
+A more accurate approach is provided by preview-latex, a subsystem of AUCTeX, see [(preview-latex)Top](/docs/auctex/Top) section ‘Introduction’ in The preview-latex Manual. This system uses LaTeX to generate images that are then displayed in your buffer. It is extremely accurate but can be fragile with some packages (like older pgf versions).
 
 Please note that you can use prettification and preview-latex together.
 
-|                                |    |                                                            |
-| :----------------------------- | -- | :--------------------------------------------------------- |
-| [• Font Locking](Font-Locking) |    |                                                            |
-| [• Folding](Folding)           |    | Folding Macros and Environments                            |
-| [• Outline](Outline)           |    | Outlining the Document                                     |
-| [• Narrowing](Narrowing)       |    | Restricting display and editing to a portion of the buffer |
-| [• Prettifying](Prettifying)   |    | Displaying Greek and math macros as Unicode characters     |
+|                                             |    |                                                            |
+| :------------------------------------------ | -- | :--------------------------------------------------------- |
+| [• Font Locking](/docs/auctex/Font-Locking) |    |                                                            |
+| [• Folding](/docs/auctex/Folding)           |    | Folding Macros and Environments                            |
+| [• Outline](/docs/auctex/Outline)           |    | Outlining the Document                                     |
+| [• Narrowing](/docs/auctex/Narrowing)       |    | Restricting display and editing to a portion of the buffer |
+| [• Prettifying](/docs/auctex/Prettifying)   |    | Displaying Greek and math macros as Unicode characters     |

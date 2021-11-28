@@ -2,7 +2,7 @@
 slug: Distrib
 ---
 
-GNU Emacs is *free software*; this means that everyone is free to use it and free to redistribute it under certain conditions. GNU Emacs is not in the public domain; it is copyrighted and there are restrictions on its distribution, but these restrictions are designed to permit everything that a good cooperating citizen would want to do. What is not allowed is to try to prevent others from further sharing any version of GNU Emacs that they might get from you. The precise conditions are found in the GNU General Public License that comes with Emacs and also appears in this manual[^1]. See [Copying](Copying).
+GNU Emacs is *free software*; this means that everyone is free to use it and free to redistribute it under certain conditions. GNU Emacs is not in the public domain; it is copyrighted and there are restrictions on its distribution, but these restrictions are designed to permit everything that a good cooperating citizen would want to do. What is not allowed is to try to prevent others from further sharing any version of GNU Emacs that they might get from you. The precise conditions are found in the GNU General Public License that comes with Emacs and also appears in this manual[^1]. See [Copying](/docs/emacs/Copying).
 
 One way to get a copy of GNU Emacs is from someone else who has it. You need not ask for our permission to do so, or tell anyone else; just copy it. If you have access to the Internet, you can get the latest distribution version of GNU Emacs by anonymous FTP; see [https://www.gnu.org/software/emacs](https://www.gnu.org/software/emacs) on our website for more information.
 
@@ -21,4 +21,4 @@ Boston, MA 02110-1301
 USA
 ```
 
-[^1]: This manual is itself covered by the GNU Free Documentation License. This license is similar in spirit to the General Public License, but is more suitable for documentation. See [GNU Free Documentation License](GNU-Free-Documentation-License).
+[^1]: This manual is itself covered by the GNU Free Documentation License. This license is similar in spirit to the General Public License, but is more suitable for documentation. See [GNU Free Documentation License](/docs/emacs/GNU-Free-Documentation-License).

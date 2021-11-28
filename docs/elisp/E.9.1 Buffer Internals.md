@@ -14,7 +14,7 @@ The address of the buffer contents. The buffer contents is a linear C array of `
 
 ### `gpt_byte`
 
-The character and byte positions of the buffer gap. See [Buffer Gap](Buffer-Gap).
+The character and byte positions of the buffer gap. See [Buffer Gap](/docs/elisp/Buffer-Gap).
 
 ### `z`
 
@@ -24,7 +24,7 @@ The character and byte positions of the end of the buffer text.
 
 ### `gap_size`
 
-The size of buffer’s gap. See [Buffer Gap](Buffer-Gap).
+The size of buffer’s gap. See [Buffer Gap](/docs/elisp/Buffer-Gap).
 
 ### `modiff`
 
@@ -102,7 +102,7 @@ This field contains flags indicating that certain variables are local in this bu
 
 ### `modtime`
 
-The modification time of the visited file. It is set when the file is written or read. Before writing the buffer into a file, this field is compared to the modification time of the file to see if the file has changed on disk. See [Buffer Modification](Buffer-Modification).
+The modification time of the visited file. It is set when the file is written or read. Before writing the buffer into a file, this field is compared to the modification time of the file to see if the file has changed on disk. See [Buffer Modification](/docs/elisp/Buffer-Modification).
 
 ### `auto_save_modified`
 
@@ -114,7 +114,7 @@ The `window-start` position in the buffer as of the last time the buffer was dis
 
 ### `clip_changed`
 
-This flag indicates that narrowing has changed in the buffer. See [Narrowing](Narrowing).
+This flag indicates that narrowing has changed in the buffer. See [Narrowing](/docs/elisp/Narrowing).
 
 ### `prevent_redisplay_optimizations_p`
 
@@ -122,17 +122,17 @@ This flag indicates that redisplay optimizations should not be used to display t
 
 ### `overlay_center`
 
-This field holds the current overlay center position. See [Managing Overlays](Managing-Overlays).
+This field holds the current overlay center position. See [Managing Overlays](/docs/elisp/Managing-Overlays).
 
 ### `overlays_before`
 
 ### `overlays_after`
 
-These fields hold, respectively, a list of overlays that end at or before the current overlay center, and a list of overlays that end after the current overlay center. See [Managing Overlays](Managing-Overlays). `overlays_before` is sorted in order of decreasing end position, and `overlays_after` is sorted in order of increasing beginning position.
+These fields hold, respectively, a list of overlays that end at or before the current overlay center, and a list of overlays that end after the current overlay center. See [Managing Overlays](/docs/elisp/Managing-Overlays). `overlays_before` is sorted in order of decreasing end position, and `overlays_after` is sorted in order of increasing beginning position.
 
 ### `name`
 
-A Lisp string that names the buffer. It is guaranteed to be unique. See [Buffer Names](Buffer-Names). This and the following fields have their names in the C struct definition end in a `_` to indicate that they should not be accessed directly, but via the `BVAR` macro, like this:
+A Lisp string that names the buffer. It is guaranteed to be unique. See [Buffer Names](/docs/elisp/Buffer-Names). This and the following fields have their names in the C struct definition end in a `_` to indicate that they should not be accessed directly, but via the `BVAR` macro, like this:
 
 ```lisp
   Lisp_Object buf_name = BVAR (buffer, name);
@@ -144,11 +144,11 @@ The length of the file this buffer is visiting, when last read or saved. It can 
 
 ### `directory`
 
-The directory for expanding relative file names. This is the value of the buffer-local variable `default-directory` (see [File Name Expansion](File-Name-Expansion)).
+The directory for expanding relative file names. This is the value of the buffer-local variable `default-directory` (see [File Name Expansion](/docs/elisp/File-Name-Expansion)).
 
 ### `filename`
 
-The name of the file visited in this buffer, or `nil`. This is the value of the buffer-local variable `buffer-file-name` (see [Buffer File Name](Buffer-File-Name)).
+The name of the file visited in this buffer, or `nil`. This is the value of the buffer-local variable `buffer-file-name` (see [Buffer File Name](/docs/elisp/Buffer-File-Name)).
 
 ### `undo_list`
 
@@ -170,15 +170,15 @@ The name of the file visited in this buffer, or `nil`. This is the value of the 
 
 ### `display_time`
 
-These fields store the values of Lisp variables that are automatically buffer-local (see [Buffer-Local Variables](Buffer_002dLocal-Variables)), whose corresponding variable names have the additional prefix `buffer-` and have underscores replaced with dashes. For instance, `undo_list` stores the value of `buffer-undo-list`.
+These fields store the values of Lisp variables that are automatically buffer-local (see [Buffer-Local Variables](/docs/elisp/Buffer_002dLocal-Variables)), whose corresponding variable names have the additional prefix `buffer-` and have underscores replaced with dashes. For instance, `undo_list` stores the value of `buffer-undo-list`.
 
 ### `mark`
 
-The mark for the buffer. The mark is a marker, hence it is also included on the list `markers`. See [The Mark](The-Mark).
+The mark for the buffer. The mark is a marker, hence it is also included on the list `markers`. See [The Mark](/docs/elisp/The-Mark).
 
 ### `local_var_alist`
 
-The association list describing the buffer-local variable bindings of this buffer, not including the built-in buffer-local bindings that have special slots in the buffer object. (Those slots are omitted from this table.) See [Buffer-Local Variables](Buffer_002dLocal-Variables).
+The association list describing the buffer-local variable bindings of this buffer, not including the built-in buffer-local bindings that have special slots in the buffer object. (Those slots are omitted from this table.) See [Buffer-Local Variables](/docs/elisp/Buffer_002dLocal-Variables).
 
 ### `major_mode`
 
@@ -198,7 +198,7 @@ Pretty name of the major mode, e.g., `"Lisp"`.
 
 ### `display_table`
 
-These fields store the buffer’s local keymap (see [Keymaps](Keymaps)), abbrev table (see [Abbrev Tables](Abbrev-Tables)), syntax table (see [Syntax Tables](Syntax-Tables)), category table (see [Categories](Categories)), and display table (see [Display Tables](Display-Tables)).
+These fields store the buffer’s local keymap (see [Keymaps](/docs/elisp/Keymaps)), abbrev table (see [Abbrev Tables](/docs/elisp/Abbrev-Tables)), syntax table (see [Syntax Tables](/docs/elisp/Syntax-Tables)), category table (see [Categories](/docs/elisp/Categories)), and display table (see [Display Tables](/docs/elisp/Display-Tables)).
 
 ### `downcase_table`
 
@@ -206,7 +206,7 @@ These fields store the buffer’s local keymap (see [Keymaps](Keymaps)), abbrev 
 
 ### `case_canon_table`
 
-These fields store the conversion tables for converting text to lower case, upper case, and for canonicalizing text for case-fold search. See [Case Tables](Case-Tables).
+These fields store the conversion tables for converting text to lower case, upper case, and for canonicalizing text for case-fold search. See [Case Tables](/docs/elisp/Case-Tables).
 
 ### `minor_modes`
 
@@ -286,7 +286,7 @@ These fields are only used in an indirect buffer, or in a buffer that is the bas
 
 ### `cursor_in_non_selected_windows`
 
-These fields store the values of Lisp variables that are automatically buffer-local (see [Buffer-Local Variables](Buffer_002dLocal-Variables)), whose corresponding variable names have underscores replaced with dashes. For instance, `mode_line_format` stores the value of `mode-line-format`.
+These fields store the values of Lisp variables that are automatically buffer-local (see [Buffer-Local Variables](/docs/elisp/Buffer_002dLocal-Variables)), whose corresponding variable names have underscores replaced with dashes. For instance, `mode_line_format` stores the value of `mode-line-format`.
 
 ### `last_selected_window`
 

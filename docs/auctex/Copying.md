@@ -10,4 +10,4 @@ To make sure that everyone has such rights, we have to forbid you to deprive any
 
 Also, for our own protection, we must make certain that everyone finds out that there is no warranty for AUCTeX. If any parts are modified by someone else and passed on, we want their recipients to know that what they have is not what we distributed, so that any problems introduced by others will not reflect on our reputation.
 
-The precise conditions of the licenses for the files currently being distributed as part of AUCTeX are found in the General Public Licenses that accompany them. This manual specifically is covered by the GNU Free Documentation License (see [Copying this Manual](Copying-this-Manual)).
+The precise conditions of the licenses for the files currently being distributed as part of AUCTeX are found in the General Public Licenses that accompany them. This manual specifically is covered by the GNU Free Documentation License (see [Copying this Manual](/docs/auctex/Copying-this-Manual)).

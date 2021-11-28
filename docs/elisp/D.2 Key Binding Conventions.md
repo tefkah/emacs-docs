@@ -2,7 +2,7 @@
 slug: Key-Binding-Conventions
 ---
 
-*   Many special major modes, like Dired, Info, Compilation, and Occur, are designed to handle read-only text that contains *hyper-links*. Such a major mode should redefine `mouse-2` and `RET` to follow the links. It should also set up a `follow-link` condition, so that the link obeys `mouse-1-click-follows-link`. See [Clickable Text](Clickable-Text). See [Buttons](Buttons), for an easy method of implementing such clickable links.
+*   Many special major modes, like Dired, Info, Compilation, and Occur, are designed to handle read-only text that contains *hyper-links*. Such a major mode should redefine `mouse-2` and `RET` to follow the links. It should also set up a `follow-link` condition, so that the link obeys `mouse-1-click-follows-link`. See [Clickable Text](/docs/elisp/Clickable-Text). See [Buttons](/docs/elisp/Buttons), for an easy method of implementing such clickable links.
 
 *   Don’t define `C-c letter` as a key in Lisp programs. Sequences consisting of `C-c` and a letter (either upper or lower case) are reserved for users; they are the **only** sequences reserved for users, so do not block them.
 

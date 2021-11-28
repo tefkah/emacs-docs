@@ -10,11 +10,11 @@ slug: Changes
 
 *   Math expression highlighting was improved. Highlighting for documents with a lot of inline math expressions ‘`$...$`’ won’t get scrambled now (‘`bug#33139`’).
 
-    There is small incompatibility due to this fix. When odd number of dollar signs are in a comment, the subsequent lines are highlighted as math until another ‘`$`’ appears. You can insert a commented dollar sign (‘`%$`’) at the next suitable end of line as a workaround. See [Known problems](Known-problems).
+    There is small incompatibility due to this fix. When odd number of dollar signs are in a comment, the subsequent lines are highlighted as math until another ‘`$`’ appears. You can insert a commented dollar sign (‘`%$`’) at the next suitable end of line as a workaround. See [Known problems](/docs/auctex/Known-problems).
 
-    In addition, it is no longer recommended to customize `font-latex-math-environments`. Use `texmathp-tex-commands` instead. See [Fontification of math](Fontification-of-math).
+    In addition, it is no longer recommended to customize `font-latex-math-environments`. Use `texmathp-tex-commands` instead. See [Fontification of math](/docs/auctex/Fontification-of-math).
 
-*   AUCTeX tracks changes in LaTeX2e 2020-02-02 release. AUCTeX supports the improvements to LaTeX font selection mechanism (NFSS). New macros like ‘`\textsw`’ or ‘`\textulc`’ are added to font insertion keyboard commands. See [Font Specifiers](Font-Specifiers), for details. Further, the entries in the menu LaTeX, Insert Font are reorganized and adjusted accordingly.
+*   AUCTeX tracks changes in LaTeX2e 2020-02-02 release. AUCTeX supports the improvements to LaTeX font selection mechanism (NFSS). New macros like ‘`\textsw`’ or ‘`\textulc`’ are added to font insertion keyboard commands. See [Font Specifiers](/docs/auctex/Font-Specifiers), for details. Further, the entries in the menu LaTeX, Insert Font are reorganized and adjusted accordingly.
 
     Macros previously provided by ‘`textcomp.sty`’ are now part of LaTeX kernel. AUCTeX tracks this change as well and support for the new macro ‘`\legacyoldstylenums`’ is added.
 
@@ -117,11 +117,11 @@ slug: Changes
 
 ### News in 11.90
 
-*   In addition to the completion performed by `TeX-complete-symbol`, AUCTeX now also supports the new Emacs standard completion-at-point facility (see the Emacs command `completion-at-point`). This also means that modern completion UIs like *company-mode* work out of the box in TeX and LaTeX buffers. See [Completion](Completion), for details.
+*   In addition to the completion performed by `TeX-complete-symbol`, AUCTeX now also supports the new Emacs standard completion-at-point facility (see the Emacs command `completion-at-point`). This also means that modern completion UIs like *company-mode* work out of the box in TeX and LaTeX buffers. See [Completion](/docs/auctex/Completion), for details.
 
 *   Completion is now aware of being inside a math environment and then completes math macros.
 
-*   AUCTeX is able to display several levels of super- and subscripts, each one raised above and a bit smaller than its basis. For this feature, have a look at the customize options `font-latex-fontify-script` (especially the new values `multi-level` and `invisible`) and `font-latex-fontify-script-max-level`. Also, the script characters ‘`^`’ and ‘`_`’ are also fontified with a special face named `font-latex-script-char-face`. See [Fontification of math](Fontification-of-math), for details.
+*   AUCTeX is able to display several levels of super- and subscripts, each one raised above and a bit smaller than its basis. For this feature, have a look at the customize options `font-latex-fontify-script` (especially the new values `multi-level` and `invisible`) and `font-latex-fontify-script-max-level`. Also, the script characters ‘`^`’ and ‘`_`’ are also fontified with a special face named `font-latex-script-char-face`. See [Fontification of math](/docs/auctex/Fontification-of-math), for details.
 
 *   Parsing of format specification in various tabular environments has been improved. The function `LaTeX-insert-item` (`C-c <LFD>`) inserts suitable number of ampersands for ‘`*{num}{cols}`’ constructs. Style files for LaTeX packages ‘`tabularx`’, ‘`tabulary`’, ‘`longtable`’, ‘`dcolumn`’ and ‘`siunitx`’ are adapted to take advantage of this improvement.
 
@@ -133,7 +133,7 @@ slug: Changes
 
 *   Parsing of the compilation log has been reworked. You should encounter fewer mistaken files while navigating through errors and warnings.
 
-*   Two new user options, `TeX-ignore-warnings` and `TeX-suppress-ignored-warnings`, allow ignoring certain warnings after compilation of the document. See [Ignoring warnings](Ignoring-warnings), for details.
+*   Two new user options, `TeX-ignore-warnings` and `TeX-suppress-ignored-warnings`, allow ignoring certain warnings after compilation of the document. See [Ignoring warnings](/docs/auctex/Ignoring-warnings), for details.
 
 *   A new option, `TeX-PDF-from-DVI`, controls if and how to produce a PDF file by converting a DVI file. This supersedes `TeX-PDF-via-dvips-ps2pdf` which is still recognized but marked as obsolete and may be removed in future releases.
 
@@ -168,7 +168,7 @@ slug: Changes
 ### News in 11.89
 
 *   You can now run all commands needed to compile a document and then open the viewer with a single command: `TeX-command-run-all`, bound to `C-c C-a`.
-*   Commands such as LaTeX and View can now be executed conveniently on the current section (or part, chapter, subsection, etc). See `LaTeX-command-section` and `LaTeX-command-section-change-level`. See [Starting a Command](Starting-a-Command), for details.
+*   Commands such as LaTeX and View can now be executed conveniently on the current section (or part, chapter, subsection, etc). See `LaTeX-command-section` and `LaTeX-command-section-change-level`. See [Starting a Command](/docs/auctex/Starting-a-Command), for details.
 *   Forward and backward search with Evince now also work when only a region of the document is compiled/viewed.
 *   To open the PDF output file you can now use also PDF Tools, a document viewer for Emacs. With it, as a plus, forward and backward search is accurate at word level.
 *   With new option `TeX-PDF-via-dvips-ps2pdf` it is possible to compile a document to DVI and then convert it to PDF using `dvips`–`ps2pdf` before viewing it.
@@ -186,7 +186,7 @@ slug: Changes
 
 *   `TeX-PDF-mode` is now enabled by default.
 
-*   Now `TeX-previous-error` works with TeX commands if the new option `TeX-parse-all-errors` is non-nil, which is the default. When this option is non-nil, an overview of errors and warnings reported by the TeX compiler can be opened with `M-x TeX-error-overview <RET>`. See [Debugging](Debugging), for details.
+*   Now `TeX-previous-error` works with TeX commands if the new option `TeX-parse-all-errors` is non-nil, which is the default. When this option is non-nil, an overview of errors and warnings reported by the TeX compiler can be opened with `M-x TeX-error-overview <RET>`. See [Debugging](/docs/auctex/Debugging), for details.
 
 *   Style file authors are encouraged to distinguish common from expert macros and environments, and mark the latter using `TeX-declare-expert-macros` and `LaTeX-declare-expert-environments`.
 
@@ -194,7 +194,7 @@ slug: Changes
 
 *   Management of LaTeX package options in the parser was improved. You might need to reparse your documents, especially if you loaded the ‘`babel`’ package with language options.
 
-*   Now you can insert ‘`$...$`’ or ‘`\(...\)`’ by typing a single `$`. To do this, customize the new option ‘`TeX-electric-math`’. `TeX-math-close-double-dollar` was removed. See [Quotes](Quotes), for details.
+*   Now you can insert ‘`$...$`’ or ‘`\(...\)`’ by typing a single `$`. To do this, customize the new option ‘`TeX-electric-math`’. `TeX-math-close-double-dollar` was removed. See [Quotes](/docs/auctex/Quotes), for details.
 
 *   `C-c <RET> documentclass <RET>` completes with all available LaTeX classes, if the `TeX-arg-input-file-search` variable is non-nil. Completion for class options of the standard LaTeX classes is provided as well.
 
@@ -208,7 +208,7 @@ slug: Changes
 
     You can insert brace pair ‘`()`’, ‘`{}`’ and ‘`[]`’ by typing a single left brace if the new user option `LaTeX-electric-left-right-brace` is enabled.
 
-    Macros ‘`\langle`’, ‘`\lfloor`’ and ‘`\lceil`’, which produce the left part of the paired braces, are treated similarly as ‘`(`’, ‘`{`’ and ‘`[`’ during the course of `TeX-insert-macro`. See [Quotes](Quotes), for details.
+    Macros ‘`\langle`’, ‘`\lfloor`’ and ‘`\lceil`’, which produce the left part of the paired braces, are treated similarly as ‘`(`’, ‘`{`’ and ‘`[`’ during the course of `TeX-insert-macro`. See [Quotes](/docs/auctex/Quotes), for details.
 
 *   Support for dozens of LaTeX packages was added.
 
@@ -218,11 +218,11 @@ slug: Changes
 
     Similar supports are provided for various amsmath environments.
 
-    See [Tabular-like](Tabular_002dlike), for details.
+    See [Tabular-like](/docs/auctex/Tabular_002dlike), for details.
 
 *   Commands for narrowing to a group (`TeX-narrow-to-group`) and to LaTeX environments (`LaTeX-narrow-to-environment`) were added.
 
-*   Now arbitrary options can be passed to the TeX processor on a per file basis using the `TeX-command-extra-options` option. See [Processor Options](Processor-Options), for details.
+*   Now arbitrary options can be passed to the TeX processor on a per file basis using the `TeX-command-extra-options` option. See [Processor Options](/docs/auctex/Processor-Options), for details.
 
 *   Now `C-c C-e document <RET>`, in an empty document, prompts for ‘`\usepackage`’ macros in addition to ‘`\documentclass`’.
 
@@ -242,7 +242,7 @@ slug: Changes
 ### News in 11.86
 
 *   Parsing of LaTeX output was improved. It is now less likely that AUCTeX opens a non-existent file upon calling `TeX-next-error`; a problem for example encountered when using MiKTeX 2.8. In addition quoted file names as emitted by MiKTeX are now supported.
-*   A new framework for the definition and selection of viewers was implemented. If you have customizations regarding viewers you will have to redo them in this new framework or reenable the old one. See [Starting Viewers](Starting-Viewers), for details.
+*   A new framework for the definition and selection of viewers was implemented. If you have customizations regarding viewers you will have to redo them in this new framework or reenable the old one. See [Starting Viewers](/docs/auctex/Starting-Viewers), for details.
 *   Comprehensive editing support for PSTricks was added.
 *   Support for various LaTeX packages was added, e.g. ‘`tabularx`’, ‘`CJK`’, and ‘`hyperref`’.
 *   An easy way to switch between TeX engines (PDFTeX, LuaTeX, XeTeX, Omega) was added.
@@ -273,7 +273,7 @@ slug: Changes
 
 *   The `polish` language option of the babel LaTeX package as well as the polski LaTeX package are now supported. Most notably this means that AUCTeX will help to insert quotation marks as defined by polish.sty (``"`..."'``) and polski.sty (`,,...''`).
 
-*   The TeX tool bar is now available and enabled by default in plain TeX mode. See [Processing Facilities](Processing-Facilities).
+*   The TeX tool bar is now available and enabled by default in plain TeX mode. See [Processing Facilities](/docs/auctex/Processing-Facilities).
 
 *   Bug fix in the display of math subscripts and superscripts.
 
@@ -283,11 +283,11 @@ slug: Changes
 
 ### News in 11.83
 
-*   The new function `TeX-doc` provides easy access to documentation about commands and packages or information related to TeX and friends in general. See [Documentation](Documentation).
+*   The new function `TeX-doc` provides easy access to documentation about commands and packages or information related to TeX and friends in general. See [Documentation](/docs/auctex/Documentation).
 
-*   You can now get rid of generated intermediate and output files by means of the new ‘`Clean`’ and ‘`Clean All`’ entries in `TeX-command-list` accessible with `C-c C-c` or the Command menu. See [Cleaning](Cleaning).
+*   You can now get rid of generated intermediate and output files by means of the new ‘`Clean`’ and ‘`Clean All`’ entries in `TeX-command-list` accessible with `C-c C-c` or the Command menu. See [Cleaning](/docs/auctex/Cleaning).
 
-*   Support for forward search with PDF files was added. That means you can jump to a place in the output file corresponding to the position in the source file. See [Viewing](Viewing).
+*   Support for forward search with PDF files was added. That means you can jump to a place in the output file corresponding to the position in the source file. See [Viewing](/docs/auctex/Viewing).
 
     Adding support for this feature required the default value of the variable `TeX-output-view-style` to be changed. Please make sure you either remove any customizations overriding the new default or incorporate the changes into your customizations if you want to use this feature.
 
@@ -295,7 +295,7 @@ slug: Changes
 
 *   Bug fix in XyMTeX support.
 
-*   The LaTeX tool bar is now enabled by default. See [Processing Facilities](Processing-Facilities).
+*   The LaTeX tool bar is now enabled by default. See [Processing Facilities](/docs/auctex/Processing-Facilities).
 
 ### News in 11.82
 
@@ -311,7 +311,7 @@ slug: Changes
 
 *   Completion support for options of some LaTeX packages was added.
 
-*   Already in version 11.81 the way to activate AUCTeX changed substantially. This should now be done with `(load "auctex.el" nil t t)` instead of the former `(require 'tex-site)`. Related to this change ‘`tex-mik.el`’ does not load ‘`tex-site.el`’ anymore. That means if you used only `(require 'tex-mik)` in order to activate AUCTeX, you have to add `(load "auctex.el" nil t t)` before the latter statement. See [Loading the package](Loading-the-package).
+*   Already in version 11.81 the way to activate AUCTeX changed substantially. This should now be done with `(load "auctex.el" nil t t)` instead of the former `(require 'tex-site)`. Related to this change ‘`tex-mik.el`’ does not load ‘`tex-site.el`’ anymore. That means if you used only `(require 'tex-mik)` in order to activate AUCTeX, you have to add `(load "auctex.el" nil t t)` before the latter statement. See [Loading the package](/docs/auctex/Loading-the-package).
 
 *   Handling of verbatim constructs was consolidated across AUCTeX. This resulted in the font-latex-specific variables `font-latex-verb-like-commands`, `font-latex-verbatim-macros`, and `font-latex-verbatim-environments` being removed and the more general variables `LaTeX-verbatim-macros-with-delims`, `LaTeX-verbatim-macros-with-braces`, and `LaTeX-verbatim-environments` being added.
 
@@ -341,11 +341,11 @@ slug: Changes
 
 *   The language-specific insertion of quotation marks was generalized. The variables `LaTeX-german-open-quote`, `LaTeX-german-close-quote`, `LaTeX-german-quote-after-quote`, `LaTeX-italian-open-quote`, `LaTeX-italian-close-quote`, and `LaTeX-italian-quote-after-quote` are now obsolete. If you are not satisfied with the default settings, you should customize `TeX-quote-language-alist` instead.
 
-*   Similar to language-specific quote insertion, AUCTeX now helps you with hyphens in different languages as well. See [European](European), for details.
+*   Similar to language-specific quote insertion, AUCTeX now helps you with hyphens in different languages as well. See [European](/docs/auctex/European), for details.
 
 *   Fill problems in Japanese text introduced in AUCTeX 11.55 were fixed. AUCTeX tries not to break lines between 1-byte and 2-byte chars. These features will work in Chinese text, too.
 
-*   The scaling factor of the fontification of sectioning commands can now be customized using the variable `font-latex-fontify-sectioning`. This variable was previously called `font-latex-title-fontify`; In this release we provide an alias but this will disappear in one of the the next releases. The faces for the sectioning commands are now called `font-latex-sectioning-N-face` (`N`=0…5) instead of `font-latex-title-N-face` (`N`=1…4). Analogously the names of the variables holding the related keyword lists were changed from `font-latex-title-N-keywords` to `font-latex-sectioning-N-keywords`. See [Font Locking](Font-Locking), for details. Make sure to adjust your customizations.
+*   The scaling factor of the fontification of sectioning commands can now be customized using the variable `font-latex-fontify-sectioning`. This variable was previously called `font-latex-title-fontify`; In this release we provide an alias but this will disappear in one of the the next releases. The faces for the sectioning commands are now called `font-latex-sectioning-N-face` (`N`=0…5) instead of `font-latex-title-N-face` (`N`=1…4). Analogously the names of the variables holding the related keyword lists were changed from `font-latex-title-N-keywords` to `font-latex-sectioning-N-keywords`. See [Font Locking](/docs/auctex/Font-Locking), for details. Make sure to adjust your customizations.
 
 *   Titles in beamer slides marked by the “\frametitle" command are know displayed with the new face `font-latex-slide-title-face`. You can add macros to be highlighted with this face to `font-latex-match-slide-title-keywords`.
 
@@ -395,7 +395,7 @@ slug: Changes
 
 *   Insertion of nodes in Texinfo mode now supports completion of existing node names.
 
-*   Setting the variable `LaTeX-float` to `nil` now means that you will not be prompted for the float position of figures and tables. You can get the old behaviour of `nil` by setting the variable to `""`, i.e. an empty string. See also [Floats](Floats).
+*   Setting the variable `LaTeX-float` to `nil` now means that you will not be prompted for the float position of figures and tables. You can get the old behaviour of `nil` by setting the variable to `""`, i.e. an empty string. See also [Floats](/docs/auctex/Floats).
 
 *   The XEmacs-specific bug concerning `overlays-at` was fixed.
 
@@ -403,7 +403,7 @@ slug: Changes
 
 ### News in 11.53
 
-*   The LaTeX math menu can include Unicode characters if your Emacs built supports it. See the variable `LaTeX-math-menu-unicode`, [Mathematics](Mathematics).
+*   The LaTeX math menu can include Unicode characters if your Emacs built supports it. See the variable `LaTeX-math-menu-unicode`, [Mathematics](/docs/auctex/Mathematics).
 *   Bug fixes for XEmacs.
 *   Completion for graphic files in the TeX search path has been added.
 *   `start` is used for the viewer for MiKTeX and fpTeX.
@@ -426,8 +426,8 @@ slug: Changes
 
 *   The use of source specials when processing or viewing the document can now be controlled with the new `TeX-source-specials` minor mode which can be toggled via an entry in the Command menu or the key binding `C-c C-t C-s`. If you have customized the variable `TeX-command-list`, you have to re-initialize it for this to work. This means to open a customization buffer for the variable by typing `M-x customize-variable RET TeX-command-list RET`, selecting “Erase Customization" and do your customization again with the new default.
 *   The content of the command menu now depends on the mode (plain TeX, LaTeX, ConTeXt etc.). Any former customization of the variable `TeX-command-list` has to be erased. Otherwise the command menu and the customization will not work correctly.
-*   Support for hiding and auto-revealing macros, e.g. footnotes or citations, and environments in a buffer was added, [Folding](Folding).
-*   You can now control if indentation is done upon typing ﹤RET﹥ by customizing the variable `TeX-newline-function`, [Indenting](Indenting).
+*   Support for hiding and auto-revealing macros, e.g. footnotes or citations, and environments in a buffer was added, [Folding](/docs/auctex/Folding).
+*   You can now control if indentation is done upon typing ﹤RET﹥ by customizing the variable `TeX-newline-function`, [Indenting](/docs/auctex/Indenting).
 *   Limited support for `doc.sty` and `ltxdoc.cls` (‘`dtx`’ files) was added. The new docTeX mode provides functionality for editing documentation parts. This includes formatting (indenting and filling), adding and completion of macros and environments while staying in comments as well as syntax highlighting. (Please note that the mode is not finished yet. For example syntax highlighting does not work yet in XEmacs.)
 *   For macro completion in docTeX mode the AUCTeX style files ‘`doc.el`’, ‘`ltxdoc.el`’ and ‘`ltx-base.el`’ were included. The latter provides general support for low-level LaTeX macros and may be used with LaTeX class and style files as well. It is currently not loaded automatically for those files.
 *   Support for ConTeXt with a separate ConTeXt mode is now included. Macro definitions for completion are available in Dutch and English.
@@ -437,16 +437,16 @@ slug: Changes
 *   Sectioning commands are now shown in a larger font on display devices which support such fontification. The variable `font-latex-title-fontify` can be customized to restore the old appearance, i.e. the usage of a different color instead of a change in size.
 *   Support for `alphanum.sty`, `beamer.cls`, `booktabs.sty`, `captcont.sty`, `emp.sty`, `paralist.sty`, `subfigure.sty` and `units.sty`/`nicefrac.sty` was added. Credits go to the authors mentioned in the respective AUCTeX style files.
 *   Inserting graphics with `C-c RET \includegraphics RET` was improved. See the variable `LaTeX-includegraphics-options-alist`.
-*   If `LaTeX-default-position` is `nil`, don’t prompt for position arguments in Tabular-like environments, see [Tabular-like](Tabular_002dlike).
+*   If `LaTeX-default-position` is `nil`, don’t prompt for position arguments in Tabular-like environments, see [Tabular-like](/docs/auctex/Tabular_002dlike).
 *   Completion for available packages when using `C-c RET \usepackage RET` was improved on systems using the kpathsea library.
 *   The commenting functionality was fixed. The separate functions for commenting and uncommenting were unified in one function for paragraphs and regions respectively which do both.
 *   Syntax highlighting can be customized to fontify quotes delimited by either ﹥﹥German﹤﹤ or ﹤﹤French﹥﹥ quotation marks by changing the variable `font-latex-quotes`.
 *   Certain TeX/LaTeX keywords for functions, references, variables and warnings will now be fontified specially. You may add your own keywords by customizing the variables `font-latex-match-function-keywords`, `font-latex-match-reference-keywords`, `font-latex-match-variable-keywords` and `font-latex-match-warning-keywords`.
 *   If you include the style files ‘`german`’ or ‘`ngerman`’ in a document (directly or via the ‘`babel`’ package), you should now customize `LaTeX-german-open-quote`, `LaTeX-german-close-quote` and `LaTeX-german-quote-after-quote` instead of `TeX-open-quote`, `TeX-close-quote` and `TeX-quote-after-quote` if you want to influence the type of quote insertion.
 *   Upon viewing an output file, the right viewer and command line options for it are now determined automatically by looking at the extension of the output file and certain options used in the source file. The behavior can be adapted or extended respectively by customizing the variable `TeX-output-view-style`.
-*   You can control whether `TeX-insert-macro` (`C-c RET`) ask for all optional arguments by customizing the variable `TeX-insert-macro-default-style`, [Completion](Completion).
+*   You can control whether `TeX-insert-macro` (`C-c RET`) ask for all optional arguments by customizing the variable `TeX-insert-macro-default-style`, [Completion](/docs/auctex/Completion).
 *   `TeX-run-discard` is now able to completely detach a process that it started.
-*   The build process was enhanced and is now based on `autoconf` making installing AUCTeX a mostly automatic process. See [Installation](Installation) and [Installation under MS Windows](Installation-under-MS-Windows) for details.
+*   The build process was enhanced and is now based on `autoconf` making installing AUCTeX a mostly automatic process. See [Installation](/docs/auctex/Installation) and [Installation under MS Windows](/docs/auctex/Installation-under-MS-Windows) for details.
 
 ### News in 11.14
 
@@ -458,7 +458,7 @@ slug: Changes
 
 ### News in 11.11
 
-*   Support for ‘`prosper.sty`’, see [http://prosper.sourceforge.net/](http://prosper.sourceforge.net/). Contributed by Phillip Lord ﹤p.lord\@russet.org.uk﹥.
+*   Support for ‘`prosper.sty`’, see [http://prosper.sourceforge.net/](/docs/auctex/http://prosper.sourceforge.net/). Contributed by Phillip Lord ﹤p.lord\@russet.org.uk﹥.
 
 ### News in 11.10
 

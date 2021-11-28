@@ -24,7 +24,7 @@ slug: FAQ
 
 3.  What should I do when `./configure` does not find programs like latex?
 
-    This is problem often encountered on Windows. Make sure that the `PATH` environment variable includes the directories containing the relevant programs, as described in [(auctex)Installation under MS Windows](Installation-under-MS-Windows) section ‘Installation under MS Windows’ in the AUCTeX manual.
+    This is problem often encountered on Windows. Make sure that the `PATH` environment variable includes the directories containing the relevant programs, as described in [(auctex)Installation under MS Windows](/docs/auctex/Installation-under-MS-Windows) section ‘Installation under MS Windows’ in the AUCTeX manual.
 
 4.  Why doesn’t the completion, style file, or multi-file stuff work?
 

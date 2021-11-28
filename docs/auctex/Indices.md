@@ -2,9 +2,9 @@
 slug: Indices
 ---
 
-|                                    |    |    |
-| :--------------------------------- | -- | :- |
-| [• Key Index](Key-Index)           |    |    |
-| [• Function Index](Function-Index) |    |    |
-| [• Variable Index](Variable-Index) |    |    |
-| [• Concept Index](Concept-Index)   |    |    |
+|                                                 |    |    |
+| :---------------------------------------------- | -- | :- |
+| [• Key Index](/docs/auctex/Key-Index)           |    |    |
+| [• Function Index](/docs/auctex/Function-Index) |    |    |
+| [• Variable Index](/docs/auctex/Variable-Index) |    |    |
+| [• Concept Index](/docs/auctex/Concept-Index)   |    |    |

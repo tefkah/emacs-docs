@@ -6,9 +6,9 @@ Emacs is a collaborative project and we encourage contributions from anyone and 
 
 There are many ways to contribute to Emacs:
 
-*   find and report bugs; See [Bugs](Bugs).
+*   find and report bugs; See [Bugs](/docs/emacs/Bugs).
 *   answer questions on the Emacs user mailing list [https://lists.gnu.org/mailman/listinfo/help-gnu-emacs](https://lists.gnu.org/mailman/listinfo/help-gnu-emacs).
-*   write documentation, either on the [wiki](https://www.emacswiki.org/), or in the Emacs source repository (see [Sending Patches](Sending-Patches)).
+*   write documentation, either on the [wiki](https://www.emacswiki.org/), or in the Emacs source repository (see [Sending Patches](/docs/emacs/Sending-Patches)).
 *   check if existing bug reports are fixed in newer versions of Emacs [https://debbugs.gnu.org/cgi/pkgreport.cgi?which=pkg\&data=emacs](https://debbugs.gnu.org/cgi/pkgreport.cgi?which=pkg\&data=emacs).
 *   fix existing bug reports.
 *   implement a feature listed in the `etc/TODO` file in the Emacs distribution, and submit a patch.
@@ -22,7 +22,7 @@ If you have a feature request or a suggestion for how to improve Emacs, the best
 
 If you have already written an improvement, please tell us about it. If you have not yet started work, it is useful to contact [emacs-devel](https://lists.gnu.org/mailman/listinfo/emacs-devel) before you start; it might be possible to suggest ways to make your extension fit in better with the rest of Emacs.
 
-When implementing a feature, please follow the Emacs coding standards; See [Coding Standards](Coding-Standards). In addition, non-trivial contributions require a copyright assignment to the FSF; See [Copyright Assignment](Copyright-Assignment).
+When implementing a feature, please follow the Emacs coding standards; See [Coding Standards](/docs/emacs/Coding-Standards). In addition, non-trivial contributions require a copyright assignment to the FSF; See [Copyright Assignment](/docs/emacs/Copyright-Assignment).
 
 The development version of Emacs can be downloaded from the repository where it is actively maintained by a group of developers. See the Emacs project page [https://savannah.gnu.org/projects/emacs/](https://savannah.gnu.org/projects/emacs/) for access details.
 
@@ -37,7 +37,7 @@ For documentation on Emacs (to understand how to implement your desired change),
 *   [https://www.gnu.org/software/emacs](https://www.gnu.org/software/emacs)
 *   [https://www.emacswiki.org/](https://www.emacswiki.org/)
 
-|                                                |    |                                |
-| :--------------------------------------------- | -- | :----------------------------- |
-| • [Coding Standards](Coding-Standards)         |    | GNU Emacs coding standards     |
-| • [Copyright Assignment](Copyright-Assignment) |    | assigning copyright to the FSF |
+|                                                            |    |                                |
+| :--------------------------------------------------------- | -- | :----------------------------- |
+| • [Coding Standards](/docs/emacs/Coding-Standards)         |    | GNU Emacs coding standards     |
+| • [Copyright Assignment](/docs/emacs/Copyright-Assignment) |    | assigning copyright to the FSF |

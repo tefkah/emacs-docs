@@ -22,19 +22,19 @@ Directory for the documentation string file, which is used to initialize the Lis
 
 ### `EMACSLOADPATH`
 
-A colon-separated list of directories[^1] to search for Emacs Lisp files. If set, it modifies the usual initial value of the `load-path` variable (see [Lisp Libraries](Lisp-Libraries)). An empty element stands for the default value of `load-path`; e.g., using ‘`EMACSLOADPATH="/tmp:"`’ adds `/tmp` to the front of the default `load-path`. To specify an empty element in the middle of the list, use 2 colons in a row, as in ‘`EMACSLOADPATH="/tmp::/foo"`’.
+A colon-separated list of directories[^1] to search for Emacs Lisp files. If set, it modifies the usual initial value of the `load-path` variable (see [Lisp Libraries](/docs/emacs/Lisp-Libraries)). An empty element stands for the default value of `load-path`; e.g., using ‘`EMACSLOADPATH="/tmp:"`’ adds `/tmp` to the front of the default `load-path`. To specify an empty element in the middle of the list, use 2 colons in a row, as in ‘`EMACSLOADPATH="/tmp::/foo"`’.
 
 ### `EMACSPATH`
 
-A colon-separated list of directories to search for executable files. If set, Emacs uses this in addition to `PATH` (see below) when initializing the variable `exec-path` (see [Shell](Shell)).
+A colon-separated list of directories to search for executable files. If set, Emacs uses this in addition to `PATH` (see below) when initializing the variable `exec-path` (see [Shell](/docs/emacs/Shell)).
 
 ### `EMAIL`
 
-Your email address; used to initialize the Lisp variable `user-mail-address`, which the Emacs mail interface puts into the ‘`From`’ header of outgoing messages (see [Mail Headers](Mail-Headers)).
+Your email address; used to initialize the Lisp variable `user-mail-address`, which the Emacs mail interface puts into the ‘`From`’ header of outgoing messages (see [Mail Headers](/docs/emacs/Mail-Headers)).
 
 ### `ESHELL`
 
-Used for shell-mode to override the `SHELL` environment variable (see [Interactive Shell](Interactive-Shell)).
+Used for shell-mode to override the `SHELL` environment variable (see [Interactive Shell](/docs/emacs/Interactive-Shell)).
 
 ### `HISTFILE`
 
@@ -72,7 +72,7 @@ The user’s preferred locale. The locale has six categories, specified by the e
 
 On MS-Windows and macOS, if `LANG` is not already set in the environment, Emacs sets it based on the system-wide default. You can set this in the “Regional Settings" Control Panel on some versions of MS-Windows, and in the “Language and Region" System Preference on macOS.
 
-The value of the `LC_CTYPE` category is matched against entries in `locale-language-names`, `locale-charset-language-names`, and `locale-preferred-coding-systems`, to select a default language environment and coding system. See [Language Environments](Language-Environments).
+The value of the `LC_CTYPE` category is matched against entries in `locale-language-names`, `locale-charset-language-names`, and `locale-preferred-coding-systems`, to select a default language environment and coding system. See [Language Environments](/docs/emacs/Language-Environments).
 
 ### `LOGNAME`
 
@@ -88,7 +88,7 @@ Name of setup file for the mh system. See [MH-E](https://www.gnu.org/software/em
 
 ### `NAME`
 
-Your real-world name. This is used to initialize the variable `user-full-name` (see [Mail Headers](Mail-Headers)).
+Your real-world name. This is used to initialize the variable `user-full-name` (see [Mail Headers](/docs/emacs/Mail-Headers)).
 
 ### `NNTPSERVER`
 
@@ -100,7 +100,7 @@ The name of the organization to which you belong. Used for setting the ‘`Organ
 
 ### `PATH`
 
-A colon-separated list of directories containing executable files. This is used to initialize the variable `exec-path` (see [Shell](Shell)).
+A colon-separated list of directories containing executable files. This is used to initialize the variable `exec-path` (see [Shell](/docs/emacs/Shell)).
 
 ### `PWD`
 
@@ -108,7 +108,7 @@ If set, this should be the default directory when Emacs was started.
 
 ### `REPLYTO`
 
-If set, this specifies an initial value for the variable `mail-default-reply-to` (see [Mail Headers](Mail-Headers)).
+If set, this specifies an initial value for the variable `mail-default-reply-to` (see [Mail Headers](/docs/emacs/Mail-Headers)).
 
 ### `SAVEDIR`
 
@@ -120,7 +120,7 @@ The name of an interpreter used to parse and execute programs run from inside Em
 
 ### `SMTPSERVER`
 
-The name of the outgoing mail server. This is used to initialize the variable `smtpmail-smtp-server` (see [Mail Sending](Mail-Sending)).
+The name of the outgoing mail server. This is used to initialize the variable `smtpmail-smtp-server` (see [Mail Sending](/docs/emacs/Mail-Sending)).
 
 ### `TERM`
 
@@ -136,7 +136,7 @@ The name of the termcap library file describing how to program the terminal spec
 
 ### `TEMP`
 
-These environment variables are used to initialize the variable `temporary-file-directory`, which specifies a directory in which to put temporary files (see [Backup](Backup)). Emacs tries to use `TMPDIR` first. If that is unset, Emacs normally falls back on `/tmp`, but on MS-Windows and MS-DOS it instead falls back on `TMP`, then `TEMP`, and finally `c:/temp`.
+These environment variables are used to initialize the variable `temporary-file-directory`, which specifies a directory in which to put temporary files (see [Backup](/docs/emacs/Backup)). Emacs tries to use `TMPDIR` first. If that is unset, Emacs normally falls back on `/tmp`, but on MS-Windows and MS-DOS it instead falls back on `TMP`, then `TEMP`, and finally `c:/temp`.
 
 ### `TZ`
 
@@ -148,6 +148,6 @@ The user’s login name. See also `LOGNAME`. On MS-DOS, this defaults to ‘`roo
 
 ### `VERSION_CONTROL`
 
-Used to initialize the `version-control` variable (see [Backup Names](Backup-Names)).
+Used to initialize the `version-control` variable (see [Backup Names](/docs/emacs/Backup-Names)).
 
 [^1]: Here and below, whenever we say “colon-separated list of directories", it pertains to Unix and GNU/Linux systems. On MS-DOS and MS-Windows, the directories are separated by semi-colons instead, since DOS/Windows file names might include a colon after a drive letter.

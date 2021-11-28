@@ -4,7 +4,7 @@ slug: Initial-Options
 
 The initial options specify parameters for the Emacs session. This section describes the more general initial options; some other options specifically related to the X Window System appear in the following sections.
 
-Some initial options affect the loading of the initialization file. Normally, Emacs first loads `site-start.el` if it exists, then your own initialization file if it exists, and finally the default initialization file `default.el` if it exists (see [Init File](Init-File)). Certain options prevent loading of some of these files or substitute other files for them.
+Some initial options affect the loading of the initialization file. Normally, Emacs first loads `site-start.el` if it exists, then your own initialization file if it exists, and finally the default initialization file `default.el` if it exists (see [Init File](/docs/emacs/Init-File)). Certain options prevent loading of some of these files or substitute other files for them.
 
 ### ‘`-chdir directory`’
 
@@ -22,7 +22,7 @@ Use `device` as the device for terminal input and output. This option implies �
 
 ### ‘`--display=display`’
 
-Use the X Window System and use the display named `display` to open the initial Emacs frame. See [Display X](Display-X), for more details.
+Use the X Window System and use the display named `display` to open the initial Emacs frame. See [Display X](/docs/emacs/Display-X), for more details.
 
 ### ‘`-nw`’
 
@@ -34,7 +34,7 @@ Don’t communicate directly with the window system, disregarding the `DISPLAY` 
 
 ### ‘`--batch`’
 
-Run Emacs in *batch mode*. Batch mode is used for running programs written in Emacs Lisp from shell scripts, makefiles, and so on. To invoke a Lisp program, use the ‘`-batch`’ option in conjunction with one or more of ‘`-l`’, ‘`-f`’ or ‘`--eval`’ (see [Action Arguments](Action-Arguments)). See [Command Example](Command-Example), for an example.
+Run Emacs in *batch mode*. Batch mode is used for running programs written in Emacs Lisp from shell scripts, makefiles, and so on. To invoke a Lisp program, use the ‘`-batch`’ option in conjunction with one or more of ‘`-l`’, ‘`-f`’ or ‘`--eval`’ (see [Action Arguments](/docs/emacs/Action-Arguments)). See [Command Example](/docs/emacs/Command-Example), for an example.
 
 In batch mode, Emacs does not display the text being edited, and the standard terminal interrupt characters such as `C-z` and `C-c` have their usual effect. Emacs functions that normally print a message in the echo area will print to either the standard output stream (`stdout`) or the standard error stream (`stderr`) instead. (To be precise, functions like `prin1`, `princ` and `print` print to `stdout`, while `message` and `error` print to `stderr`.) Functions that normally read keyboard input from the minibuffer take their input from the terminal’s standard input stream (`stdin`) instead.
 
@@ -60,25 +60,25 @@ Omit details like system name and build time from the Emacs executable, so that 
 
 ### ‘`--no-init-file`’
 
-Do not load any initialization file (see [Init File](Init-File)). When Emacs is invoked with this option, the Customize facility does not allow options to be saved (see [Easy Customization](Easy-Customization)). This option does not disable loading `site-start.el`.
+Do not load any initialization file (see [Init File](/docs/emacs/Init-File)). When Emacs is invoked with this option, the Customize facility does not allow options to be saved (see [Easy Customization](/docs/emacs/Easy-Customization)). This option does not disable loading `site-start.el`.
 
 ### ‘`--no-site-file`’
 
 ### ‘`-nsl`’
 
-Do not load `site-start.el` (see [Init File](Init-File)). The ‘`-Q`’ option does this too, but other options like ‘`-q`’ do not.
+Do not load `site-start.el` (see [Init File](/docs/emacs/Init-File)). The ‘`-Q`’ option does this too, but other options like ‘`-q`’ do not.
 
 ### ‘`--no-site-lisp`’
 
-Do not include the `site-lisp` directories in `load-path` (see [Init File](Init-File)). The ‘`-Q`’ option does this too.
+Do not include the `site-lisp` directories in `load-path` (see [Init File](/docs/emacs/Init-File)). The ‘`-Q`’ option does this too.
 
 ### ‘`--no-splash`’
 
-Do not display a startup screen. You can also achieve this effect by setting the variable `inhibit-startup-screen` to non-`nil` in your initialization file (see [Entering Emacs](Entering-Emacs)).
+Do not display a startup screen. You can also achieve this effect by setting the variable `inhibit-startup-screen` to non-`nil` in your initialization file (see [Entering Emacs](/docs/emacs/Entering-Emacs)).
 
 ### ‘`--no-x-resources`’
 
-Do not load X resources. You can also achieve this effect by setting the variable `inhibit-x-resources` to `t` in your initialization file (see [Resources](Resources)).
+Do not load X resources. You can also achieve this effect by setting the variable `inhibit-x-resources` to `t` in your initialization file (see [Resources](/docs/emacs/Resources)).
 
 ### ‘`-Q`’
 
@@ -94,11 +94,11 @@ Start Emacs with minimum customizations. This is similar to using ‘`-q`’, �
 
 ### ‘`--fg-daemon[=name]`’
 
-Start Emacs as a daemon: after Emacs starts up, it starts the Emacs server without opening any frames. You can then use the `emacsclient` command to connect to Emacs for editing. (Optionally, you can specify an explicit `name` for the server; if you do, you will need to specify the same `name` when you invoke `emacsclient`, via its `--socket-name` option, see [emacsclient Options](emacsclient-Options).) See [Emacs Server](Emacs-Server), for information about using Emacs as a daemon. A “background" daemon disconnects from the terminal and runs in the background (‘`--daemon`’ is an alias for ‘`--bg-daemon`’).
+Start Emacs as a daemon: after Emacs starts up, it starts the Emacs server without opening any frames. You can then use the `emacsclient` command to connect to Emacs for editing. (Optionally, you can specify an explicit `name` for the server; if you do, you will need to specify the same `name` when you invoke `emacsclient`, via its `--socket-name` option, see [emacsclient Options](/docs/emacs/emacsclient-Options).) See [Emacs Server](/docs/emacs/Emacs-Server), for information about using Emacs as a daemon. A “background" daemon disconnects from the terminal and runs in the background (‘`--daemon`’ is an alias for ‘`--bg-daemon`’).
 
 ### ‘`--no-desktop`’
 
-Do not reload any saved desktop. See [Saving Emacs Sessions](Saving-Emacs-Sessions).
+Do not reload any saved desktop. See [Saving Emacs Sessions](/docs/emacs/Saving-Emacs-Sessions).
 
 ### ‘`-u user`’
 

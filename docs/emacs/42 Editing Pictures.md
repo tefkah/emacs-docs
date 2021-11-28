@@ -16,9 +16,9 @@ The special commands of Picture mode all work in other modes (provided the `pict
 
 Turning on Picture mode runs the hook `picture-mode-hook`. Additional extensions to Picture mode can be found in `artist.el`.
 
-|                                                  |    |                                                                         |
-| :----------------------------------------------- | -- | :---------------------------------------------------------------------- |
-| • [Basic Picture](Basic-Picture)                 |    | Basic concepts and simple commands of Picture Mode.                     |
-| • [Insert in Picture](Insert-in-Picture)         |    | Controlling direction of cursor motion after self-inserting characters. |
-| • [Tabs in Picture](Tabs-in-Picture)             |    | Various features for tab stops and indentation.                         |
-| • [Rectangles in Picture](Rectangles-in-Picture) |    | Clearing and superimposing rectangles.                                  |
+|                                                              |    |                                                                         |
+| :----------------------------------------------------------- | -- | :---------------------------------------------------------------------- |
+| • [Basic Picture](/docs/emacs/Basic-Picture)                 |    | Basic concepts and simple commands of Picture Mode.                     |
+| • [Insert in Picture](/docs/emacs/Insert-in-Picture)         |    | Controlling direction of cursor motion after self-inserting characters. |
+| • [Tabs in Picture](/docs/emacs/Tabs-in-Picture)             |    | Various features for tab stops and indentation.                         |
+| • [Rectangles in Picture](/docs/emacs/Rectangles-in-Picture) |    | Clearing and superimposing rectangles.                                  |

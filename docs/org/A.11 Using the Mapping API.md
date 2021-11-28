@@ -62,7 +62,7 @@ Skip trees with the COMMENT keyword.
 
 Used as value for `org-agenda-skip-function`, so whenever the function returns `t`, `FUNC` is called for that entry and search continues from the point where the function leaves it.
 
-The mapping routine can call any arbitrary function, even functions that change meta data or query the property API (see [Using the Property API](Using-the-Property-API)). Here are some handy functions:
+The mapping routine can call any arbitrary function, even functions that change meta data or query the property API (see [Using the Property API](/docs/org/Using-the-Property-API)). Here are some handy functions:
 
 ### <span className="tag function">`function`</span> **org-todo** *\&optional arg*
 

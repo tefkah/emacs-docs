@@ -2,7 +2,7 @@
 slug: Mapping
 ---
 
-This node follows the native Texinfo mode summary (see [(texinfo)Texinfo Mode Summary](Texinfo-Mode-Summary)) and lists only those commands to which AUCTeX provides a keybinding.
+This node follows the native Texinfo mode summary (see [(texinfo)Texinfo Mode Summary](/docs/auctex/Texinfo-Mode-Summary)) and lists only those commands to which AUCTeX provides a keybinding.
 
 Basically all commands of the native mode related to producing menus and interlinking nodes are mapped to same or similar keys in AUCTeX, while a few insertion commands are mapped to AUCTeX-like keys.
 

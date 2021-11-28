@@ -4,7 +4,7 @@ slug: Printing
 
 Emacs provides commands for printing hardcopies of either an entire buffer or part of one. You can invoke the printing commands directly, as detailed below, or using the ‘`File`’ menu on the menu bar.
 
-Aside from the commands described in this section, you can also print hardcopies from Dired (see [Operating on Files](Operating-on-Files)) and the diary (see [Displaying the Diary](Displaying-the-Diary)). You can also “print" an Emacs buffer to HTML with the command `M-x htmlfontify-buffer`, which converts the current buffer to a HTML file, replacing Emacs faces with CSS-based markup. Furthermore, Org mode allows you to print Org files to a variety of formats, such as PDF (see [Org Mode](Org-Mode)).
+Aside from the commands described in this section, you can also print hardcopies from Dired (see [Operating on Files](/docs/emacs/Operating-on-Files)) and the diary (see [Displaying the Diary](/docs/emacs/Displaying-the-Diary)). You can also “print" an Emacs buffer to HTML with the command `M-x htmlfontify-buffer`, which converts the current buffer to a HTML file, replacing Emacs faces with CSS-based markup. Furthermore, Org mode allows you to print Org files to a variety of formats, such as PDF (see [Org Mode](/docs/emacs/Org-Mode)).
 
 ### `M-x print-buffer`
 
@@ -28,8 +28,8 @@ To specify the printer to use, set the variable `printer-name`. The default, `ni
 
 The variable `lpr-headers-switches` similarly specifies the extra switches to use to make page headers. The variable `lpr-add-switches` controls whether to supply ‘`-T`’ and ‘`-J`’ options (suitable for `lpr`) to the printer program: `nil` means don’t add them (this should be the value if your printer program is not compatible with `lpr`).
 
-|                                                |    |                                               |
-| :--------------------------------------------- | -- | :-------------------------------------------- |
-| • [PostScript](PostScript)                     |    | Printing buffers or regions as PostScript.    |
-| • [PostScript Variables](PostScript-Variables) |    | Customizing the PostScript printing commands. |
-| • [Printing Package](Printing-Package)         |    | An optional advanced printing interface.      |
+|                                                            |    |                                               |
+| :--------------------------------------------------------- | -- | :-------------------------------------------- |
+| • [PostScript](/docs/emacs/PostScript)                     |    | Printing buffers or regions as PostScript.    |
+| • [PostScript Variables](/docs/emacs/PostScript-Variables) |    | Customizing the PostScript printing commands. |
+| • [Printing Package](/docs/emacs/Printing-Package)         |    | An optional advanced printing interface.      |

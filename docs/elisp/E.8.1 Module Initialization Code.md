@@ -16,7 +16,7 @@ Next, write an initialization function for the module.
 
 ### <span className="tag function">`function`</span> *int* **emacs\_module\_init** *(struct emacs\_runtime \*`runtime`)*
 
-Emacs calls this function when it loads a module. If a module does not export a function named `emacs_module_init`, trying to load the module will signal an error. The initialization function should return zero if the initialization succeeds, non-zero otherwise. In the latter case, Emacs will signal an error, and the loading of the module will fail. If the user presses `C-g` during the initialization, Emacs ignores the return value of the initialization function and quits (see [Quitting](Quitting)). (If needed, you can catch user quitting inside the initialization function, see [should\_quit](should_005fquit).)
+Emacs calls this function when it loads a module. If a module does not export a function named `emacs_module_init`, trying to load the module will signal an error. The initialization function should return zero if the initialization succeeds, non-zero otherwise. In the latter case, Emacs will signal an error, and the loading of the module will fail. If the user presses `C-g` during the initialization, Emacs ignores the return value of the initialization function and quits (see [Quitting](/docs/elisp/Quitting)). (If needed, you can catch user quitting inside the initialization function, see [should\_quit](/docs/elisp/should_005fquit).)
 
 The argument `runtime` is a pointer to a C `struct` that includes 2 public fields: `size`, which provides the size of the structure in bytes; and `get_environment`, which provides a pointer to a function that allows the module initialization function access to the Emacs environment object and its interfaces.
 
@@ -61,10 +61,10 @@ Finally, you can write a module that will work with older versions of Emacs, by 
 
 This works because later Emacs versions always *add* members to the environment, never *remove* any members, so the size can only grow with new Emacs releases. Given the version of Emacs, the module can use only the parts of the module API that existed in that version, since those parts are identical in later versions.
 
-`emacs-module.h` defines a preprocessor macro `EMACS_MAJOR_VERSION`. It expands to an integer literal which is the latest major version of Emacs supported by the header. See [Version Info](Version-Info). Note that the value of `EMACS_MAJOR_VERSION` is a compile-time constant and does not represent the version of Emacs that is currently running and has loaded your module. If you want your module to be compatible with various versions of `emacs-module.h` as well as various versions of Emacs, you can use conditional compilation based on `EMACS_MAJOR_VERSION`.
+`emacs-module.h` defines a preprocessor macro `EMACS_MAJOR_VERSION`. It expands to an integer literal which is the latest major version of Emacs supported by the header. See [Version Info](/docs/elisp/Version-Info). Note that the value of `EMACS_MAJOR_VERSION` is a compile-time constant and does not represent the version of Emacs that is currently running and has loaded your module. If you want your module to be compatible with various versions of `emacs-module.h` as well as various versions of Emacs, you can use conditional compilation based on `EMACS_MAJOR_VERSION`.
 
 We recommend that modules always perform the compatibility verification, unless they do their job entirely in the initialization function, and don’t access any Lisp objects or use any Emacs functions accessible through the environment structure.
 
 ### Binding module functions to Lisp symbols
 
-This gives the module functions names so that Lisp code could call it by that name. We describe how to do this in [Module Functions](Module-Functions) below.
+This gives the module functions names so that Lisp code could call it by that name. We describe how to do this in [Module Functions](/docs/elisp/Module-Functions) below.

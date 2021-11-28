@@ -24,7 +24,7 @@ This command toggles whether Magit refreshes buffers verbosely. Enabling this he
 
 This command displays a buffer containing information about the available and used `git` executable(s), and can be useful when investigating `exec-path` issues.
 
-Also see [Git Executable](Git-Executable).
+Also see [Git Executable](/docs/magit/Git-Executable).
 
 ### `M-x with-editor-debug`     (`with-editor-debug`)
 
@@ -32,4 +32,4 @@ This command displays a buffer containing information about the available and us
 
 Also see [(with-editor)Debugging](https://magit.vc/manual/with-editor.html#Debugging).
 
-Please also see the [FAQ](FAQ).
+Please also see the [FAQ](/docs/magit/FAQ).

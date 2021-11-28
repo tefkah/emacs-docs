@@ -4,7 +4,7 @@ slug: Windows-Keyboard
 
 This section describes the Windows-specific features related to keyboard input in Emacs.
 
-Many key combinations (known as “keyboard shortcuts") that have conventional uses in MS-Windows programs conflict with traditional Emacs key bindings. (These Emacs key bindings were established years before Microsoft was founded.) Examples of conflicts include `C-c`, `C-x`, `C-z`, `C-a`, and `W-SPC`. You can redefine some of them with meanings more like the MS-Windows meanings by enabling CUA Mode (see [CUA Bindings](CUA-Bindings)). Another optional feature which will make Emacs behave like other Windows applications is Delete Selection mode (see [Using Region](Using-Region)).
+Many key combinations (known as “keyboard shortcuts") that have conventional uses in MS-Windows programs conflict with traditional Emacs key bindings. (These Emacs key bindings were established years before Microsoft was founded.) Examples of conflicts include `C-c`, `C-x`, `C-z`, `C-a`, and `W-SPC`. You can redefine some of them with meanings more like the MS-Windows meanings by enabling CUA Mode (see [CUA Bindings](/docs/emacs/CUA-Bindings)). Another optional feature which will make Emacs behave like other Windows applications is Delete Selection mode (see [Using Region](/docs/emacs/Using-Region)).
 
 By default, the key labeled `Alt` is mapped as the `Meta` key. If you wish it to produce the `Alt` modifier instead, set the variable `w32-alt-is-meta` to a `nil` value.
 

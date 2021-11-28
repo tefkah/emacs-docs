@@ -4,7 +4,7 @@ slug: Resources
 
 Programs running under the X Window System organize their user options under a hierarchy of classes and resources. You can specify default values for these options in your *X resource file*, usually named `~/.Xdefaults` or `~/.Xresources`. Changes in this file do not take effect immediately, because the X server stores its own list of resources; to update it, use the command `xrdb`—for instance, ‘`xrdb ~/.Xdefaults`’.
 
-Settings specified via X resources in general override the equivalent settings in Emacs init files (see [Init File](Init-File)), in particular for parameters of the initial frame (see [Frame Parameters](Frame-Parameters)).
+Settings specified via X resources in general override the equivalent settings in Emacs init files (see [Init File](/docs/emacs/Init-File)), in particular for parameters of the initial frame (see [Frame Parameters](/docs/emacs/Frame-Parameters)).
 
 (MS-Windows systems do not support X resource files; on such systems, Emacs looks for X resources in the Windows Registry, first under the key ‘`HKEY_CURRENT_USER\SOFTWARE\GNU\Emacs`’, which affects only the current user and override the system-wide settings, and then under the key ‘`HKEY_LOCAL_MACHINE\SOFTWARE\GNU\Emacs`’, which affects all users of the system. The menu and scroll bars are native widgets on MS-Windows, so they are only customizable via the system-wide settings in the Display Control Panel. You can also set resources using the ‘`-xrm`’ command line option, as explained below.)
 
@@ -18,13 +18,13 @@ The program name is the name of the executable file to which the resource applie
 
 The resource name is the name of a program setting. For instance, Emacs recognizes a ‘`cursorColor`’ resource that controls the color of the text cursor.
 
-Resources are grouped into named classes. For instance, the ‘`Foreground`’ class contains the ‘`cursorColor`’, ‘`foreground`’ and ‘`pointerColor`’ resources (see [Table of Resources](Table-of-Resources)). Instead of using a resource name, you can use a class name to specify the default value for all resources in that class, like this:
+Resources are grouped into named classes. For instance, the ‘`Foreground`’ class contains the ‘`cursorColor`’, ‘`foreground`’ and ‘`pointerColor`’ resources (see [Table of Resources](/docs/emacs/Table-of-Resources)). Instead of using a resource name, you can use a class name to specify the default value for all resources in that class, like this:
 
 ```lisp
 emacs.Foreground: dark green
 ```
 
-Emacs does not process X resources at all if you set the variable `inhibit-x-resources` to a non-`nil` value. If you invoke Emacs with the ‘`-Q`’ (or ‘`--quick`’) command-line option, `inhibit-x-resources` is automatically set to `t` (see [Initial Options](Initial-Options)).
+Emacs does not process X resources at all if you set the variable `inhibit-x-resources` to a non-`nil` value. If you invoke Emacs with the ‘`-Q`’ (or ‘`--quick`’) command-line option, `inhibit-x-resources` is automatically set to `t` (see [Initial Options](/docs/emacs/Initial-Options)).
 
 In addition, you can use the following command-line options to override the X resources file:
 
