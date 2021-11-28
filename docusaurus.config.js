@@ -209,7 +209,8 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
   const firstItem = unsortedItems?.[0]
   if (firstItem?.type === 'link' || firstItem?.type === 'category') return
 
-  const dir = firstItem?.id?.replaceAll(/(\w+\/).*/g, '$1')
+  const id = firstItem?.id || ''
+  const dir = id?.replaceAll(/(\w+\/).*/g, '$1')
 
   const items = unsortedItems.sort((a, b) => {
     const compareUnits = [a, b]
