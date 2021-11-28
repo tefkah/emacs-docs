@@ -13,7 +13,7 @@ const config = {
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.svg',
+  favicon: 'img/owl.svg',
   organizationName: 'ThomasFKJorna', // Usually your GitHub org/user name.
   projectName: 'emacs-docs', // Usually your repo name.
   trailingSlash: false,
@@ -72,7 +72,7 @@ const config = {
         title: 'Emacs Docs',
         logo: {
           alt: 'Emacs',
-          src: 'img/favicon.svg',
+          src: 'img/owl.svg',
         },
         items: [
           {
