@@ -1,8 +1,9 @@
 {
   "index_name": "emacs-docs",
+  "allowed_domains": ["emacsdocs.org"],
   "start_urls": [
     {
-      "url": "http://127.0.0.1:3000/docs/"
+      "url": "https://www.emacsdocs.org/"
     }
   ],
   "selectors": {
