@@ -202,7 +202,7 @@ function prefixParser(file) {
 }
 
 function createSidebarDirs(numberPrefixParser, unsortedItems) {
-  const dir = unsortedItems[0].id.replaceAll(/(\w+\/).*/g, '$1')
+  const dir = unsortedItems?.[0]?.id?.replaceAll(/(\w+\/).*/g, '$1')
 
   const items = unsortedItems.sort((a, b) => {
     const compareUnits = [a, b]
