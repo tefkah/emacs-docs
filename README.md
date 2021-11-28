@@ -1,33 +1,25 @@
-# Website
+# Emacs Docs
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+> Unofficial Emacs Documentation for the 21st century.
 
-### Installation
+[Emacs Docs Mascot](./static/img/favicon.svg)
 
-```
-$ yarn
-```
+## Why
 
-### Local Development
+I like clicking things.
 
-```
-$ yarn start
-```
+## Included manuals
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+- Emacs Manual (source, license)
+- Emacs Lisp Manual (source, license)
+- Org Mode Manual (source, license)
+- AUCTeX Manual (source, license)
+- Magit manual (source, license)
 
-### Build
+### How to include other things
 
-```
-$ yarn build
-```
+Make an issue, or try to run `converter.js` on the full text version of the manual.
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+## FAQs
 
-### Deployment
-
-```
-$ GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+Please see [the FAQs](https://emacsdocs.org/blog/faq)
