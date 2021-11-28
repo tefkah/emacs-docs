@@ -207,14 +207,14 @@ function prefixParser(file) {
  */
 function createSidebarDirs(numberPrefixParser, unsortedItems) {
   const firstItem = unsortedItems?.[0]
-  if (firstItem.type === 'link' || firstItem.type === 'category') return
+  if (firstItem?.type === 'link' || firstItem?.type === 'category') return
 
   const dir = firstItem?.id?.replaceAll(/(\w+\/).*/g, '$1')
 
   const items = unsortedItems.sort((a, b) => {
     const compareUnits = [a, b]
     const [newa, newb] = compareUnits.map((unit) => {
-      if (unit.type !== 'doc') return
+      if (unit?.type !== 'doc') return
       let pref = prefixParser(unit.id).prefix?.split('.') || ['300']
 
       if (pref[0].replaceAll(/[^A-H]/g, '')) return 300
@@ -227,7 +227,7 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
   const itemsWhichNeedCategories = Array.from(
     new Set(
       items.map((item) => {
-        if (item.type !== 'doc') return undefined
+        if (item?.type !== 'doc') return undefined
 
         const { prefix, filename } = prefixParser(item?.id)
 
@@ -249,7 +249,7 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
         const namePrefix = prefixParser(item.id).prefix
         return namePrefix === prefix
       })
-      if (categoryName.type !== 'doc') return prefix
+      if (categoryName?.type !== 'doc') return prefix
       const lab = categoryName?.id?.replaceAll(/\w+\//g, '') || undefined
       return {
         type: 'category',
@@ -259,7 +259,7 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
         items: [],
       }
     })
-    .filter((cat) => cat.label)
+    .filter((cat) => cat?.label)
 
   const manualLabelPrefixes = itemsWhichNeedCategories.map(
     ({ label }) => prefixParser(label).prefix,
