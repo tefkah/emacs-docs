@@ -99,6 +99,35 @@ html[data-theme='dark'] {
   font-size: var(--ifm-code-font-size)
 }
 
+.menu__link {
+  padding: 6px 12px;
+}
+.menu__link--active{
+  padding-left: 8px;
+border-left: 4px solid var(--ifm-color-primary);
+font-weight: 500;
+}
+
+.table-of-contents .table-of-contents__link--active {
+    border-left: 4px solid var(--ifm-color-primary);
+    color: var(--ifm-font-color-base);
+    font-weight: 500;
+    margin-left: -16px;
+    padding-left: 12px;
+}
+.navbar .navbar__link--active::after {
+    background: var(--ifm-color-primary);
+    content: "";
+    display: flex;
+    height: 4px;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-top: -3px;
+    position: relative;
+    top: 17px;
+    width: calc(100% + 40px);
+}
+
 .footer {
   background-color: rgb(40, 44, 52);
 }

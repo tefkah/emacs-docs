@@ -46,7 +46,7 @@ const config = {
           },
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/',
+          //editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/',
         },
         blog: {
           showReadingTime: true,
@@ -56,14 +56,16 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-        sitemap: { changefreq: 'weekly', priority: 0.5, trailingSlash: false },
       }),
     ],
   ],
-  themes: ['docusaurus-theme-search-typesense'],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      sitemap: { changefreq: 'weekly', priority: 0.5, trailingSlash: false },
+
+      //image: '',
+      metadatas: [{ name: 'summary', content: 'Emacs Documentation for the 21st century.' }],
       hideableSidebar: true,
       navbar: {
         hideOnScroll: true,
@@ -78,30 +80,35 @@ const config = {
             docId: 'emacs/The Emacs Editor',
             position: 'left',
             label: 'Emacs',
+            className: 'emacs',
           },
           {
             type: 'doc',
             docId: 'elisp/Emacs Lisp',
             position: 'left',
             label: 'Elisp',
+            className: 'elisp',
           },
           {
             type: 'doc',
             docId: 'org/The Org Manual',
             position: 'left',
             label: 'Org-Mode',
+            className: 'org',
           },
           {
             type: 'doc',
             docId: 'auctex/AUCTeX',
             position: 'left',
             label: 'AUCTeX',
+            className: 'auctex',
           },
           {
             type: 'doc',
             docId: 'magit/1 Introduction',
             position: 'left',
             label: 'Magit',
+            className: 'magit',
           },
           //{ to: "/blog", label: "Blog", position: "left" },
           {
@@ -175,51 +182,54 @@ const config = {
         darkIcon: '🌙',
         lightIcon: '☀️',
       },
-      typesense: {
-        typesenseCollectionName: 'docusaurus-2', // Replace with your own doc site's name. Should match the collection name in the scraper settings.
-
-        typesenseServerConfig: {
-          nodes: [
-            {
-              host: 'xxx-1.a1.typesense.net',
-              port: 443,
-              protocol: 'https',
-            },
-            {
-              host: 'xxx-2.a1.typesense.net',
-              port: 443,
-              protocol: 'https',
-            },
-            {
-              host: 'xxx-3.a1.typesense.net',
-              port: 443,
-              protocol: 'https',
-            },
-          ],
-          apiKey: 'xyz',
-        },
-
-        // Optional: Typesense search parameters: https://typesense.org/docs/0.21.0/api/documents.html#arguments
-        typesenseSearchParameters: {},
-
-        // Optional
-        contextualSearch: true,
-      },
     }),
+  // typesense: {
+  //   typesenseCollectionName: 'emacs-docs', // Replace with your own doc site's name. Should match the collection name in the scraper settings.
+
+  //   typesenseServerConfig: {
+  //     nodes: [
+  //       {
+  //         host: 'xxx-1.a1.typesense.net',
+  //         port: 443,
+  //         protocol: 'https',
+  //       },
+  //       {
+  //         host: 'xxx-2.a1.typesense.net',
+  //         port: 443,
+  //         protocol: 'https',
+  //       },
+  //       {
+  //         host: 'xxx-3.a1.typesense.net',
+  //         port: 443,
+  //         protocol: 'https',
+  //       },
+  //     ],
+  //     apiKey: 'xyz',
+  //   },
+
+  //   // Optional: Typesense search parameters: https://typesense.org/docs/0.21.0/api/documents.html#arguments
+  //   typesenseSearchParameters: {},
+
+  //   // Optional
+  //   contextualSearch: true,
+  // },
 
   plugins: [
     // ... Your other plugins.
     [
       require.resolve('@easyops-cn/docusaurus-search-local'),
       {
-        // ... Your options.
-        // `hashed` is recommended as long-term-cache of index file is possible.
         hashed: true,
-        // For Docs using Chinese, The `language` is recommended to set to:
-        // ```
-        // language: ["en", "zh"],
-        // ```
-        // When applying `zh` in language, please install `nodejieba` in your project.
+        language: 'en',
+        docsRouteBasePath: ['docs/org', 'docs/auctex', 'docs/emacs', 'docs/magit', 'docs/elisp'],
+        docsDir: ['docs/org', 'docs/auctex', 'docs/emacs', 'docs/magit', 'docs/elisp'],
+
+        // When indexing your documents, their content is split into "tokens".
+        // Text entered into the search box is also tokenized.
+        // This setting configures the separator used to determine where to split the text into tokens.
+        // By default, it splits the text at whitespace and dashes.
+        //
+        // Note: Does not work for "ja" and "th" languages, since these use a different tokenizer.
       },
     ],
   ],
