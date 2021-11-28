@@ -14,8 +14,8 @@ function HomepageHeader() {
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons} style={{ margin: 'auto' }}>
-          <Link className="button button--secondary button--lg" to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
+          <Link className="button button--secondary button--lg" to="/docs/emacs/The-Emacs-Editor">
+            Get Started with Emacs!️
           </Link>
         </div>
       </div>

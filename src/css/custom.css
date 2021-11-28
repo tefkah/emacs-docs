@@ -9,7 +9,8 @@
 @import url("https://fontlibrary.org//face/nimbus-sans-l");
 
 :root {
-  --ifm-color-primary: #9226d1;
+  --nano-salient: #673AB7;
+  --ifm-color-primary: var(--nano-salient);
   --ifm-color-primary-dark: #8322bc;
   --ifm-color-primary-darker: #7c20b2;
   --ifm-color-primary-darkest: #661b92;
@@ -18,7 +19,6 @@
   --ifm-color-primary-lightest: #b25fe2;
   --ifm-color-primary-background: hsl(277, 20%, 99%);
   --ifm-color-primary-background-border: hsl(277, 40%, 99%);
-  --doom-blue: #1371c1;
   --doom-blue-background: #daecfb;
 
 --org: #7a9;
@@ -26,31 +26,46 @@
   --ifm-code-font-size: 95%;
   --l: 100%;
 
-  --ifm-car-color: rgb(187, 104, 229);
+  --ifm-car-color: var(--nano-salient);
   --gh-icon: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
 
   --ifm-table-border-width: 0px !important;
 
+  --fun-tag: var(--ifm-color-primary-background);
+  --var-tag: var(--ifm-color-primary-background);
+  --user-option-tag:
+  var(--ifm-color-primary-background);
+  --macro-tag: 
+  var(--ifm-color-primary-background);
+  --special-tag:
+   var(--ifm-color-primary-background);
+
+  --fun-tag-background: var(--ifm-color-primary);
+  --macro-tag-background: rgb(227, 17, 108);
+  --var-tag-background: rgb(0, 0, 159);
+  --special-tag-background:   rgb(200, 58, 73);
+  --user-option-tag-background: rgb(54, 172, 170);
+
 }
 
 
-body{
-  /* font-family: "Nimbus Sans L", sans-serif; */
-}
 
 th,
 table tr,
 table td{
   border: none !important;
 }
+h3 > code {
+  font-size: 80%;
+}
 
 html[data-theme='dark'] {
   --doom-green: #88b453;
-  --doom-pale: #988cda;
-  --doom-purple: #b85dd5;
-  --doom-pink: #d39ae5;
-  --doom-blue: #439EEC;
-  --doom-orange: #E7B268;
+  --doom-pale: #a9a1e1;
+  --doom-purple: #c678dd;
+  --doom-pink: #dcaeea;
+  --doom-blue: #51afef;
+  --doom-orange: #ECBE7B;
 
   --ifm-color-primary: var(--doom-pale);
   --ifm-color-primary-dark: #5a91ea;
@@ -62,15 +77,31 @@ html[data-theme='dark'] {
   --ifm-color-primary-background-border: var(--ifm-background-surface-color);
 --org: #e0eae7;
 
+
+  --fun-tag-background: var(--ifm-code-background);
+  --macro-tag-background: var(--ifm-code-background);
+  --var-tag-background: var(--ifm-code-background);
+  --special-tag-background: var(--ifm-code-background);
+  --user-option-tag-background: var(--ifm-code-background);
   /* any other colors you wish to overwrite */
-  --fun-tag: var(--doom-blue)
-  --var-tag: var(--doom-orange)
-  --user-option-tag: var(--doom-pink)
-  --macro-tag: var(--doom-purple)
-  --special-tag: var(--doom-pale)
+  --fun-tag: var(--doom-blue); 
+  --var-tag: var(--doom-orange);
+  --user-option-tag: var(--doom-pink);
+  --macro-tag: var(--doom-pale);
+  --special-tag:var(--doom-pale);
+  --quoted-symbol: var(--doom-orange);
+  --punctuation:  var(--doom-blue);
   --gh-icon: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E");
 }
 
+.tag + strong {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: var(--ifm-code-font-size)
+}
+
+.footer {
+  background-color: rgb(40, 44, 52);
+}
 .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.1);
   display: block;
@@ -124,16 +155,20 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   opacity: 1;
 }
 
+.token.punctuation {
+  color: var(--punctuation) !important;
+
+}
+.token.quoted-symbol, .other-marker-vars, .rest-vars{
+  color: var(--quoted-symbol) !important;
+}
 .token.car {
   color: var(--ifm-car-color);
 }
 
 .tag {
-  font-weight: 400 !important;
   font-size: 80%;
-  padding: 5px;
-  font-family: monospace !important;
-  border-radius: 4px;
+  margin-right: 4px;
 }
 
 h3 {
@@ -141,24 +176,29 @@ h3 {
 }
 
 .tag.function code{
-  background-color: var(--doom-blue-background);
-  color: var(--doom-blue);
+  color: var(--fun-tag);
+  background-color: var(--fun-tag-background);
+  border-color: var(--fun-tag-background);
 }
 
-.tag.macro {
-  color: var(--ifm-color-primary-darker);
-  background-color: var(--doom-purple) !important;
+.tag.macro code{
+  color: var(--macro-tag);
+  background-color: var(--macro-tag-background);
+  border-color: var(--macro-tag-background);
 }
 
-.tag.user-option {
-  color: var(--ifm-color-primary-darker);
-  background-color: var(--doom-pink) !important;
+.tag.user-option code{
+  color: var(--user-option-tag);
+  background-color: var(--user-option-tag-background);
+  border-color: var(--user-option-tag-background);
 }
-.tag.specialform {
-  color: var(--ifm-color-primary-darker);
-  background-color: var(--doom-pale) !important;
+.tag.specialform code{
+  color: var(--special-tag);
+  background-color: var(--special-tag-background);
+  border-color: var(--special-tag-background);
 }
-.tag.variable {
-  color: var(--ifm-color-primary-darker);
-  background-color: var(--doom-orange) !important;
+.tag.variable code{
+  color: var(--var-tag);
+  background-color: var(--var-tag-background);
+  border-color: var(--var-tag-background);
 }

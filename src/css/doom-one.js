@@ -8,7 +8,7 @@ var theme = {
   },
   styles: [
     {
-      types: ['comment', 'punctuation', 'string'],
+      types: ['comment', 'punctuation'],
       style: {
         color: 'rgb(91, 98, 104)',
       },
@@ -44,7 +44,7 @@ var theme = {
       },
     },
     {
-      types: ['symbol', 'inserted'],
+      types: ['symbol', 'inserted', 'string'],
       style: {
         color: 'rgb(152, 190, 101)',
       },

@@ -3,7 +3,7 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github')
 //const darkCodeTheme = require('prism-react-renderer/themes/dracula')
-const darkCodeTheme = require('./src/css/one-dark')
+const darkCodeTheme = require('./src/css/doom-one')
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -63,7 +63,9 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      hideableSidebar: true,
       navbar: {
+        hideOnScroll: true,
         title: 'Emacs Docs',
         logo: {
           alt: 'Emacs',
@@ -134,15 +136,15 @@ const config = {
             items: [
               {
                 label: 'GNU website',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                href: 'https://www.gnu.org/',
               },
               {
                 label: 'FSF Shop',
-                href: 'https://discordapp.com/invite/docusaurus',
+                href: 'https://shop.fsf.org/',
               },
               {
                 label: 'Donate to FSF',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://my.fsf.org/donate',
               },
             ],
           },
@@ -150,8 +152,8 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
+                label: 'FAQ',
+                to: '/blog/FAQ',
               },
               {
                 label: 'GitHub',

@@ -1,0 +1,13 @@
+---
+slug: MS_002dDOS-File-Names
+---
+
+On MS-DOS, file names are case-insensitive and limited to eight characters, plus optionally a period and three more characters. Emacs knows enough about these limitations to handle file names that were meant for other operating systems. For instance, leading dots ‘`.`’ in file names are invalid in MS-DOS, so Emacs transparently converts them to underscores ‘`_`’; thus your default init file (see [Init File](Init-File)) is called `_emacs` on MS-DOS. Excess characters before or after the period are generally ignored by MS-DOS itself; thus, if you visit the file `LongFileName.EvenLongerExtension`, you will silently get `longfile.eve`, but Emacs will still display the long file name on the mode line. Other than that, it’s up to you to specify file names which are valid under MS-DOS; the transparent conversion as described above only works on file names built into Emacs.
+
+The above restrictions on the file names on MS-DOS make it almost impossible to construct the name of a backup file (see [Backup Names](Backup-Names)) without losing some of the original file name characters. For example, the name of a backup file for `docs.txt` is `docs.tx~` even if single backup is used.
+
+If you run Emacs as a DOS application under Windows 9X, Windows ME, or Windows 2000/XP, you can turn on support for long file names. If you do that, Emacs doesn’t truncate file names or convert them to lower case; instead, it uses the file names that you specify, verbatim. To enable long file name support, set the environment variable `LFN` to ‘`y`’ before starting Emacs. Unfortunately, Windows NT doesn’t allow DOS programs to access long file names, so Emacs built for MS-DOS will only see their short 8+3 aliases.
+
+MS-DOS has no notion of home directory, so Emacs on MS-DOS pretends that the directory where it is installed is the value of the `HOME` environment variable. That is, if your Emacs binary, `emacs.exe`, is in the directory `c:/utils/emacs/bin`, then Emacs acts as if `HOME` were set to ‘`c:/utils/emacs`’. In particular, that is where Emacs looks for the init file `_emacs`. With this in mind, you can use ‘`~`’ in file names as an alias for the home directory, as you would on GNU or Unix. You can also set `HOME` variable in the environment before starting Emacs; its value will then override the above default behavior.
+
+Emacs on MS-DOS handles the name `/dev` specially, because of a feature in the emulator libraries of DJGPP that pretends I/O devices have names in that directory. We recommend that you avoid using an actual directory named `/dev` on any disk.
