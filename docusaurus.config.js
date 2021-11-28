@@ -11,7 +11,7 @@ const config = {
   tagline: 'Emacs documentation for the 21st century',
   url: 'https://emacsdocs.org',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.svg',
   organizationName: 'ThomasFKJorna', // Usually your GitHub org/user name.
@@ -63,7 +63,6 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      onBrokenLinks: 'warn',
       hideableSidebar: true,
       navbar: {
         hideOnScroll: true,
