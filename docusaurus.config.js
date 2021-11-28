@@ -196,7 +196,7 @@ const config = {
 
 function prefixParser(file) {
   const [prefix, filename] =
-    file?.replaceAll(/(\w+\/)?(Appendix )?([A-H\d\.]+) (.*?)/g, '$3@$4')?.split('@') || []
+    file?.replace(/(\w+\/)?(Appendix )?([A-H\d\.]+) (.*?)/g, '$3@$4')?.split('@') || []
 
   return { prefix, filename }
 }
@@ -210,7 +210,7 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
   if (firstItem?.type === 'link' || firstItem?.type === 'category') return
 
   const id = firstItem?.id || ''
-  const dir = id.replaceAll(/(\w+\/).*/g, '$1')
+  const dir = id.replace(/(\w+\/).*/g, '$1')
 
   const items = unsortedItems.sort((a, b) => {
     const compareUnits = [a, b]
@@ -218,7 +218,7 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
       if (unit?.type !== 'doc') return
       let pref = prefixParser(unit.id).prefix?.split('.') || ['300']
 
-      if (pref[0].replaceAll(/[^A-H]/g, '')) return 300
+      if (pref[0].replace(/[^A-H]/g, '')) return 300
       return parseInt(pref.map((p) => (p.length === 1 ? '0' + p : p)).join(''))
     })
 
@@ -251,7 +251,7 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
         return namePrefix === prefix
       })
       if (categoryName?.type !== 'doc') return prefix
-      const lab = categoryName?.id?.replaceAll(/\w+\//g, '') || undefined
+      const lab = categoryName?.id?.replace(/\w+\//g, '') || undefined
       return {
         type: 'category',
         label: lab,
@@ -367,7 +367,7 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
       items: cat.items.filter((item) => {
         if (item.type === 'category') return true
 
-        return !cat.items.some((sub) => sub?.label === item?.id?.replaceAll(/\w+\//g, ''))
+        return !cat.items.some((sub) => sub?.label === item?.id?.replace(/\w+\//g, ''))
       }),
     }
   })
@@ -423,7 +423,7 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
   const notAppendices = ['Function Index', 'Footnotes', 'Copying', 'Concept Index']
 
   const withSpecialItems = withNoOneMemberCategories.reduce((acc, item) => {
-    const label = item.label.replaceAll(/Appendix /g, '')
+    const label = item.label.replace(/Appendix /g, '')
     if (firstItems.includes(label)) {
       return [{ ...item, label: label }, ...acc]
     }
