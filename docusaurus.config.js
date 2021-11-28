@@ -201,12 +201,20 @@ function prefixParser(file) {
   return { prefix, filename }
 }
 
+/**
+ * @param {import("@docusaurus/plugin-content-docs/src/types").NumberPrefixParser} numberPrefixParser
+ * @param {import("@docusaurus/plugin-content-docs/src/sidebars/types").SidebarItem[]} unsortedItems
+ */
 function createSidebarDirs(numberPrefixParser, unsortedItems) {
-  const dir = unsortedItems?.[0]?.id?.replaceAll(/(\w+\/).*/g, '$1')
+  const firstItem = unsortedItems?.[0]
+  if (firstItem.type === 'link' || firstItem.type === 'category') return
+
+  const dir = firstItem?.id?.replaceAll(/(\w+\/).*/g, '$1')
 
   const items = unsortedItems.sort((a, b) => {
     const compareUnits = [a, b]
     const [newa, newb] = compareUnits.map((unit) => {
+      if (unit.type !== 'doc') return
       let pref = prefixParser(unit.id).prefix?.split('.') || ['300']
 
       if (pref[0].replaceAll(/[^A-H]/g, '')) return 300
@@ -219,7 +227,7 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
   const itemsWhichNeedCategories = Array.from(
     new Set(
       items.map((item) => {
-        if (item.type === 'category') return undefined
+        if (item.type !== 'doc') return undefined
 
         const { prefix, filename } = prefixParser(item?.id)
 
@@ -237,9 +245,11 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
   )
     ?.map((prefix) => {
       const categoryName = items.find((item) => {
+        if (item.type !== 'doc') return false
         const namePrefix = prefixParser(item.id).prefix
         return namePrefix === prefix
       })
+      if (categoryName.type !== 'doc') return prefix
       const lab = categoryName?.id?.replaceAll(/\w+\//g, '') || undefined
       return {
         type: 'category',
@@ -260,6 +270,7 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
     const catPrefix = prefixParser(category.label).prefix
 
     const directDescendant = items.find((item) => {
+      if (item.type !== 'doc') return
       const itemPrefix = prefixParser(item.id).prefix
       return catPrefix === itemPrefix
     })
@@ -281,6 +292,7 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
     // }, [])
 
     const subItems = items.reduce((acc, item) => {
+      if (item.type !== 'doc') return acc
       const itemPrefix = prefixParser(item.id).prefix
       const splitItemPrefix = itemPrefix?.split('.')
 
