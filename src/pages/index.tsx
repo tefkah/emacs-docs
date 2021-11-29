@@ -17,7 +17,9 @@ function HomepageHeader() {
             style={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column' }}
           >
             <h1 className="hero__title">{siteConfig.title}</h1>
-            <p className="hero__subtitle">{siteConfig.tagline}</p>
+            <p className="hero__subtitle" style={{ textAlign: 'left' }}>
+              {siteConfig.tagline}
+            </p>
             <div className={styles.buttons}>
               <Link
                 className="button button--secondary button--lg"
@@ -34,6 +36,7 @@ function HomepageHeader() {
               alt="Ellie the owl"
               src={'img/ellie-no-bg.svg'}
               height="100%"
+              style={{ paddingTop: '20px' }}
             />
           </div>
         </div>

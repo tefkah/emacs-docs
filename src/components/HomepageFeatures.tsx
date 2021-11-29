@@ -33,7 +33,7 @@ const FeatureList: FeatureItem[] = [
     description: <>Authoritative reference for extending and programming Emacs.</>,
   },
   {
-    title: 'Org-Mode Manual',
+    title: 'Org Manual',
     image: '/img/org-mode-unicorn.svg',
     link: 'docs/org/The-Org-Manual',
     description: <>Organize your life in plain text.</>,
@@ -74,7 +74,7 @@ function Feature({ title, shortTitle, image, link, description }: FeatureItem) {
         <div className="text--center">
           <div className={styles.buttons} style={{ marginTop: 'auto' }}>
             <Link className="button button--secondary button--lg" to={link}>
-              {` Read ${shortTitle || title}`}
+              {`${shortTitle || title}`}
             </Link>
           </div>
         </div>
