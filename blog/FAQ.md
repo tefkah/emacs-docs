@@ -19,6 +19,10 @@ I do not enjoy browsing the Emacs documentation within Emacs nor on the GNU webs
 
 Mostly so it can be easily found when you ~google~ look it up with your search engine of choice, and because naming things is hard 🤷
 
+## What is that adorable little mascot called?
+
+Their name is Ellie!
+
 ## Copyright?
 
 Should be good! The terms of the GFDL (GNU Free Documentation License) allow such modifications.

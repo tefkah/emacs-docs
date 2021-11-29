@@ -7,8 +7,8 @@ const darkCodeTheme = require('./src/css/doom-one')
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Emacs docs',
-  tagline: 'Emacs documentation for the 21st century',
+  title: 'Emacs Docs',
+  tagline: 'The modern documentation website Emacs deserves.',
   url: 'https://emacsdocs.org',
   baseUrl: '/',
   onBrokenLinks: 'warn',
@@ -65,7 +65,7 @@ const config = {
       sitemap: { changefreq: 'weekly', priority: 0.5, trailingSlash: false },
 
       //image: '',
-      metadatas: [{ name: 'summary', content: 'Emacs Documentation for the 21st century.' }],
+      metadatas: [{ name: 'summary', content: 'The modern documentation website Emacs deserves.' }],
       hideableSidebar: true,
       navbar: {
         hideOnScroll: true,
@@ -78,37 +78,30 @@ const config = {
           {
             type: 'doc',
             docId: 'emacs/The Emacs Editor',
-            position: 'left',
+            position: 'right',
             label: 'Emacs',
             className: 'emacs',
           },
           {
             type: 'doc',
             docId: 'elisp/Emacs Lisp',
-            position: 'left',
+            position: 'right',
             label: 'Elisp',
             className: 'elisp',
           },
           {
             type: 'doc',
             docId: 'org/The Org Manual',
-            position: 'left',
+            position: 'right',
             label: 'Org-Mode',
             className: 'org',
           },
           {
             type: 'doc',
             docId: 'auctex/AUCTeX',
-            position: 'left',
+            position: 'right',
             label: 'AUCTeX',
             className: 'auctex',
-          },
-          {
-            type: 'doc',
-            docId: 'magit/1 Introduction',
-            position: 'left',
-            label: 'Magit',
-            className: 'magit',
           },
           //{ to: "/blog", label: "Blog", position: "left" },
           {
@@ -137,6 +130,10 @@ const config = {
                 label: 'Org-Mode',
                 to: '/docs/org/The-Org-Manual',
               },
+              {
+                label: 'AUCTeX',
+                to: '/docs/auctex/Top',
+              },
             ],
           },
           {
@@ -162,6 +159,10 @@ const config = {
               {
                 label: 'FAQ',
                 to: '/blog/FAQ',
+              },
+              {
+                label: 'License',
+                to: '/blog/License',
               },
               {
                 label: 'GitHub',
@@ -221,8 +222,8 @@ const config = {
       {
         hashed: true,
         language: 'en',
-        docsRouteBasePath: ['docs/org', 'docs/auctex', 'docs/emacs', 'docs/magit', 'docs/elisp'],
-        docsDir: ['docs/org', 'docs/auctex', 'docs/emacs', 'docs/magit', 'docs/elisp'],
+        docsRouteBasePath: ['docs/org', 'docs/auctex', 'docs/emacs', 'docs/elisp'],
+        docsDir: ['docs/org', 'docs/auctex', 'docs/emacs', 'docs/elisp'],
 
         // When indexing your documents, their content is split into "tokens".
         // Text entered into the search box is also tokenized.
@@ -455,13 +456,23 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
     'The Emacs Editor',
     'The Org Manual',
     'Emacs Lisp',
-    'Magit User Manual',
     'Table of Contents',
     'AUCTeX',
     'Copying',
+    'Distribution',
   ]
 
-  const notAppendices = ['Function Index', 'Footnotes', 'Copying', 'Concept Index']
+  const notAppendices = [
+    'Acknowledgments',
+    'Command and Function Index',
+    'Command-Line Option Index',
+    'Distribution',
+    'Function Index',
+    'Footnotes',
+    'Copying',
+    'Concept Index',
+    'Glossary',
+  ]
 
   const withSpecialItems = withNoOneMemberCategories.reduce((acc, item) => {
     const label = item.label.replace(/Appendix /g, '')
@@ -474,6 +485,45 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
     acc.push(item)
     return acc
   }, [])
+
+  // gross manual modifications
+  // Difficult to get auctex's first three files in the right order
+  console.log(items[0])
+  if (items?.[0]?.type === 'doc' && items[0].id.replace(/(\w+)\/.*/g, '$1') === 'auctex') {
+    console.log('aaaaaa')
+    const firstThree = withSpecialItems.slice(0, 3)
+    const last = withSpecialItems.slice(3)
+    return [...firstThree.reverse(), ...last]
+  }
+
+  if (items?.[0]?.type === 'doc' && items[0].id.replace(/(\w+)\/.*/g, '$1') === 'emacs') {
+    const finalOrder = [
+      'Appendix A',
+      'Appendix B',
+      'Appendix C',
+      'Appendix D',
+      'Appendix E',
+      'Appendix F',
+      'Appendix G',
+      'GNU Manifesto',
+      'Glossary',
+      'Ack',
+      'Key',
+      'Command-Line',
+      'Function',
+      'Variable',
+      'Concept',
+    ]
+
+    const firstItems = withSpecialItems.slice(0, -finalOrder.length - 1)
+    const lastItems = withSpecialItems.slice(-finalOrder.length - 1)
+    console.dir(lastItems)
+    const sortedLastItems = finalOrder.map(
+      (item, index) => lastItems.find((uitem) => uitem.label.includes(item)) || lastItems[index],
+    )
+
+    return [...firstItems, ...sortedLastItems]
+  }
 
   return withSpecialItems
 }

@@ -11,6 +11,7 @@ import Link from '@docusaurus/Link'
 
 type FeatureItem = {
   title: string
+  shortTitle?: string
   image: string
   description: JSX.Element
   link?: string
@@ -19,29 +20,35 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: 'GNU Emacs Manual',
+    shortTitle: 'Emacs Manual',
     image: '/img/Emacs-logo.svg',
     description: <>An extensible, customizable, free/libre text editor — and more.</>,
     link: 'docs/emacs/The-Emacs-Editor',
   },
   {
-    title: 'Elisp Manual',
-    image: '/img/favicon.svg',
+    title: 'GNU Elisp Reference Manual',
+    shortTitle: 'Elisp Manual',
+    image: '/img/e.svg',
     link: 'docs/elisp/Emacs-Lisp',
-    description: (
-      <>LISP... for Emacs! Complete, authoritative reference for extending and programming Emacs.</>
-    ),
+    description: <>Authoritative reference for extending and programming Emacs.</>,
   },
   {
-    title: 'Org-Mode manual',
+    title: 'Org-Mode Manual',
     image: '/img/org-mode-unicorn.svg',
     link: 'docs/org/The-Org-Manual',
     description: <>Organize your life in plain text.</>,
   },
+  {
+    title: 'AUCTeX Manual',
+    image: '/img/auctex-logo.png',
+    link: 'docs/auctex/Top',
+    description: <>A sophisticated LaTeX editing system.</>,
+  },
 ]
 
-function Feature({ title, image, description, link }: FeatureItem) {
+function Feature({ title, shortTitle, image, link, description }: FeatureItem) {
   return (
-    <div className={clsx('col col--4')} style={{}}>
+    <div className={clsx('col col--3')} style={{}}>
       <div
         className="feature-card"
         // style={{
@@ -53,18 +60,21 @@ function Feature({ title, image, description, link }: FeatureItem) {
         //   borderWidth: '2px',
         //   height: '100%',
         // }}
+        style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
       >
-        <div className="text--center">
-          <img className={styles.featureSvg} alt={title} src={image} />
+        <div>
+          <div className="text--center">
+            <img className={styles.featureSvg} alt={title} src={image} />
+          </div>
+          <div className="text--center padding-horiz--md">
+            <h3>{title}</h3>
+            <p>{description}</p>
+          </div>
         </div>
-        <div className="text--center padding-horiz--md">
-          <h3>{title}</h3>
-          <p>{description}</p>
-        </div>
         <div className="text--center">
-          <div className={styles.buttons}>
+          <div className={styles.buttons} style={{ marginTop: 'auto' }}>
             <Link className="button button--secondary button--lg" to={link}>
-              {` Read ${title}`}
+              {` Read ${shortTitle || title}`}
             </Link>
           </div>
         </div>
@@ -94,7 +104,7 @@ export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className="row">
+        <div className="row row--no-gutters">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}
