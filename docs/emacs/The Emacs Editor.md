@@ -4,8 +4,8 @@ slug: The-Emacs-Editor
 
 Emacs is the advanced, extensible, customizable, self-documenting editor. This manual describes how to edit with Emacs and some of the ways to customize it; it corresponds to GNU Emacs version 27.2.
 
-The homepage for GNU Emacs is at [https://www.gnu.org/software/emacs/](https://www.gnu.org/software/emacs/).\
-To view this manual in other formats, click [here](https://www.gnu.org/software/emacs/manual/emacs.html).\
+The homepage for GNU Emacs is at [https://www.gnu.org/software/emacs/](https://www.gnu.org/software/emacs/).
+To view this manual in other formats, click [here](https://www.gnu.org/software/emacs/manual/emacs.html).
 You can also purchase a printed copy from the [FSF store](https://shop.fsf.org/product/emacs-manual/).
 
 For information on extending Emacs, see [Emacs Lisp](https://www.gnu.org/software/emacs/manual/html_mono/elisp.html#Top) in The Emacs Lisp Reference Manual.
@@ -347,7 +347,7 @@ Here are some other nodes which are really subnodes of the ones already listed, 
 | [Output Coding](/docs/emacs/Output-Coding)                                     | Choosing coding systems for output.                                                                                             |
 | [Text Coding](/docs/emacs/Text-Coding)                                         | Choosing conversion to use for file text.                                                                                       |
 | [Communication Coding](/docs/emacs/Communication-Coding)                       | Coding systems for interprocess communication.                                                                                  |
-| [File Name Coding](/docs/emacs/File-Name-Coding)                               | Coding systems for file *names*.                                                                                                |
+| [File Name Coding](/docs/emacs/File-Name-Coding)                               | Coding systems for file _names_.                                                                                                |
 | [Terminal Coding](/docs/emacs/Terminal-Coding)                                 | Specifying coding systems for converting terminal input and output.                                                             |
 | [Fontsets](/docs/emacs/Fontsets)                                               | Fontsets are collections of fonts that cover the whole spectrum of characters.                                                  |
 | [Defining Fontsets](/docs/emacs/Defining-Fontsets)                             | Defining a new fontset.                                                                                                         |
