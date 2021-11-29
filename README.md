@@ -1,19 +1,19 @@
+[Emacs Docs Mascot](https://emacsdocs.org/img/Banner.png)
+
 # Emacs Docs
 
-> Unofficial Emacs Documentation for the 21st century.
-
-[Emacs Docs Mascot](./static/img/favicon.svg)
+> The modern documentation website Emacs deserves.
 
 ## Why
 
-I like clicking things.
+I didn't particularly enjoy either browsing the manual online or in Emacs, and wished there was a modern equivalent. Luckily, there is now!
 
 ## Included manuals
 
-- Emacs Manual (source, license)
-- Emacs Lisp Manual (source, license)
-- Org Mode Manual (source, license)
-- AUCTeX Manual (source, license)
+- Emacs Manual [source](https://www.gnu.org/software/emacs/manual/emacs.html)
+- Emacs Lisp Manual [source](https://www.gnu.org/software/emacs/manual/elisp.html)
+- Org Mode Manual [source](https://www.gnu.org/software/emacs/manual/org.html)
+- AUCTeX Manual [source](https://www.gnu.org/software/auctex/manual/auctex.index.html)
 
 ### How to include other things
 
@@ -24,8 +24,14 @@ Only documentation for Emacs core and Emacs packages will be included, which mus
 
 Point 1. excludes Magit from being included, sadly.
 
-Make an issue, or try to run `converter.js` on the full text version of the manual.
-
 ## FAQs
 
 Please see [the FAQs](https://emacsdocs.org/blog/faq)
+
+## Misc
+
+The build script which pulls the manuals from the GNU website and converts them into MD files is not yet included here on accounts of it being extremely janky. I will publish it when it's polished further, which would allow the website to be built from scratch on every build.
+
+## Comments and Feedback
+
+If you have any ideas or feddback about the project or the design of the website, please open a disccusion! I'd be more than happy to talk to discuss this further.
