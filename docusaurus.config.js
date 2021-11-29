@@ -64,7 +64,7 @@ const config = {
     ({
       sitemap: { changefreq: 'weekly', priority: 0.5, trailingSlash: false },
 
-      //image: '',
+      image: 'img/Banner.png',
       metadatas: [{ name: 'summary', content: 'The modern documentation website Emacs deserves.' }],
       hideableSidebar: true,
       navbar: {
