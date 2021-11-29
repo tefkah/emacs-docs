@@ -105,7 +105,7 @@ const config = {
           },
           //{ to: "/blog", label: "Blog", position: "left" },
           {
-            href: 'https://github.com/ThomasFKJorna/emacsdocs',
+            href: 'https://github.com/ThomasFKJorna/emacs-docs',
             className: 'github-icon',
             position: 'right',
             icon: 'github',
