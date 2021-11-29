@@ -4,15 +4,38 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
+  padding: 4rem;
   text-align: center;
   position: relative;
   overflow: hidden;
+  display: flex;
 }
 
 @media screen and (max-width: 966px) {
   .heroBanner {
     padding: 2rem;
+  }
+}
+
+.heroSubtitle {
+  text-align: left;
+}
+@media screen and (max-width: 966px) {
+  .heroSubtitle {
+    text-align: center;
+  }
+}
+
+.leftHero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+@media screen and (max-width: 966px) {
+  .leftHero {
+    text-align: center;
+    align-items: center;
   }
 }
 

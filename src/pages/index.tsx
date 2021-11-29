@@ -12,14 +12,9 @@ function HomepageHeader() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container padding-top--lg padding-bottom--lg">
         <div className="row">
-          <div
-            className="col"
-            style={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column' }}
-          >
+          <div className={clsx(styles.leftHero, 'col')}>
             <h1 className="hero__title">{siteConfig.title}</h1>
-            <p className="hero__subtitle" style={{ textAlign: 'left' }}>
-              {siteConfig.tagline}
-            </p>
+            <p className={clsx('hero__subtitle', styles.heroSubtitle)}>{siteConfig.tagline}</p>
             <div className={styles.buttons}>
               <Link
                 className="button button--secondary button--lg"
@@ -49,8 +44,8 @@ export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext()
   return (
     <Layout
-      title={`${siteConfig.title}`}
-      description="The modern documentation website Emacs deserves."
+      title={`Hello from ${siteConfig.title}`}
+      description="Description will go into a meta tag in <head />"
     >
       <HomepageHeader />
       <main>
