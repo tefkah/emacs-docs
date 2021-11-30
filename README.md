@@ -1,8 +1,11 @@
-[Emacs Docs Mascot](https://emacsdocs.org/img/Banner.png)
-
 # Emacs Docs
 
 > The modern documentation website Emacs deserves.
+
+
+![Emacs Docs Mascot](https://emacsdocs.org/img/Banner.png)
+
+
 
 ## Why
 
@@ -19,10 +22,11 @@ I didn't particularly enjoy either browsing the manual online or in Emacs, and w
 
 Only documentation for Emacs core and Emacs packages will be included, which must satisfy the following requirements:
 
-1. Be licensed under a free documentation license such as the GNU Free Documentation License 1.3, Creative Commons Attribution 4.0 or Creative Commons Attribution-Share-Alike 4.0 License, etc. This EXCLUDES documentation licensed under the GPLv3, as it's incompatible with the GFDL.
+1. Be licensed under a free documentation license such as the GNU Free Documentation License 1.3 or Creative Commons Attribution 4.0 license. To the best of my knowledge I cannot include GLPv3 licensed materials under the GFDLv1.3 license governing the contents of the website, so at the time of writing (30 Nov 2021) I will not add manuals with such a license.
 2. Are available in either Markdown or big-single-page HTML format.
+3. Are authoritative references on parts of GNU Emacs or packages interacting with GNU Emacs.
 
-Point 1. excludes Magit from being included, sadly.
+Point 1. excludes Magit from being included, ~sadly~ for now, see https://github.com/ThomasFKJorna/emacs-docs/#1 for up to date discussion.
 
 ## FAQs
 
@@ -30,7 +34,7 @@ Please see [the FAQs](https://emacsdocs.org/blog/faq)
 
 ## Misc
 
-The build script which pulls the manuals from the GNU website and converts them into MD files is not yet included here on accounts of it being extremely janky. I will publish it when it's polished further, which would allow the website to be built from scratch on every build.
+The scripts used to convert the HTML manuals to Markdown can be found [here](https://github.com/ThomasFKJorna/emacs-docs-converter). Please note that it's extremely jank and will be substantially revised in the future, contributors are welcome, but you've been warned!
 
 ## Comments and Feedback
 
