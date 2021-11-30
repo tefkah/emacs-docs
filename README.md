@@ -1,8 +1,11 @@
-[Emacs Docs Mascot](https://emacsdocs.org/img/Banner.png)
-
 # Emacs Docs
 
 > The modern documentation website Emacs deserves.
+
+
+![Emacs Docs Mascot](https://emacsdocs.org/img/Banner.png)
+
+
 
 ## Why
 
@@ -30,7 +33,7 @@ Please see [the FAQs](https://emacsdocs.org/blog/faq)
 
 ## Misc
 
-The build script which pulls the manuals from the GNU website and converts them into MD files is not yet included here on accounts of it being extremely janky. I will publish it when it's polished further, which would allow the website to be built from scratch on every build.
+The scripts used to convert the HTML manuals to Markdown can be found [here](https://github.com/ThomasFKJorna/emacs-docs-converter). Please note that it's extremely jank and will be substantially revised in the future, contributors are welcome, but you've been warned!
 
 ## Comments and Feedback
 
