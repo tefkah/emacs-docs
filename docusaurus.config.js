@@ -103,6 +103,13 @@ const config = {
             label: 'AUCTeX',
             className: 'auctex',
           },
+          {
+            type: 'doc',
+            docId: 'magit/Magit User Manual',
+            position: 'right',
+            label: 'Magit',
+            className: 'magit',
+          },
           //{ to: "/blog", label: "Blog", position: "left" },
           {
             href: 'https://github.com/ThomasFKJorna/emacs-docs',
@@ -133,6 +140,10 @@ const config = {
               {
                 label: 'AUCTeX',
                 to: '/docs/auctex/Top',
+              },
+              {
+                label: 'Magit',
+                to: '/docs/magit/Magit User Manual',
               },
             ],
           },
@@ -460,6 +471,7 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
     'AUCTeX',
     'Copying',
     'Distribution',
+    'Magit User Manual',
   ]
 
   const notAppendices = [
