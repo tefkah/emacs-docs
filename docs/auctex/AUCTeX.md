@@ -17,8 +17,11 @@ It is a good idea to make a printout of AUCTeX’s reference card ‘`tex-ref.te
 If you want to make AUCTeX aware of style files and multi-file documents right away, insert the following in your ‘`.emacs`’ file.
 
 ```lisp
-(setq TeX-auto-save t) (setq TeX-parse-self t) (setq-default TeX-master nil)
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq-default TeX-master nil)
 ```
+
 
 Another thing you should enable is RefTeX, a comprehensive solution for managing cross references, bibliographies, indices, document navigation and a few other things. (see [(reftex)Installation](https://www.gnu.org/software/auctex/manual/reftex.html#Installation) section ‘Installation’ in The RefTeX manual)
 
@@ -39,16 +42,16 @@ Bug reports should go to [bug-auctex@gnu.org](/docs/auctex/mailto:bug-auctex@gnu
 | [• Appendices](/docs/auctex/Appendices)       |     | Copying, Changes, Development, FAQ, Texinfo mode |
 | [• Indices](/docs/auctex/Indices)             |     |                                                  |
 
-| ```lisp
+| 
 — The Detailed Node Listing — Introduction
 
-````| |                                                            |
+`| |                                                            |
 | [• Summary](/docs/auctex/Summary)                                               |    | Overview of AUCTeX                                         |
 | [• Installation](/docs/auctex/Installation)                                     |    | Installing AUCTeX                                          |
 | [• Quick Start](/docs/auctex/Quick-Start)                                       |    |                                                            |
-| ```lisp
+| 
 Editing the Document Source
-```                                       |    |                                                            |
+                                       |    |                                                            |
 | [• Quotes](/docs/auctex/Quotes)                                                 |    | Inserting double quotes                                    |
 | [• Font Specifiers](/docs/auctex/Font-Specifiers)                               |    | Inserting Font Specifiers                                  |
 | [• Sectioning](/docs/auctex/Sectioning)                                         |    | Inserting chapters, sections, etc.                         |
@@ -58,34 +61,34 @@ Editing the Document Source
 | [• Commenting](/docs/auctex/Commenting)                                         |    | Commenting text                                            |
 | [• Indenting](/docs/auctex/Indenting)                                           |    | Reflecting syntactic constructs with whitespace            |
 | [• Filling](/docs/auctex/Filling)                                               |    | Automatic and manual line breaking                         |
-| ```lisp
+| 
 Inserting Environment Templates
-```                                   |    |                                                            |
+                                   |    |                                                            |
 | [• Equations](/docs/auctex/Equations)                                           |    |                                                            |
 | [• Floats](/docs/auctex/Floats)                                                 |    |                                                            |
 | [• Itemize-like](/docs/auctex/Itemize_002dlike)                                 |    | Itemize-like Environments                                  |
 | [• Tabular-like](/docs/auctex/Tabular_002dlike)                                 |    | Tabular-like Environments                                  |
 | [• Customizing Environments](/docs/auctex/Customizing-Environments)             |    |                                                            |
-| ```lisp
+| 
 Controlling Screen Display
-```                                        |    |                                                            |
+                                        |    |                                                            |
 | [• Font Locking](/docs/auctex/Font-Locking)                                     |    |                                                            |
 | [• Folding](/docs/auctex/Folding)                                               |    | Folding Macros and Environments                            |
 | [• Outline](/docs/auctex/Outline)                                               |    | Outlining the Document                                     |
 | [• Narrowing](/docs/auctex/Narrowing)                                           |    | Restricting display and editing to a portion of the buffer |
 | [• Prettifying](/docs/auctex/Prettifying)                                       |    | Displaying Greek and math macros as Unicode characters     |
-| ```lisp
+| 
 Font Locking
-```                                                      |    |                                                            |
+                                                      |    |                                                            |
 | [• Fontification of macros](/docs/auctex/Fontification-of-macros)               |    |                                                            |
 | [• Fontification of quotes](/docs/auctex/Fontification-of-quotes)               |    |                                                            |
 | [• Fontification of math](/docs/auctex/Fontification-of-math)                   |    | Fontification of math constructs                           |
 | [• Verbatim content](/docs/auctex/Verbatim-content)                             |    | Verbatim macros and environments                           |
 | [• Faces](/docs/auctex/Faces)                                                   |    | Faces used by font-latex                                   |
 | [• Known problems](/docs/auctex/Known-problems)                                 |    | Known fontification problems                               |
-| ```lisp
+| 
 Starting Processors, Viewers and Other Programs
-```                   |    |                                                            |
+                   |    |                                                            |
 | [• Commands](/docs/auctex/Commands)                                             |    | Invoking external commands.                                |
 | [• Viewing](/docs/auctex/Viewing)                                               |    | Invoking external viewers.                                 |
 | [• Debugging](/docs/auctex/Debugging)                                           |    | Debugging TeX and LaTeX output.                            |
@@ -93,61 +96,61 @@ Starting Processors, Viewers and Other Programs
 | [• Control](/docs/auctex/Control)                                               |    | Controlling the processes.                                 |
 | [• Cleaning](/docs/auctex/Cleaning)                                             |    | Cleaning intermediate and output files.                    |
 | [• Documentation](/docs/auctex/Documentation)                                   |    | Documentation about macros and packages.                   |
-| ```lisp
+| 
 Viewing the Formatted Output
-```                                      |    |                                                            |
+                                      |    |                                                            |
 | [• Starting Viewers](/docs/auctex/Starting-Viewers)                             |    | Starting viewers                                           |
 | [• I/O Correlation](/docs/auctex/I_002fO-Correlation)                           |    | Forward and inverse search                                 |
-| ```lisp
+| 
 Catching the errors
-```                                               |    |                                                            |
+                                               |    |                                                            |
 | [• Ignoring warnings](/docs/auctex/Ignoring-warnings)                           |    | Controlling warnings to be reported                        |
 | [• Error overview](/docs/auctex/Error-overview)                                 |    | List of all errors and warnings                            |
-| ```lisp
+| 
 Customization and Extension
-```                                       |    |                                                            |
+                                       |    |                                                            |
 | [• Multifile](/docs/auctex/Multifile)                                           |    | Multifile Documents                                        |
 | [• Parsing Files](/docs/auctex/Parsing-Files)                                   |    | Automatic Parsing of TeX Files                             |
 | [• Internationalization](/docs/auctex/Internationalization)                     |    | Language Support                                           |
 | [• Automatic](/docs/auctex/Automatic)                                           |    | Automatic Customization                                    |
 | [• Style Files](/docs/auctex/Style-Files)                                       |    | Writing Your Own Style Support                             |
-| ```lisp
+| 
 Language Support
-```                                                  |    |                                                            |
+                                                  |    |                                                            |
 | [• European](/docs/auctex/European)                                             |    | Using AUCTeX with European Languages                       |
 | [• Japanese](/docs/auctex/Japanese)                                             |    | Using AUCTeX with Japanese                                 |
-| ```lisp
+| 
 Automatic Customization
-```                                           |    |                                                            |
+                                           |    |                                                            |
 | [• Automatic Global](/docs/auctex/Automatic-Global)                             |    | Automatic Customization for the Site                       |
 | [• Automatic Private](/docs/auctex/Automatic-Private)                           |    | Automatic Customization for a User                         |
 | [• Automatic Local](/docs/auctex/Automatic-Local)                               |    | Automatic Customization for a Directory                    |
-| ```lisp
+| 
 Writing Your Own Style Support
-```                                    |    |                                                            |
+                                    |    |                                                            |
 | [• Simple Style](/docs/auctex/Simple-Style)                                     |    | A Simple Style File                                        |
 | [• Adding Macros](/docs/auctex/Adding-Macros)                                   |    | Adding Support for Macros                                  |
 | [• Adding Environments](/docs/auctex/Adding-Environments)                       |    | Adding Support for Environments                            |
 | [• Adding Other](/docs/auctex/Adding-Other)                                     |    | Adding Other Information                                   |
 | [• Hacking the Parser](/docs/auctex/Hacking-the-Parser)                         |    | Automatic Extraction of New Things                         |
-| ```lisp
+| 
 Copying, Changes, Development, FAQ
-```                                |    |                                                            |
+                                |    |                                                            |
 | [• Copying this Manual](/docs/auctex/Copying-this-Manual)                       |    |                                                            |
 | [• Changes](/docs/auctex/Changes)                                               |    |                                                            |
 | [• Development](/docs/auctex/Development)                                       |    |                                                            |
 | [• FAQ](/docs/auctex/FAQ)                                                       |    |                                                            |
 | [• Texinfo mode](/docs/auctex/Texinfo-mode)                                     |    |                                                            |
-| ```lisp
+| 
 Copying this Manual
-```                                               |    |                                                            |
+                                               |    |                                                            |
 | [• GNU Free Documentation License](/docs/auctex/GNU-Free-Documentation-License) |    | License for copying this manual.                           |
-| ```lisp
+| 
 Indices
-```                                                           |    |                                                            |
+                                                           |    |                                                            |
 | [• Key Index](/docs/auctex/Key-Index)                                           |    |                                                            |
 | [• Function Index](/docs/auctex/Function-Index)                                 |    |                                                            |
 | [• Variable Index](/docs/auctex/Variable-Index)                                 |    |                                                            |
 | [• Concept Index](/docs/auctex/Concept-Index)                                   |    |                                                            |
 |                                                                                 |    |                                                            |
-````
+`

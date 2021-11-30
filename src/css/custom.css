@@ -49,11 +49,11 @@
   --ifm-global-spacing: 1.5rem;
 }
 
-code {
+/* code {
   padding-top: 0;
   padding-bottom: 0.2rem;
   margin-bottom: 0.2rem;
-}
+} */
 
 th,
 table tr,
@@ -140,7 +140,9 @@ html[data-theme='dark'] {
   top: 17px;
   width: calc(100% + 30px);
 }
-
+p > code {
+  vertical-align: top;
+}
 .footer {
   background-color: rgb(40, 44, 52);
 }
@@ -217,8 +219,7 @@ html[data-theme='dark'] .github-icon::before {
   margin-right: 4px;
 }
 .tag code {
-  /* padding-bottom: 0px; */
-  padding-right: 0.2rem;
+  vertical-align: baseline;
 }
 
 h3 {

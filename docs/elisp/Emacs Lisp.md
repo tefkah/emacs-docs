@@ -2,8 +2,8 @@
 slug: Emacs-Lisp
 ---
 
-The homepage for GNU Emacs is at [https://www.gnu.org/software/emacs/](https://www.gnu.org/software/emacs/).\
-For information on using Emacs, refer to the [Emacs Manual](https://www.gnu.org/software/emacs/manual/emacs.html).\
+The homepage for GNU Emacs is at [https://www.gnu.org/software/emacs/](https://www.gnu.org/software/emacs/).
+For information on using Emacs, refer to the [Emacs Manual](https://www.gnu.org/software/emacs/manual/emacs.html).
 To view this manual in other formats, click [here](https://www.gnu.org/software/emacs/manual/elisp.html).
 
 This is the GNU Emacs Lisp Reference Manual corresponding to Emacs version 27.2.
@@ -275,7 +275,7 @@ Here are other nodes that are subnodes of those already listed, mentioned here s
 | [Directory Local Variables](/docs/elisp/Directory-Local-Variables)                   | Local variables common to all files in a directory.                                                              |
 | [Connection Local Variables](/docs/elisp/Connection-Local-Variables)                 | Local variables common for remote connections.                                                                   |
 | [Variable Aliases](/docs/elisp/Variable-Aliases)                                     | Variables that are aliases for other variables.                                                                  |
-| [Variables with Restricted Values](/docs/elisp/Variables-with-Restricted-Values)     | Non-constant variables whose value can *not* be an arbitrary Lisp object.                                        |
+| [Variables with Restricted Values](/docs/elisp/Variables-with-Restricted-Values)     | Non-constant variables whose value can _not_ be an arbitrary Lisp object.                                        |
 | [Generalized Variables](/docs/elisp/Generalized-Variables)                           | Extending the concept of variables.                                                                              |
 | Scoping Rules for Variable Bindings                                                  |                                                                                                                  |
 | [Dynamic Binding](/docs/elisp/Dynamic-Binding)                                       | The default for binding local variables in Emacs.                                                                |
@@ -638,7 +638,7 @@ Here are other nodes that are subnodes of those already listed, mentioned here s
 | [Current Buffer](/docs/elisp/Current-Buffer)                                         | Designating a buffer as current so that primitives will access its contents.                                     |
 | [Buffer Names](/docs/elisp/Buffer-Names)                                             | Accessing and changing buffer names.                                                                             |
 | [Buffer File Name](/docs/elisp/Buffer-File-Name)                                     | The buffer file name indicates which file is visited.                                                            |
-| [Buffer Modification](/docs/elisp/Buffer-Modification)                               | A buffer is *modified* if it needs to be saved.                                                                  |
+| [Buffer Modification](/docs/elisp/Buffer-Modification)                               | A buffer is _modified_ if it needs to be saved.                                                                  |
 | [Modification Time](/docs/elisp/Modification-Time)                                   | Determining whether the visited file was changed behind Emacs’s back.                                            |
 | [Read Only Buffers](/docs/elisp/Read-Only-Buffers)                                   | Modifying text is not allowed in a read-only buffer.                                                             |
 | [Buffer List](/docs/elisp/Buffer-List)                                               | How to look at all the existing buffers.                                                                         |
