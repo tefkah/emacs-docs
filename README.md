@@ -17,16 +17,16 @@ I didn't particularly enjoy either browsing the manual online or in Emacs, and w
 - Emacs Lisp Manual [source](https://www.gnu.org/software/emacs/manual/elisp.html)
 - Org Mode Manual [source](https://www.gnu.org/software/emacs/manual/org.html)
 - AUCTeX Manual [source](https://www.gnu.org/software/auctex/manual/auctex.index.html)
+- Magit Manual [source](https://magit.vc/manual/magit/)
 
-### How to include other things
+### How to include other manuals
 
 Only documentation for Emacs core and Emacs packages will be included, which must satisfy the following requirements:
 
-1. Be licensed under a free documentation license such as the GNU Free Documentation License 1.3 or Creative Commons Attribution 4.0 license. To the best of my knowledge I cannot include GLPv3 licensed materials under the GFDLv1.3 license governing the contents of the website, so at the time of writing (30 Nov 2021) I will not add manuals with such a license.
+1. Be licensed under a free documentation license such as the GNU Free Documentation License 1.3 or Creative Commons Attribution 4.0 license or other free software licenses such as the GPLv3 or MIT.
 2. Are available in either Markdown or big-single-page HTML format.
 3. Are authoritative references on parts of GNU Emacs or packages interacting with GNU Emacs.
 
-Point 1. excludes Magit from being included, ~sadly~ for now, see https://github.com/ThomasFKJorna/emacs-docs/#1 for up to date discussion.
 
 ## FAQs
 
