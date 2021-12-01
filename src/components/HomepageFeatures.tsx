@@ -44,11 +44,17 @@ const FeatureList: FeatureItem[] = [
     link: 'docs/auctex/Top',
     description: <>A sophisticated LaTeX editing system.</>,
   },
+  {
+    title: 'Magit Manual',
+    image: '/img/magit-logo.png',
+    link: 'docs/Magit/Top',
+    description: <> A Git Porcelain inside Emacs.</>,
+  },
 ]
 
 function Feature({ title, shortTitle, image, link, description }: FeatureItem) {
   return (
-    <div className={clsx('col col--3')} style={{}}>
+    <div className={clsx('col col--4')} style={{}}>
       <div
         className="feature-card"
         // style={{

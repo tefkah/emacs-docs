@@ -143,7 +143,7 @@ const config = {
               },
               {
                 label: 'Magit',
-                to: '/docs/magit/Magit User Manual',
+                to: '/docs/magit/Magit-User-Manual',
               },
             ],
           },
