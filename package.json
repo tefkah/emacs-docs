@@ -14,7 +14,8 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
-    "initialize": "ts-node  scripts/init.ts"
+    "ts-node": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\"",
+    "setup": "yarn ts-node scripts/setup.ts"
   },
   "dependencies": {
     "@cmfcmf/docusaurus-search-local": "^0.9.2",

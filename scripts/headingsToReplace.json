@@ -1,0 +1,9 @@
+{
+  "Microsoft Windows Performance": "9.2.2.1 Microsoft Windows Performance",
+  "MacOS Performance": "9.2.2.2 MacOS Performance",
+  "Using the Revision Stack": "6.5.2.1 Using the Revision Stack",
+  "Commit Pseudo Headers": "6.5.2.2 Commit Pseudo Headers",
+  "Commit Mode and Hooks": "6.5.2.3 Commit Mode and Hooks",
+  "Commit Message Conventions": "6.5.2.4 Commit Message Conventions",
+  "Risk of Reverting Automatically": "4.1.6.1 Risk of Reverting Automatically"
+}

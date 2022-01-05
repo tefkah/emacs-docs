@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Emacs",
+    "url": "https://www.gnu.org/software/emacs/manual/html_mono/emacs.html"
+  },
+  {
+    "name": "Elisp",
+    "url": "https://www.gnu.org/software/emacs/manual/html_mono/elisp.html"
+  },
+  {
+    "name": "Org",
+    "url": "https://www.gnu.org/software/emacs/manual/html_mono/org.html"
+  },
+  {
+    "name": "AUCTeX",
+    "url": "https://www.gnu.org/software/auctex/manual/auctex.html"
+  },
+  {
+    "name": "Magit",
+    "url": "https://magit.vc/manual/magit.html"
+  }
+]
