@@ -8,10 +8,8 @@ There are two main applications for properties in Org mode. First, properties ar
 
 Properties can be conveniently edited and viewed in column view (see [Column View](/docs/org/Column-View)).
 
-|                                                          |    |                                    |
-| :------------------------------------------------------- | -- | :--------------------------------- |
-| • [Property Syntax](/docs/org/Property-Syntax)           |    | How properties are spelled out.    |
-| • [Special Properties](/docs/org/Special-Properties)     |    | Access to other Org mode features. |
-| • [Property Searches](/docs/org/Property-Searches)       |    | Matching property values.          |
-| • [Property Inheritance](/docs/org/Property-Inheritance) |    | Passing values down a tree.        |
-| • [Column View](/docs/org/Column-View)                   |    | Tabular viewing and editing.       |
+*   [Property Syntax](/docs/org/Property-Syntax)
+*   [Special Properties](/docs/org/Special-Properties)
+*   [Property Searches](/docs/org/Property-Searches)
+*   [Property Inheritance](/docs/org/Property-Inheritance)
+*   [Column View](/docs/org/Column-View)

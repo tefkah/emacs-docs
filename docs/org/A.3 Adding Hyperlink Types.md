@@ -29,7 +29,7 @@ The following ‘`ol-man.el`’ file implements it
 PATH should be a topic that can be thrown at the man command."
   (funcall org-man-command path))
 
-(defun org-man-store-link ()
+(defun org-man-store-link (&optional _interactive?)
   "Store a link to a man page."
   (when (memq major-mode '(Man-mode woman-mode))
     ;; This is a man page, we do make this link.
@@ -77,4 +77,4 @@ A review of ‘`ol-man.el`’:
 
 3.  The rest of the file implements necessary variables and functions.
 
-    For example, `org-man-store-link` is responsible for storing a link when `org-store-link` (see [Handling Links](/docs/org/Handling-Links)) is called from a buffer displaying a man page. It first checks if the major mode is appropriate. If check fails, the function returns `nil`, which means it isn’t responsible for creating a link to the current buffer. Otherwise the function makes a link string by combining the ‘`man:`’ prefix with the man topic. It also provides a default description. The function `org-insert-link` can insert it back into an Org buffer later on.
+    For example, `org-man-store-link` is responsible for storing a link when `org-store-link` (see [Handling Links](/docs/org/Handling-Links)) is called from a buffer displaying a man page. It is passed an argument `interactive?` which this function does not use, but other store functions use to behave differently when a link is stored interactively by the user. It first checks if the major mode is appropriate. If check fails, the function returns `nil`, which means it isn’t responsible for creating a link to the current buffer. Otherwise the function makes a link string by combining the ‘`man:`’ prefix with the man topic. It also provides a default description. The function `org-insert-link` can insert it back into an Org buffer later on.

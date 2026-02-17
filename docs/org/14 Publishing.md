@@ -8,9 +8,7 @@ You can also use Org to convert files into PDF, or even combine HTML and PDF con
 
 Publishing has been contributed to Org by David O’Toole.
 
-|                                                              |    |                                    |
-| :----------------------------------------------------------- | -- | :--------------------------------- |
-| • [Configuration](/docs/org/Configuration)                   |    | Defining projects.                 |
-| • [Uploading Files](/docs/org/Uploading-Files)               |    | How to get files up on the server. |
-| • [Sample Configuration](/docs/org/Sample-Configuration)     |    | Example projects.                  |
-| • [Triggering Publication](/docs/org/Triggering-Publication) |    | Publication commands.              |
+*   [Configuration](/docs/org/Configuration)
+*   [Uploading Files](/docs/org/Uploading-Files)
+*   [Sample Configuration](/docs/org/Sample-Configuration)
+*   [Triggering Publication](/docs/org/Triggering-Publication)

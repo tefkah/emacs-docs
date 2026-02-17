@@ -19,13 +19,11 @@ By default, the report ignores commented (see [Comment Lines](/docs/org/Comment-
 
 Two variables control how the agenda buffer is displayed and whether the window configuration is restored when the agenda exits: `org-agenda-window-setup` and `org-agenda-restore-windows-after-quit`.
 
-|                                                                  |    |                                              |
-| :--------------------------------------------------------------- | -- | :------------------------------------------- |
-| • [Agenda Files](/docs/org/Agenda-Files)                         |    | Files being searched for agenda information. |
-| • [Agenda Dispatcher](/docs/org/Agenda-Dispatcher)               |    | Keyboard access to agenda views.             |
-| • [Built-in Agenda Views](/docs/org/Built_002din-Agenda-Views)   |    | What is available out of the box?            |
-| • [Presentation and Sorting](/docs/org/Presentation-and-Sorting) |    | How agenda items are prepared for display.   |
-| • [Agenda Commands](/docs/org/Agenda-Commands)                   |    | Remote editing of Org trees.                 |
-| • [Custom Agenda Views](/docs/org/Custom-Agenda-Views)           |    | Defining special searches and views.         |
-| • [Exporting Agenda Views](/docs/org/Exporting-Agenda-Views)     |    | Writing a view to a file.                    |
-| • [Agenda Column View](/docs/org/Agenda-Column-View)             |    | Using column view for collected entries.     |
+*   [Agenda Files](/docs/org/Agenda-Files)
+*   [The Agenda Dispatcher](/docs/org/Agenda-Dispatcher)
+*   [The Built-in Agenda Views](/docs/org/Built_002din-Agenda-Views)
+*   [Presentation and Sorting](/docs/org/Presentation-and-Sorting)
+*   [Commands in the Agenda Buffer](/docs/org/Agenda-Commands)
+*   [Custom Agenda Views](/docs/org/Custom-Agenda-Views)
+*   [Exporting Agenda Views](/docs/org/Exporting-Agenda-Views)
+*   [Using Column View in the Agenda](/docs/org/Agenda-Column-View)
