@@ -10,7 +10,7 @@ const config = {
 	onBrokenLinks: "warn",
 	onBrokenMarkdownLinks: "warn",
 	favicon: "img/favicon.svg",
-	organizationName: "ThomasFKJorna",
+	organizationName: "tefkah",
 	projectName: "emacs-docs",
 	trailingSlash: false,
 
@@ -130,7 +130,7 @@ const config = {
 						className: "magit",
 					},
 					{
-						href: "https://github.com/ThomasFKJorna/emacs-docs",
+						href: "https://github.com/tefkah/emacs-docs",
 						className: "github-icon",
 						position: "right",
 						"aria-label": "GitHub repository",
@@ -166,7 +166,7 @@ const config = {
 							{ label: "License", to: "/blog/License" },
 							{
 								label: "GitHub",
-								href: "https://github.com/ThomasFKJorna/emacs-docs",
+								href: "https://github.com/tefkah/emacs-docs",
 							},
 						],
 					},
@@ -357,12 +357,13 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
 
 	const withoutPrefs = filtered.map((cat) => {
 		const { prefix: catPrefix, filename: catLabel } = prefixParser(cat.label);
-		const isAppendix = ["A", "B", "C", "D", "E", "F", "G", "H"].includes(
-			catPrefix[0],
-		);
+		const isAppendix = /[A-Z]/.test(catPrefix[0]);
+
 		const categoryLabel = isAppendix
 			? `Appendix ${cat.label}`
-			: catLabel || cat.label;
+			: /\d+/.test(cat.label)
+				? `${catPrefix}\. ${catLabel}`
+				: cat.label;
 
 		if (!cat.items?.length) return { ...cat, label: categoryLabel };
 

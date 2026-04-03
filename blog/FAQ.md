@@ -2,9 +2,7 @@
 slug: FAQ
 title: FAQ
 authors:
-  name: Thomas F. K. Jorna
-  url: https://github.com/ThomasFKJorna
-  image_url: https://github.com/thomasfkjorna.png
+  - tefkah
 tags: [about]
 ---
 
@@ -35,7 +33,7 @@ The way these docs are generated work best if the authors produce on big HTML fi
 
 ## There's something wrong!
 
-Whoops! Sorry! HTML does not lend itself to perfect conversion to Markdown, so some links could be messed up. I keep a list of "bad" links [here](https://github.com/ThomasFKJorna/emacs-docs/bad-links.json) to which you can add the incorrect link url and the correct one, meaning it should be fixed next build.
+Whoops! Sorry! HTML does not lend itself to perfect conversion to Markdown, so some links could be messed up. I keep a list of "bad" links [here](https://github.com/tefkah/emacs-docs/bad-links.json) to which you can add the incorrect link url and the correct one, meaning it should be fixed next build.
 
 ## Do you have any other fantastic projects?
 

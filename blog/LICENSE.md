@@ -16,7 +16,7 @@ All text is licensed under the GNU Free Documentation License version 1.3, see t
 > A copy of the license is included in the section entitled "GNU
 > Free Documentation License".
 
-See the license [here](https://github.com/ThomasFKJorna/emacs-docs/GNU_Free_Documentation_License)
+See the license [here](https://github.com/tefkah/emacs-docs/GNU_Free_Documentation_License)
 
 The verbatim copies of the included manuals retain their original license, see the copyright notices included in each section.
 
@@ -45,4 +45,4 @@ All code is licensed under the GNU General Public License version 3 or later as 
 > You should have received a copy of the GNU General Public License
 > along with this program. If not, see [https://www.gnu.org/licenses/](https://www.gnu.org/licenses/).
 
-See the license [here](https://github.com/ThomasFKJorna/emacs-docs/GNU_General_Public_License)
+See the license [here](https://github.com/tefkah/emacs-docs/GNU_General_Public_License)

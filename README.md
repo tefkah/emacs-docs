@@ -1,11 +1,10 @@
 # Emacs Docs
 
+![Last updated: 2026-04-03](https://img.shields.io/badge/last_updated-2026--04--03-blue)
+
 > The modern documentation website Emacs deserves.
 
-
 ![Emacs Docs Mascot](https://emacsdocs.org/img/Banner.png)
-
-
 
 ## Why
 
@@ -27,14 +26,13 @@ Only documentation for Emacs core and Emacs packages will be included, which mus
 2. Are available in either Markdown or big-single-page HTML format.
 3. Are authoritative references on parts of GNU Emacs or packages interacting with GNU Emacs.
 
-
 ## FAQs
 
 Please see [the FAQs](https://emacsdocs.org/blog/faq)
 
 ## Misc
 
-The scripts used to convert the HTML manuals to Markdown can be found [here](https://github.com/ThomasFKJorna/emacs-docs-converter). Please note that it's extremely jank and will be substantially revised in the future, contributors are welcome, but you've been warned!
+The scripts used to convert the HTML manuals to Markdown can be found [here](https://github.com/tefkah/emacs-docs-converter). Please note that it's extremely jank and will be substantially revised in the future, contributors are welcome, but you've been warned!
 
 ## Comments and Feedback
 
