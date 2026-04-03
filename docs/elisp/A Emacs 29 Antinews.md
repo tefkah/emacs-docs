@@ -1,0 +1,23 @@
+---
+slug: Antinews
+---
+
+For those users who live backwards in time, here is information about downgrading to Emacs version 29.4. We hope you will enjoy the greater simplicity that results from the absence of many Emacs 30.2<!-- /@w --> features.
+
+- Mouse wheel events once again follow the platform and window-system conventions: sometimes they are `wheel-up/down` and sometimes `mouse-4/5/6/7`. Lisp programs which use these should once again be aware of the conventions in effect and behave accordingly.
+- The command `describe-function` no longer distracts you by showing unnecessary details like the type of the function's object. Emacs hackers always know whether a function is a primitive, a native-compiled Lisp function, or any other kind. Stating the obvious simply wastes the precious screen estate; as you move into the past, and the typical dimensions of the screen become smaller, that waste is less and less justified. So we made the waste smaller.
+- The support for styled underline in face attribute was dropped. The simple underline should be enough; anything else is just code bloat and creeping featurism. Colorful underlines on TTY frames are no longer supported for the same reason.
+- IELM stopped recording its input history. You will no longer be annoyed by inputs from your past sessions; each session starts with a clean slate. What can be simpler and easier to remember?
+- You can no longer disable JavaScript in xwidget Webkit sessions. Since xwidgets are going away in one of the previous Emacs versions, we decided to make this one step in that direction and get rid of this complication.
+- The `minibuffer-regexp-mode` was removed. Regular expressions are just strings, so no fancy mode should be needed for editing them.
+- We removed the Compat package. Forward compatibility for ELPA packages becomes less and less important as you move back through time, and soon enough ELPA will disappear entirely. We decided it was prudent to start preparing for that now.
+- We are back to interpreting `\x` without any following hex digits as character code zero (NUL), as it always was in Emacs. The savings in typing due to this alone are enough to justify this simplification.
+- To keep Emacs clean and elegant, we've removed the ability to show tooltips for fringe bitmaps. What important information cam be shown on the fringes, and why would it require tooltips to explain its purpose? We decided it isn't justified to keep this in past versions of Emacs.
+- Fancy sorting-related facilities, like the `value<` function and keyword arguments for `sort`, were deleted as too complex. The basic `sort` function should all that's needed in the years to go.
+- Features related to the inheritance graph of major modes were deemed unnecessary and thus were dropped. This includes `provided-mode-derived-p`, `derived-mode-add-parents`, and others. We decided that untangling the mode inheritance relationships by hand facilitates more clear code and makes the intent evident.
+- We removed unnecessary functionality for handling touch screen events, as touch screens gradually disappear from view as you move back in time. There's no need to keep obsolete these new inventions in the past.
+- Various new functions and variables for moving and transposing sexps and for moving by program statements were dropped as unnecessary. The original commands that move by balanced expressions are more than enough.
+- We deleted some fancy `declare` forms for functions, such as `ftype`. Emacs Lisp is not a string-typed language, which makes these declarations anathema. The types `closure` and `interpreted-function` are gone for the same reason: no need to distinguish types of Lisp functions.
+- The byte compiler stopped issuing warnings about practices some purists consider questionable. This includes warnings about missing `lexical-binding` cookies, empty bodies of special forms and macros, comparison with literals, `condition-case` without handlers, mutation of constants, and some others. As time moves into the past, the typical Emacs hacker knows best what's correct code and what isn't, and thus these warnings become useless annoyances. Good riddance!
+- The `obarray` type is gone. Obarrays are back to their original representation as vectors. Each removed Lisp data type makes Emacs simpler and easier to use, so this is a welcome deletion.
+- As part of the ongoing quest for simplicity, many other functions and variables have been eliminated. Other functions and variables, that were declared obsolete since Emacs 24, have been added back, in preparation for releasing Emacs 24 in some distant past.

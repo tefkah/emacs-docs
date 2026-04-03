@@ -4,7 +4,7 @@ slug: Standard-Keymaps
 
 In this section we list some of the more general keymaps. Many of these exist when Emacs is first started, but some are loaded only when the respective feature is accessed.
 
-There are many other, more specialized, maps than these; in particular those associated with major and minor modes. The minibuffer uses several keymaps (see [Completion Commands](/docs/elisp/Completion-Commands)). For more details on keymaps, see [Keymaps](/docs/elisp/Keymaps).
+There are many other, more specialized, maps than these; in particular those associated with major and minor modes. The minibuffer uses several keymaps (see [Minibuffer Commands that Do Completion](/docs/elisp/Completion-Commands)). For more details on keymaps, see [Keymaps](/docs/elisp/Keymaps).
 
 ### `2C-mode-map`
 
@@ -18,7 +18,7 @@ See [Defining Abbrevs](https://www.gnu.org/software/emacs/manual/html_mono/emacs
 
 ### `button-buffer-map`
 
-A sparse keymap useful for buffers containing buffers.\
+A sparse keymap useful for buffers containing buttons.\
 You may want to use this as a parent keymap. See [Buttons](/docs/elisp/Buttons).
 
 ### `button-map`
@@ -46,10 +46,6 @@ See [Registers](https://www.gnu.org/software/emacs/manual/html_mono/emacs.html#R
 
 A full keymap for `ESC` (or `Meta`) commands.
 
-### `facemenu-keymap`
-
-A sparse keymap used for the `M-o` prefix key.
-
 ### `function-key-map`
 
 The parent keymap of all `local-function-key-map` (q.v.) instances.
@@ -76,11 +72,11 @@ It has the same keymap in its value cell and in its function cell.
 ### `input-decode-map`
 
 The keymap for translating keypad and function keys.\
-If there are none, then it contains an empty sparse keymap. See [Translation Keymaps](/docs/elisp/Translation-Keymaps).
+If there are none, then it contains an empty sparse keymap. See [Keymaps for Translating Sequences of Events](/docs/elisp/Translation-Keymaps).
 
 ### `key-translation-map`
 
-A keymap for translating keys. This one overrides ordinary key bindings, unlike `local-function-key-map`. See [Translation Keymaps](/docs/elisp/Translation-Keymaps).
+A keymap for translating keys. This one overrides ordinary key bindings, unlike `local-function-key-map`. See [Keymaps for Translating Sequences of Events](/docs/elisp/Translation-Keymaps).
 
 ### `kmacro-keymap`
 
@@ -90,7 +86,7 @@ See [Keyboard Macros](https://www.gnu.org/software/emacs/manual/html_mono/emacs.
 ### `local-function-key-map`
 
 The keymap for translating key sequences to preferred alternatives.\
-If there are none, then it contains an empty sparse keymap. See [Translation Keymaps](/docs/elisp/Translation-Keymaps).
+If there are none, then it contains an empty sparse keymap. See [Keymaps for Translating Sequences of Events](/docs/elisp/Translation-Keymaps).
 
 ### `menu-bar-file-menu`
 
@@ -105,7 +101,7 @@ If there are none, then it contains an empty sparse keymap. See [Translation Key
 ### `menu-bar-help-menu`
 
 These keymaps display the main, top-level menus in the menu bar.\
-Some of them contain sub-menus. For example, the Edit menu contains `menu-bar-search-menu`, etc. See [Menu Bar](/docs/elisp/Menu-Bar).
+Some of them contain sub-menus. For example, the Edit menu contains `menu-bar-search-menu`, etc. See [The Menu Bar](/docs/elisp/Menu-Bar).
 
 ### `minibuffer-inactive-mode-map`
 
@@ -170,7 +166,7 @@ See [Tab Bars](https://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Ta
 ### `tool-bar-map`
 
 The keymap defining the contents of the tool bar.\
-See [Tool Bar](/docs/elisp/Tool-Bar).
+See [Tool bars](/docs/elisp/Tool-Bar).
 
 ### `universal-argument-map`
 

@@ -1,71 +1,35 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
-
-/* You can override the default Infima variables here. */
-
-@import url('https://fontlibrary.org//face/nimbus-sans-l');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 
 :root {
-  --ifm-font-family-base: 'Roboto', sans-serif;
-  --ifm-font-family-monospace: 'Roboto Mono', SFMono-Regular, Menlo, Monaco, Consolas,
-    'Liberation Mono', 'Courier New', monospace;
-  --nano-salient: #673ab7;
-  --ellie: #7134a9;
-  --ifm-color-primary: #7134a9;
-  --ifm-color-primary-dark: #662f98;
-  --ifm-color-primary-darker: #602c90;
-  --ifm-color-primary-darkest: #4f2476;
-  --ifm-color-primary-light: #7c39ba;
-  --ifm-color-primary-lighter: #823cc2;
-  --ifm-color-primary-lightest: #9255cb;
-  --ifm-color-primary-background: hsl(277, 20%, 99%);
-  --ifm-color-primary-background-border: hsl(277, 40%, 99%);
-  --doom-blue-background: #daecfb;
+  --ifm-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ifm-font-family-monospace: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  --org: #7a9;
+  --ifm-color-primary: #6d28d9;
+  --ifm-color-primary-dark: #5b21b6;
+  --ifm-color-primary-darker: #4c1d95;
+  --ifm-color-primary-darkest: #3b0f80;
+  --ifm-color-primary-light: #7c3aed;
+  --ifm-color-primary-lighter: #8b5cf6;
+  --ifm-color-primary-lightest: #a78bfa;
 
-  --ifm-code-font-size: 95%;
-  --l: 100%;
+  --ifm-code-font-size: 92%;
+  --ifm-global-spacing: 1.5rem;
+  --ifm-heading-font-weight: 600;
+  --ifm-font-weight-semibold: 500;
 
-  --ifm-car-color: var(--nano-salient);
-  --ifm-table-border-width: 0px !important;
+  --ifm-table-border-width: 0px;
+
+  --fun-tag: var(--ifm-color-primary);
+  --macro-tag: rgb(219, 39, 119);
+  --var-tag: rgb(37, 99, 235);
+  --special-tag: rgb(220, 38, 38);
+  --user-option-tag: rgb(13, 148, 136);
 
   --fun-tag-background: none;
   --var-tag-background: none;
   --user-option-tag-background: none;
   --macro-tag-background: none;
   --special-tag-background: none;
-
-  --fun-tag: var(--ifm-color-primary);
-  --macro-tag: rgb(227, 17, 108);
-  --var-tag: rgb(0, 0, 159);
-  --special-tag: rgb(200, 58, 73);
-  --user-option-tag: rgb(54, 172, 170);
-
-  --ifm-global-spacing: 1.5rem;
-}
-
-/* code {
-  padding-top: 0;
-  padding-bottom: 0.2rem;
-  margin-bottom: 0.2rem;
-} */
-
-th,
-table tr,
-table td {
-  border: none !important;
-}
-h3 > code {
-  font-size: 80%;
-}
-
-.markdown h1:first-child {
-  --ifm-h1-font-size: 2.5rem;
 }
 
 html[data-theme='dark'] {
@@ -76,86 +40,167 @@ html[data-theme='dark'] {
   --doom-blue: #51afef;
   --doom-orange: #ecbe7b;
 
-  --ifm-color-primary: var(--doom-pale);
-  --ifm-color-primary-dark: #5a91ea;
-  --ifm-car-color: var(--doom-pale);
-  --ifm-background-surface-color: #1e2127;
-  --ifm-background-color: #191b20;
-  --ifm-hover-overlay: rgba(255, 255, 255, 0.05);
-  --ifm-color-primary-background: var(--ifm-background-surface-color);
-  --ifm-color-primary-background-border: var(--ifm-background-surface-color);
-  --org: #e0eae7;
+  --ifm-color-primary: #a78bfa;
+  --ifm-color-primary-dark: #8b5cf6;
+  --ifm-color-primary-darker: #7c3aed;
+  --ifm-color-primary-darkest: #6d28d9;
+  --ifm-color-primary-light: #c4b5fd;
+  --ifm-color-primary-lighter: #ddd6fe;
+  --ifm-color-primary-lightest: #ede9fe;
+
+  --ifm-background-surface-color: #1e1e2e;
+  --ifm-background-color: #181825;
+  --ifm-hover-overlay: rgba(255, 255, 255, 0.04);
+
+  --fun-tag: var(--doom-blue);
+  --macro-tag: var(--doom-pale);
+  --var-tag: var(--doom-orange);
+  --user-option-tag: var(--doom-pink);
+  --special-tag: var(--doom-pale);
 
   --fun-tag-background: var(--ifm-code-background);
   --macro-tag-background: var(--ifm-code-background);
   --var-tag-background: var(--ifm-code-background);
   --special-tag-background: var(--ifm-code-background);
   --user-option-tag-background: var(--ifm-code-background);
-  /* any other colors you wish to overwrite */
-  --fun-tag: var(--doom-blue);
-  --var-tag: var(--doom-orange);
-  --user-option-tag: var(--doom-pink);
-  --macro-tag: var(--doom-pale);
-  --special-tag: var(--doom-pale);
-  --quoted-symbol: var(--doom-orange);
-  --punctuation: var(--doom-blue);
-  --gh-icon: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E");
 }
 
-.hero {
-  background-color: var(--ellie);
-  color: #ffffff;
+/* ── typography ─────────────────────────────────────────────────────────────── */
+
+.markdown h1:first-child {
+  --ifm-h1-font-size: 2.25rem;
+  letter-spacing: -0.025em;
 }
 
-.tag + strong {
-  font-family: var(--ifm-font-family-monospace);
-  font-size: var(--ifm-code-font-size);
+h2 {
+  letter-spacing: -0.015em;
 }
+
+h3 {
+  font-weight: 400;
+}
+
+h3 > code {
+  font-size: 85%;
+}
+
+p > code {
+  vertical-align: top;
+}
+
+/* ── tables ─────────────────────────────────────────────────────────────────── */
+
+th,
+table tr,
+table td {
+  border: none !important;
+}
+
+/* ── sidebar ────────────────────────────────────────────────────────────────── */
 
 .menu__link {
   padding: 6px 12px;
-}
-.menu__link--active {
-  padding-left: 8px;
-  border-left: 4px solid var(--ifm-color-primary);
-  font-weight: 500;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
+.menu__link--active {
+  padding-left: 9px;
+  border-left: 3px solid var(--ifm-color-primary);
+  font-weight: 500;
+  border-radius: 0 6px 6px 0;
+}
+
+/* ── toc sidebar ────────────────────────────────────────────────────────────── */
+
 .table-of-contents .table-of-contents__link--active {
-  border-left: 4px solid var(--ifm-color-primary);
+  border-left: 3px solid var(--ifm-color-primary);
   color: var(--ifm-font-color-base);
   font-weight: 500;
   margin-left: -16px;
-  padding-left: 12px;
+  padding-left: 13px;
 }
+
+/* ── navbar ─────────────────────────────────────────────────────────────────── */
+
+.navbar {
+  backdrop-filter: blur(12px);
+}
+
 .navbar .navbar__link--active::after {
   background: var(--ifm-color-primary);
   content: '';
   display: flex;
-  height: 4px;
-  margin-left: -15px;
-  margin-right: -15px;
-  margin-top: -4px;
+  height: 3px;
+  margin-left: -12px;
+  margin-right: -12px;
+  margin-top: -3px;
   position: relative;
-  top: 17px;
-  width: calc(100% + 30px);
+  top: 15px;
+  width: calc(100% + 24px);
+  border-radius: 3px 3px 0 0;
 }
-p > code {
-  vertical-align: top;
+
+/* ── hero ───────────────────────────────────────────────────────────────────── */
+
+.hero {
+  background: linear-gradient(135deg, #6d28d9 0%, #4c1d95 100%);
+  color: #ffffff;
 }
+
+html[data-theme='dark'] .hero {
+  background: linear-gradient(135deg, #3b0f80 0%, #1e1b4b 100%);
+}
+
+/* ── footer ─────────────────────────────────────────────────────────────────── */
+
 .footer {
-  background-color: rgb(40, 44, 52);
+  background-color: #1e1b2e;
 }
+
+/* ── feature cards ──────────────────────────────────────────────────────────── */
+
+.feature-card {
+  display: block;
+  position: relative;
+  padding: 2rem 1.25rem;
+  text-decoration: none;
+  overflow: hidden;
+  height: 100%;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.feature-card:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 4px 24px rgba(109, 40, 217, 0.1);
+  transform: translateY(-2px);
+}
+
+html[data-theme='dark'] .feature-card:hover {
+  box-shadow: 0 4px 24px rgba(167, 139, 250, 0.08);
+}
+
+.feature-card:hover p {
+  color: var(--ifm-color-primary);
+}
+
+/* ── code highlighting ──────────────────────────────────────────────────────── */
+
 .docusaurus-highlight-code-line {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.08);
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
 }
 
 html[data-theme='dark'] .docusaurus-highlight-code-line {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.25);
 }
+
+/* ── github icon ────────────────────────────────────────────────────────────── */
 
 .github-icon::before {
   background: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E");
@@ -163,7 +208,6 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   display: flex;
   height: 24px;
   width: 24px;
-  margin-right: 8px;
 }
 
 html[data-theme='dark'] .github-icon::before {
@@ -171,59 +215,20 @@ html[data-theme='dark'] .github-icon::before {
     no-repeat;
 }
 
-.feature-card {
-  transition: all 0.3s ease-out;
-}
-
-.feature-card {
-  display: block;
-  position: relative;
-  /* background-color: var(--ifm-color-primary-background); */
-  padding: 32px 16px;
-  text-decoration: none;
-  overflow: hidden;
-  height: 100%;
-  border: 1px solid var(--ifm-color-primary-background-border);
-}
-/* .card3 .go-corner {
-  opacity: 0.7;
-} */
-.feature-card:hover {
-  border: 1px solid var(--ifm-color-primary);
-  /* box-shadow: 0px 0px 999px 999px rgba(255, 255, 255, 0.5); */
-  z-index: 500;
-}
-
-.feature-card:hover p {
-  color: var(--ifm-color-primary);
-}
-.feature-card:hover .go-corner {
-  transition: opactiy 0.3s linear;
-  opacity: 1;
-}
-
-.token.punctuation {
-  color: var(--punctuation) !important;
-}
-.token.quoted-symbol,
-.other-marker-vars,
-.rest-vars {
-  color: var(--quoted-symbol) !important;
-}
-.token.car {
-  color: var(--ifm-car-color);
-}
+/* ── elisp tags ─────────────────────────────────────────────────────────────── */
 
 .tag {
   font-size: 80%;
   margin-right: 4px;
 }
+
 .tag code {
   vertical-align: baseline;
 }
 
-h3 {
-  font-weight: 400;
+.tag + strong {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: var(--ifm-code-font-size);
 }
 
 .tag.function code {
@@ -243,13 +248,31 @@ h3 {
   background-color: var(--user-option-tag-background);
   border-color: var(--user-option-tag-background);
 }
+
 .tag.specialform code {
   color: var(--special-tag);
   background-color: var(--special-tag-background);
   border-color: var(--special-tag-background);
 }
+
 .tag.variable code {
   color: var(--var-tag);
   background-color: var(--var-tag-background);
   border-color: var(--var-tag-background);
+}
+
+/* ── prism token overrides ──────────────────────────────────────────────────── */
+
+.token.car {
+  color: var(--ifm-color-primary);
+}
+
+html[data-theme='dark'] .token.punctuation {
+  color: var(--doom-blue) !important;
+}
+
+html[data-theme='dark'] .token.quoted-symbol,
+html[data-theme='dark'] .other-marker-vars,
+html[data-theme='dark'] .rest-vars {
+  color: var(--doom-orange) !important;
 }

@@ -1,7 +1,4 @@
-// @flow
-// Converted automatically using ./tools/themeFromVsCode
-
-var theme = {
+const theme = {
   plain: {
     color: '#bbc2cf',
     backgroundColor: '#282c34',
@@ -64,4 +61,4 @@ var theme = {
   ],
 }
 
-module.exports = theme
+export default theme

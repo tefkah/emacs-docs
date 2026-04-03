@@ -1,10 +1,11 @@
+import React from 'react'
+
 interface TagProps {
   tag: string
-  children: any
+  children: React.ReactNode
 }
 
-export default function Tag(props: TagProps) {
-  const { tag, children } = props
+export default function Tag({ tag, children }: TagProps): React.ReactNode {
   const getColor = (key: string) => {
     switch (key) {
       case 'function':
@@ -15,13 +16,16 @@ export default function Tag(props: TagProps) {
         return 'green'
       case 'special form':
         return 'yellow'
+      default:
+        return undefined
     }
   }
 
   const color = getColor(tag)
+
   return (
     <span
-      style={{ color: color, backgroundColor: color, fontWeight: 300, fontFamily: 'monospace' }}
+      style={{ color, backgroundColor: color, fontWeight: 300, fontFamily: 'monospace' }}
     >
       {children}
     </span>

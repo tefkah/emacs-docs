@@ -8,6 +8,7 @@ import HomepageFeatures from '../components/HomepageFeatures'
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext()
+
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container padding-top--lg padding-bottom--lg">
@@ -15,12 +16,13 @@ function HomepageHeader() {
           <div className={clsx(styles.leftHero, 'col')}>
             <h1 className="hero__title">{siteConfig.title}</h1>
             <p className={clsx('hero__subtitle', styles.heroSubtitle)}>{siteConfig.tagline}</p>
+
             <div className={styles.buttons}>
               <Link
                 className="button button--secondary button--lg"
                 to="/docs/emacs/The-Emacs-Editor"
               >
-                Get Started with Emacs!️
+                Get Started with Emacs
               </Link>
             </div>
           </div>
@@ -40,13 +42,11 @@ function HomepageHeader() {
   )
 }
 
-export default function Home(): JSX.Element {
+export default function Home(): React.ReactNode {
   const { siteConfig } = useDocusaurusContext()
+
   return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
-    >
+    <Layout title={siteConfig.title} description="The modern documentation website Emacs deserves.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

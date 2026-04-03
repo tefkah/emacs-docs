@@ -15,15 +15,3 @@ Lisp is unlike many other languages in that its objects are *self-typing*: the p
 In most languages, the programmer must declare the data type of each variable, and the type is known by the compiler but not represented in the data. Such type declarations do not exist in Emacs Lisp. A Lisp variable can have any type of value, and it remembers whatever value you store in it, type and all. (Actually, a small number of Emacs Lisp variables can only take on values of a certain type. See [Variables with Restricted Values](/docs/elisp/Variables-with-Restricted-Values).)
 
 This chapter describes the purpose, printed representation, and read syntax of each of the standard types in GNU Emacs Lisp. Details on how to use these types can be found in later chapters.
-
-|                                                                |    |                                            |
-| :------------------------------------------------------------- | -- | :----------------------------------------- |
-| • [Printed Representation](/docs/elisp/Printed-Representation) |    | How Lisp objects are represented as text.  |
-| • [Special Read Syntax](/docs/elisp/Special-Read-Syntax)       |    | An overview of all the special sequences.  |
-| • [Comments](/docs/elisp/Comments)                             |    | Comments and their formatting conventions. |
-| • [Programming Types](/docs/elisp/Programming-Types)           |    | Types found in all Lisp systems.           |
-| • [Editing Types](/docs/elisp/Editing-Types)                   |    | Types specific to Emacs.                   |
-| • [Circular Objects](/docs/elisp/Circular-Objects)             |    | Read syntax for circular structure.        |
-| • [Type Predicates](/docs/elisp/Type-Predicates)               |    | Tests related to types.                    |
-| • [Equality Predicates](/docs/elisp/Equality-Predicates)       |    | Tests of equality between any two objects. |
-| • [Mutability](/docs/elisp/Mutability)                         |    | Some objects should not be modified.       |

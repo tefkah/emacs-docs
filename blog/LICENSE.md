@@ -43,6 +43,6 @@ All code is licensed under the GNU General Public License version 3 or later as 
 > GNU General Public License for more details.
 >
 > You should have received a copy of the GNU General Public License
-> along with this program. If not, see <https://www.gnu.org/licenses/>.
+> along with this program. If not, see [https://www.gnu.org/licenses/](https://www.gnu.org/licenses/).
 
 See the license [here](https://github.com/ThomasFKJorna/emacs-docs/GNU_General_Public_License)

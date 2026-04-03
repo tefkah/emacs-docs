@@ -6,21 +6,13 @@ This section describes the Emacs module API and how to use it as part of writing
 
 Writing a module and integrating it into Emacs comprises the following tasks:
 
-*   Writing initialization code for the module.
-*   Writing one or more module functions.
-*   Communicating values and objects between Emacs and your module functions.
-*   Handling of error conditions and nonlocal exits.
+- Writing initialization code for the module.
+- Writing one or more module functions.
+- Communicating values and objects between Emacs and your module functions.
+- Handling of error conditions and nonlocal exits.
 
 The following subsections describe these tasks and the API itself in more detail.
 
 Once your module is written, compile it to produce a shared library, according to the conventions of the underlying platform. Then place the shared library in a directory mentioned in `load-path` (see [Library Search](/docs/elisp/Library-Search)), where Emacs will find it.
 
 If you wish to verify the conformance of a module to the Emacs dynamic module API, invoke Emacs with the `--module-assertions` option. See [Initial Options](https://www.gnu.org/software/emacs/manual/html_mono/emacs.html#Initial-Options) in The GNU Emacs Manual.
-
-|                                                              |    |    |
-| :----------------------------------------------------------- | -- | :- |
-| • [Module Initialization](/docs/elisp/Module-Initialization) |    |    |
-| • [Module Functions](/docs/elisp/Module-Functions)           |    |    |
-| • [Module Values](/docs/elisp/Module-Values)                 |    |    |
-| • [Module Misc](/docs/elisp/Module-Misc)                     |    |    |
-| • [Module Nonlocal](/docs/elisp/Module-Nonlocal)             |    |    |

@@ -4,11 +4,11 @@ slug: Standard-Hooks
 
 The following is a list of some hook variables that let you provide functions to be called from within Emacs on suitable occasions.
 
-Most of these variables have names ending with ‘`-hook`’. They are *normal hooks*, run by means of `run-hooks`. The value of such a hook is a list of functions; the functions are called with no arguments and their values are completely ignored. The recommended way to put a new function on such a hook is to call `add-hook`. See [Hooks](/docs/elisp/Hooks), for more information about using hooks.
+Most of these variables have names ending with '`-hook`'. They are *normal hooks*, run by means of `run-hooks`. The value of such a hook is a list of functions; the functions are called with no arguments and their values are completely ignored. The recommended way to put a new function on such a hook is to call `add-hook`. See [Hooks](/docs/elisp/Hooks), for more information about using hooks.
 
-The variables whose names end in ‘`-functions`’ are usually *abnormal hooks* (some old code may also use the deprecated ‘`-hooks`’ suffix); their values are lists of functions, but these functions are called in a special way (they are passed arguments, or their return values are used). The variables whose names end in ‘`-function`’ have single functions as their values.
+The variables whose names end in '`-functions`' are usually *abnormal hooks* (some old code may also use the deprecated '`-hooks`' suffix). Their values are lists of functions, but these functions are called in a special way: they are either passed arguments, or their return values are used in some way. The variables whose names end in '`-function`' have single functions as their values.
 
-This is not an exhaustive list, it only covers the more general hooks. For example, every major mode defines a hook named ‘`modename-mode-hook`’. The major mode command runs this normal hook with `run-mode-hooks` as the very last thing it does. See [Mode Hooks](/docs/elisp/Mode-Hooks). Most minor modes have mode hooks too.
+This is not an exhaustive list, it only covers the more general hooks. For example, every major mode defines a hook named '`modename-mode-hook`'. The major mode command runs this normal hook with `run-mode-hooks` as the very last thing it does. See [Mode Hooks](/docs/elisp/Mode-Hooks). Most minor modes have mode hooks too.
 
 A special feature allows you to specify expressions to evaluate if and when a file is loaded (see [Hooks for Loading](/docs/elisp/Hooks-for-Loading)). That feature is not exactly a hook, but does a similar job.
 
@@ -40,7 +40,7 @@ See [Mode Hooks](/docs/elisp/Mode-Hooks).
 
 ### `window-setup-hook`
 
-See [Init File](/docs/elisp/Init-File).
+See [The Init File](/docs/elisp/Init-File).
 
 ### `after-insert-file-functions`
 
@@ -48,7 +48,7 @@ See [Init File](/docs/elisp/Init-File).
 
 ### `write-region-post-annotation-function`
 
-See [Format Conversion](/docs/elisp/Format-Conversion).
+See [File Format Conversion](/docs/elisp/Format-Conversion).
 
 ### `after-make-frame-functions`
 
@@ -70,7 +70,7 @@ See [Saving Buffers](/docs/elisp/Saving-Buffers).
 
 ### `after-setting-font-hook`
 
-Hook run after a frame’s font changes.
+Hook run after a frame's font changes.
 
 ### `auto-save-hook`
 
@@ -84,11 +84,11 @@ See [File Local Variables](/docs/elisp/File-Local-Variables).
 
 ### `buffer-access-fontify-functions`
 
-See [Lazy Properties](/docs/elisp/Lazy-Properties).
+See [Lazy Computation of Text Properties](/docs/elisp/Lazy-Properties).
 
 ### `buffer-list-update-hook`
 
-Hook run when the buffer list changes (see [Buffer List](/docs/elisp/Buffer-List)).
+Hook run when the buffer list changes (see [The Buffer List](/docs/elisp/Buffer-List)).
 
 ### `buffer-quit-function`
 
@@ -96,7 +96,7 @@ Function to call to quit the current buffer.
 
 ### `change-major-mode-hook`
 
-See [Creating Buffer-Local](/docs/elisp/Creating-Buffer_002dLocal).
+See [Creating and Deleting Buffer-Local Bindings](/docs/elisp/Creating-Buffer_002dLocal).
 
 ### `comint-password-function`
 
@@ -130,7 +130,7 @@ See [Multiple Terminals](/docs/elisp/Multiple-Terminals).
 
 ### `split-window-preferred-function`
 
-See [Choosing Window Options](/docs/elisp/Choosing-Window-Options).
+See [Additional Options for Displaying Buffers](/docs/elisp/Choosing-Window-Options).
 
 ### `echo-area-clear-hook`
 
@@ -140,15 +140,15 @@ See [Echo Area Customization](/docs/elisp/Echo-Area-Customization).
 
 ### `find-file-not-found-functions`
 
-See [Visiting Functions](/docs/elisp/Visiting-Functions).
+See [Functions for Visiting Files](/docs/elisp/Visiting-Functions).
 
 ### `font-lock-extend-after-change-region-function`
 
-See [Region to Refontify](/docs/elisp/Region-to-Refontify).
+See [Region to Fontify after a Buffer Change](/docs/elisp/Region-to-Refontify).
 
 ### `font-lock-extend-region-functions`
 
-See [Multiline Font Lock](/docs/elisp/Multiline-Font-Lock).
+See [Multiline Font Lock Constructs](/docs/elisp/Multiline-Font-Lock).
 
 ### `font-lock-fontify-buffer-function`
 
@@ -188,17 +188,17 @@ See [Killing Emacs](/docs/elisp/Killing-Emacs).
 
 ### `menu-bar-update-hook`
 
-See [Menu Bar](/docs/elisp/Menu-Bar).
+See [The Menu Bar](/docs/elisp/Menu-Bar).
 
 ### `minibuffer-setup-hook`
 
 ### `minibuffer-exit-hook`
 
-See [Minibuffer Misc](/docs/elisp/Minibuffer-Misc).
+See [Minibuffer Miscellany](/docs/elisp/Minibuffer-Misc).
 
 ### `mouse-leave-buffer-hook`
 
-Hook run when about to switch windows with a mouse command.
+Hook run when the user mouse-clicks in a window.
 
 ### `mouse-position-function`
 
@@ -206,7 +206,7 @@ See [Mouse Position](/docs/elisp/Mouse-Position).
 
 ### `prefix-command-echo-keystrokes-functions`
 
-An abnormal hook run by prefix commands (such as `C-u`) which should return a string describing the current prefix state. For example, `C-u` produces ‘`C-u-`’ and ‘`C-u 1 2 3-`’. Each hook function is called with no arguments and should return a string describing the current prefix state, or `nil` if there’s no prefix state. See [Prefix Command Arguments](/docs/elisp/Prefix-Command-Arguments).
+An abnormal hook run by prefix commands (such as `C-u`) which should return a string describing the current prefix state. For example, `C-u` produces '`C-u-`' and '`C-u 1 2 3-`'. Each hook function is called with no arguments and should return a string describing the current prefix state, or `nil` if there's no prefix state. See [Prefix Command Arguments](/docs/elisp/Prefix-Command-Arguments).
 
 ### `prefix-command-preserve-state-hook`
 
@@ -220,7 +220,7 @@ Hook run in each window just before redisplaying it. See [Forcing Redisplay](/do
 
 ### `pre-command-hook`
 
-See [Command Overview](/docs/elisp/Command-Overview).
+See [Command Loop Overview](/docs/elisp/Command-Overview).
 
 ### `post-gc-hook`
 
@@ -260,7 +260,7 @@ See [Temporary Displays](/docs/elisp/Temporary-Displays).
 
 ### `tty-setup-hook`
 
-See [Terminal-Specific](/docs/elisp/Terminal_002dSpecific).
+See [Terminal-Specific Initialization](/docs/elisp/Terminal_002dSpecific).
 
 ### `window-configuration-change-hook`
 
@@ -268,4 +268,4 @@ See [Terminal-Specific](/docs/elisp/Terminal_002dSpecific).
 
 ### `window-size-change-functions`
 
-See [Window Hooks](/docs/elisp/Window-Hooks).
+See [Hooks for Window Scrolling and Changes](/docs/elisp/Window-Hooks).

@@ -26,7 +26,7 @@ The associated buffer of the process.
 
 ### `pid`
 
-An integer, the operating system’s process ID. Pseudo-processes such as network or serial connections use a value of 0.
+An integer, the operating system's process ID. Pseudo-processes such as network or serial connections use a value of 0.
 
 ### `childp`
 

@@ -1,0 +1,17 @@
+---
+slug: Native-Compilation
+---
+
+In addition to the byte-compilation, described in [the previous chapter](/docs/elisp/Byte-Compilation), Emacs can also optionally compile Lisp function definitions into a true compiled code, known as *native code*. This feature uses the `libgccjit` library, which is part of the GCC distribution, and requires that Emacs be built with support for using that library. It also requires GCC and Binutils (the assembler and linker) to be available on your system for you to be able to native-compile Lisp code.
+
+To determine whether the current Emacs process can produce and load natively-compiled Lisp code, call `native-comp-available-p` (see [Native-Compilation Functions](/docs/elisp/Native_002dCompilation-Functions)).
+
+Unlike byte-compiled code, natively-compiled Lisp code is executed directly by the machine's hardware, and therefore runs at full speed that the host CPU can provide. The resulting speedup generally depends on what the Lisp code does, but is usually 2.5 to 5 times faster than the corresponding byte-compiled code.
+
+Since native code is generally incompatible between different systems, the natively-compiled code is *not* transportable from one machine to another, it can only be used on the same machine where it was produced or on very similar ones (having the same CPU and run-time libraries). The transportability of natively-compiled code is the same as that of shared libraries (`.so` or `.dll` files).
+
+Libraries of natively-compiled code include crucial dependencies on Emacs Lisp primitives (see [What Is a Function?](/docs/elisp/What-Is-a-Function)) and their calling conventions, and thus Emacs usually won't load natively-compiled code produced by earlier or later Emacs versions; native compilation of the same Lisp code by a different Emacs version will usually produce a natively-compiled library under a unique file name that only that version of Emacs will be able to load. However, the use of unique file names enables several versions of the same Lisp library natively-compiled by several different versions of Emacs to be placed within the same directory.
+
+A non-`nil` file-local variable binding of `no-byte-compile` (see [Byte Compilation](/docs/elisp/Byte-Compilation)) also disables the native compilation of that file. In addition, a similar variable `no-native-compile` disables just the native compilation of the file. If both `no-byte-compile` and `no-native-compile` are specified, the former takes precedence.
+
+Sometimes there could be a need to prevent the native compilation from writing its results, the `*.eln` files, into a subdirectory of `user-emacs-directory` (see [The Init File](/docs/elisp/Init-File)). You can do that by either changing the value of `native-comp-eln-load-path` (see [Native-Compilation Variables](/docs/elisp/Native_002dCompilation-Variables)) or by temporarily pointing the `HOME` environment variable to a non-existing directory. Note that the latter technique might still produce a small number of `*.eln` files if Emacs needs to generate *trampolines*, which are used if Lisp primitives are advised or redefined in your Lisp code that is being natively compiled. See [trampolines](/docs/elisp/Native_002dCompilation-Variables). Alternatively, you can specify that the `*.eln` files are written to a non-default directory using the `startup-redirect-eln-cache` function; see [Native-Compilation Functions](/docs/elisp/Native_002dCompilation-Functions).
