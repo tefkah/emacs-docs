@@ -17,6 +17,7 @@
     "fetch": "tsx scripts/fetch-and-convert.ts",
     "convert": "tsx scripts/converter.ts"
   },
+  "packageManager": "pnpm@10.26.1",
   "dependencies": {
     "@docusaurus/core": "^3.9.2",
     "@docusaurus/faster": "^3.9.2",
