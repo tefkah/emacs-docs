@@ -1,12 +1,15 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "routes": [
+  "headers": [
     {
-      "src": "/search-index.json",
-      "headers": {
-        "Cache-Control": "public, max-age=604800, immutable"
-      }
+      "source": "/search-index.json",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, immutable"
+        }
+      ]
     }
   ]
 }
