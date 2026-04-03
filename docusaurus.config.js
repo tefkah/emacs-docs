@@ -147,7 +147,7 @@ const config = {
 							{ label: "Emacs", to: "/docs/emacs/The-Emacs-Editor" },
 							{ label: "Elisp", to: "/docs/elisp/Emacs-Lisp" },
 							{ label: "Org-Mode", to: "/docs/org/The-Org-Manual" },
-							{ label: "AUCTeX", to: "/docs/auctex/Top" },
+							{ label: "AUCTeX", to: "/docs/auctex/AUCTeX" },
 							{ label: "Magit", to: "/docs/magit/Magit-User-Manual" },
 						],
 					},
