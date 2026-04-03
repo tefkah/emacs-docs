@@ -33,14 +33,14 @@ Following these conventions will make your program fit better into Emacs when it
 - A question asked in the minibuffer with `yes-or-no-p` or `y-or-n-p` should start with a capital letter and end with '`?`'.
 
 - When you mention a default value in a minibuffer prompt, put it and the word '`default`' inside parentheses. It should look like this:
-  ```
+  ```lisp
   Enter the answer (default 42):
 
   ```
 
 - In `interactive`, if you use a Lisp expression to produce a list of arguments, don't try to provide the correct default values for region or position arguments. Instead, provide `nil` for those arguments if they were not specified, and have the function body compute the default value when the argument is `nil`. For instance, write this:
 
-  ```
+  ```lisp
   (defun foo (pos)
     (interactive
      (list (if specified specified-pos)))
@@ -51,7 +51,7 @@ Following these conventions will make your program fit better into Emacs when it
 
   rather than this:
 
-  ```
+  ```lisp
   (defun foo (pos)
     (interactive
      (list (if specified specified-pos

@@ -8,7 +8,7 @@ A Parsing Expression Grammar (PEG) describes a formal language in terms of a set
 
 Each rule in a PEG is referred to as a *parsing expression* (PEX), and can be specified a literal string, a regexp-like character range or set, a peg-specific construct resembling an Emacs Lisp function call, a reference to another rule, or a combination of any of these. A grammar is expressed as a tree of rules in which one rule is typically treated as a "root" or "entry-point" rule. For instance:
 
-```
+```lisp
 ((number sign digit (* digit))
  (sign   (or "+" "-" ""))
  (digit  [0-9]))
@@ -21,7 +21,7 @@ Once defined, grammars can be used to parse text after point in the current buff
 
 Match *pexs* at point.
 
-```
+```lisp
 (peg-parse
   (number sign digit (* digit))
   (sign   (or "+" "-" ""))
@@ -49,7 +49,7 @@ Convert *pexs* into a single peg-matcher suitable for passing to `peg-run`.
 
 The `peg-parse` example above expands to a set of calls to these functions, and could be written in full as:
 
-```
+```lisp
 (with-peg-rules
     ((number sign digit (* digit))
      (sign   (or "+" "-" ""))
@@ -68,7 +68,7 @@ Define *name* as a PEG rule that accepts *args* and matches *pexs* at point.
 
 For instance:
 
-```
+```lisp
 (define-peg-rule digit ()
   [0-9])
 
@@ -82,7 +82,7 @@ Another possibility is to define a named set of rules with `define-peg-ruleset`:
 
 Define *name* as an identifier for *rules*.
 
-```
+```lisp
 (define-peg-ruleset number-grammar
   ;; `digit' here references the definition above.
   (number () sign digit (* digit))
@@ -92,7 +92,7 @@ Define *name* as an identifier for *rules*.
 
 Rules and rulesets defined this way can be referred to by name in later calls to `peg-run` or `with-peg-rules`:
 
-```
+```lisp
 (with-peg-rules number-grammar
   (peg-run (peg number)))
 

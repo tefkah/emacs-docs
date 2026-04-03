@@ -6,7 +6,7 @@ Lisp primitives are Lisp functions implemented in C. The details of interfacing 
 
 An example of a special form is the definition of `or`, from `eval.c`. (An ordinary function would have the same general appearance.)
 
-```
+```lisp
 DEFUN ("or", For, Sor, 0, UNEVALLED, 0,
        doc: /* Eval args until one of them yields non-nil,
 then return that value.
@@ -15,7 +15,7 @@ If all args return nil, return nil.
 
 ```
 
-```
+```lisp
 usage: (or CONDITIONS...)  */)
   (Lisp_Object args)
 {
@@ -23,12 +23,12 @@ usage: (or CONDITIONS...)  */)
 
 ```
 
-```
+```lisp
 
 
 ```
 
-```
+```lisp
   while (CONSP (args))
     {
       val = eval_sub (XCAR (args));
@@ -40,12 +40,12 @@ usage: (or CONDITIONS...)  */)
 
 ```
 
-```
+```lisp
 
 
 ```
 
-```
+```lisp
   return val;
 }
 
@@ -53,7 +53,7 @@ usage: (or CONDITIONS...)  */)
 
 Let's start with a precise explanation of the arguments to the `DEFUN` macro. Here is a template for them:
 
-```
+```lisp
 DEFUN (lname, fname, sname, min, max, interactive, doc)
 
 ```
@@ -82,7 +82,7 @@ This is the maximum number of arguments that the function accepts, if there is a
 
 This is an interactive specification, a string such as might be used as the argument of `interactive` in a Lisp function (see [Using `interactive`](/docs/elisp/Using-Interactive)). In the case of `or`, it is `0` (a null pointer), indicating that `or` cannot be called interactively. A value of `""` indicates a function that should receive no arguments when called interactively. If the value begins with a '`"(`', the string is evaluated as a Lisp form. For example:
 
-```
+```lisp
 DEFUN ("foo", Ffoo, Sfoo, 0, 3,
        "(list (read-char-by-name \"Insert character: \")\
               (prefix-numeric-value current-prefix-arg)\
@@ -103,7 +103,7 @@ All the usual rules for documentation strings in Lisp code (see [Tips for Docume
 
 The documentation string can be followed by a list of C function attributes for the C function that implements the primitive, like this:
 
-```
+```lisp
 DEFUN ("bar", Fbar, Sbar, 0, UNEVALLED, 0
        doc: /* ... */
        attributes: attr1 attr2 ...)
@@ -134,7 +134,7 @@ You must not use C initializers for static or global variables unless the variab
 
 Defining the C function is not enough to make a Lisp primitive available; you must also create the Lisp symbol for the primitive and store a suitable subr object in its function cell. The code looks like this:
 
-```
+```lisp
 defsubr (&sname);
 
 ```
@@ -161,7 +161,7 @@ The documentation for the variable, as a C comment. See [Documentation Basics](/
 
 By convention, when defining variables of a "native" type (`int` and `bool`), the name of the C variable is the name of the Lisp variable with `-` replaced by `_`. When the variable has type `Lisp_Object`, the convention is to also prefix the C variable name with `V`. This is an example:
 
-```
+```lisp
 DEFVAR_INT ("my-int-variable", my_int_variable,
            doc: /* An integer variable.  */);
 
@@ -172,28 +172,28 @@ DEFVAR_LISP ("my-lisp-variable", Vmy_lisp_variable,
 
 There are situations in Lisp where you need to refer to the symbol itself rather than the value of that symbol. One such case is when temporarily overriding the value of a variable, which in Lisp is done with `let`. In C sources, this is done by defining a corresponding, constant symbol, and using `specbind`. By convention, `Qmy_lisp_variable` corresponds to `Vmy_lisp_variable`; to define it, use the `DEFSYM` macro.
 
-```
+```lisp
 DEFSYM (Qmy_lisp_variable, "my-lisp-variable");
 
 ```
 
 To perform the actual binding:
 
-```
+```lisp
 specbind (Qmy_lisp_variable, Qt);
 
 ```
 
 In Lisp, symbols sometimes need to be quoted. To achieve the same effect in C, you again use the corresponding constant symbol `Qmy_lisp_variable`. For example, when creating a buffer-local variable (see [Buffer-Local Variables](/docs/elisp/Buffer_002dLocal-Variables)) in Lisp, you would write:
 
-```
+```lisp
 (make-variable-buffer-local 'my-lisp-variable)
 
 ```
 
 In C, the corresponding code uses `Fmake_variable_buffer_local` in combination with `DEFSYM`:
 
-```
+```lisp
 DEFSYM (Qmy_lisp_variable, "my-lisp-variable");
 Fmake_variable_buffer_local (Qmy_lisp_variable);
 
@@ -203,14 +203,14 @@ If you want to make a Lisp variable that is defined in C behave like one declare
 
 If you directly define a file-scope C variable of type `Lisp_Object`, you must protect it from garbage-collection by calling `staticpro` in `syms_of_filename`, like this:
 
-```
+```lisp
 staticpro (&variable);
 
 ```
 
 Here is another example function, with more complicated arguments. This comes from the code in `window.c`, and it demonstrates the use of macros and functions to manipulate Lisp objects.
 
-```
+```lisp
 DEFUN ("coordinates-in-window-p", Fcoordinates_in_window_p,
        Scoordinates_in_window_p, 2, 2, 0,
        doc: /* Return non-nil if COORDINATES are in WINDOW.
@@ -218,7 +218,7 @@ DEFUN ("coordinates-in-window-p", Fcoordinates_in_window_p,
 
 ```
 
-```
+```lisp
   or `right-margin' is returned.  */)
   (register Lisp_Object coordinates, Lisp_Object window)
 {
@@ -229,12 +229,12 @@ DEFUN ("coordinates-in-window-p", Fcoordinates_in_window_p,
 
 ```
 
-```
+```lisp
 
 
 ```
 
-```
+```lisp
   w = decode_live_window (window);
   f = XFRAME (w->frame);
   CHECK_CONS (coordinates);
@@ -247,12 +247,12 @@ DEFUN ("coordinates-in-window-p", Fcoordinates_in_window_p,
 
 ```
 
-```
+```lisp
 
 
 ```
 
-```
+```lisp
   switch (coordinates_in_window (w, x, y))
     {
     case ON_NOTHING:            /* NOT in window at all.  */
@@ -260,39 +260,39 @@ DEFUN ("coordinates-in-window-p", Fcoordinates_in_window_p,
 
 ```
 
-```
+```lisp
 
     ...
 
 
 ```
 
-```
+```lisp
     case ON_MODE_LINE:          /* In mode line of window.  */
       return Qmode_line;
 
 ```
 
-```
+```lisp
 
     ...
 
 
 ```
 
-```
+```lisp
     case ON_SCROLL_BAR:         /* On scroll-bar of window.  */
       /* Historically we are supposed to return nil in this case.  */
       return Qnil;
 
 ```
 
-```
+```lisp
 
 
 ```
 
-```
+```lisp
     default:
       emacs_abort ();
     }

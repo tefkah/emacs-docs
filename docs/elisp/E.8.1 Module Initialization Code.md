@@ -4,7 +4,7 @@ slug: Module-Initialization
 
 Begin your module by including the header file `emacs-module.h` and defining the GPL compatibility symbol:
 
-```
+```lisp
 #include <emacs-module.h>
 
 int plugin_is_GPL_compatible;
@@ -27,7 +27,7 @@ The initialization function should perform whatever initialization is required f
 
 A module can verify that the Emacs executable which loads the module is compatible with the module, by comparing the `size` member of the *runtime* structure with the value compiled into the module:
 
-```
+```lisp
 int
 emacs_module_init (struct emacs_runtime *runtime)
 {
@@ -41,7 +41,7 @@ If the size of the runtime object passed to the module is smaller than what it e
 
 In addition, a module can verify the compatibility of the module API with what the module expects. The following sample code assumes it is part of the `emacs_module_init` function shown above:
 
-```
+```lisp
   emacs_env *env = runtime->get_environment (runtime);
   if (env->size < sizeof (*env))
     return 2;
@@ -52,7 +52,7 @@ This calls the `get_environment` function using the pointer provided in the `run
 
 Finally, you can write a module that will work with older versions of Emacs, by comparing the size of the environment passed by Emacs with known sizes, like this:
 
-```
+```lisp
   emacs_env *env = runtime->get_environment (runtime);
   if (env->size >= sizeof (struct emacs_env_26))
     emacs_version = 26;  /* Emacs 26 or later.  */

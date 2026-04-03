@@ -4,14 +4,14 @@ slug: Library-Headers
 
 Emacs has conventions for using special comments in Lisp libraries to divide them into sections and give information such as who wrote them. Using a standard format for these items makes it easier for tools (and people) to extract the relevant information. This section explains these conventions, starting with an example:
 
-```
+```lisp
 ;;; foo.el --- Support for the Foo programming language  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2010-2025 Your Name
 
 ```
 
-```
+```lisp
 
 ;; Author: Your Name <yourname@example.com>
 ;; Maintainer: Someone Else <someone@example.com>
@@ -19,7 +19,7 @@ Emacs has conventions for using special comments in Lisp libraries to divide the
 
 ```
 
-```
+```lisp
 ;; Keywords: languages
 ;; URL: https://example.com/foo
 
@@ -33,7 +33,7 @@ Emacs has conventions for using special comments in Lisp libraries to divide the
 
 The very first line should have this format:
 
-```
+```lisp
 ;;; filename --- description  -*- lexical-binding: t; -*-
 
 ```
@@ -48,7 +48,7 @@ After the copyright notice come several *header comment* lines, each beginning w
 
 This header states the name and email address of at least the principal author of the library. If there are multiple authors, list them on continuation lines led by `;;` and a tab or at least two spaces. We recommend including a contact email address, of the form '`<...>`'. For example:
 
-```
+```lisp
 ;; Author: Your Name <yourname@example.com>
 ;;      Someone Else <someone@example.com>
 ;;      Another Person <another@example.com>
@@ -93,14 +93,14 @@ If this exists, it names packages on which the current package depends for prope
 
 Its format is a list of lists on a single line. The `car` of each sub-list is the name of a package, as a symbol. The `cadr` of each sub-list is the minimum acceptable version number, as a string that can be parsed by `version-to-list`. An entry that lacks a version (i.e., an entry which is just a symbol, or a sub-list of one element) is equivalent to entry with version "0". For instance:
 
-```
+```lisp
 ;; Package-Requires: ((gnus "1.0") (bubbles "2.7.2") cl-lib (seq))
 
 ```
 
 Packages that don't need to support Emacs versions older than Emacs 27 can have the '`Package-Requires`' header split across multiple lines, like this:
 
-```
+```lisp
 ;; Package-Requires: ((emacs "27.1")
 ;;                    (compat "29.1.4.1"))
 

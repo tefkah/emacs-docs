@@ -34,7 +34,7 @@ Finally, you should bind the Lisp function to a symbol, so that Lisp code could 
 
 Combining the above steps, code that arranges for a C function `module_func` to be callable as `module-func` from Lisp will look like this, as part of the module initialization function:
 
-```
+```lisp
  emacs_env *env = runtime->get_environment (runtime);
  emacs_value func = env->make_function (env, min_arity, max_arity,
                                         module_func, docstring, data);
@@ -69,7 +69,7 @@ Note that there is no native module support for retrieving the interactive speci
 
 If you want to run some code when a module function object (i.e., an object returned by `make_function`) is garbage-collected, you can install a *function finalizer*. Function finalizers are available since Emacs 28. For example, if you have passed some heap-allocated structure to the *data* argument of `make_function`, you can use the finalizer to deallocate the structure. See [(libc)Basic Allocation](https://www.gnu.org/software/libc/manual/html_mono/libc.html#Basic-Allocation), and see [(libc)Freeing after Malloc](https://www.gnu.org/software/libc/manual/html_mono/libc.html#Freeing-after-Malloc). The finalizer function has the following signature:
 
-```
+```lisp
 void finalizer (void *data)
 
 ```

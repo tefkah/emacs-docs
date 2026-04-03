@@ -28,7 +28,7 @@ The default value of the variable `ps-lpr-command` is `""`, which causes PostScr
 
 For example, to use Ghostscript for printing on the system's default printer, put this in your `.emacs` file:
 
-```
+```lisp
 (setq ps-printer-name t)
 (setq ps-lpr-command "D:/gs6.01/bin/gswin32c.exe")
 (setq ps-lpr-switches '("-q" "-dNOPAUSE" "-dBATCH"

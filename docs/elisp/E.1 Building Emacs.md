@@ -34,7 +34,7 @@ By default the dumped `emacs` executable records details such as the build time 
 
 You can specify additional files to preload by writing a library named `site-load.el` that loads them. You may need to rebuild Emacs with an added definition
 
-```
+```lisp
 #define SITELOAD_PURESIZE_EXTRA n
 
 ```

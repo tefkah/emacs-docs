@@ -8,7 +8,7 @@ Help strings for menu-bar and pop-up menus are displayed in the echo area when t
 
 Some versions of mouse drivers don't report the number of mouse buttons correctly. For example, mice with a wheel report that they have 3 buttons, but only 2 of them are passed to Emacs; the clicks on the wheel, which serves as the middle button, are not passed. In these cases, you can use the `M-x msdos-set-mouse-buttons` command to tell Emacs how many mouse buttons to expect. You could make such a setting permanent by adding this fragment to your `_emacs` init file:
 
-```
+```lisp
 ;; Treat the mouse like a 2-button mouse.
 (msdos-set-mouse-buttons 2)
 

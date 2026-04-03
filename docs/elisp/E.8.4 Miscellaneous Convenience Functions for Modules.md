@@ -26,7 +26,7 @@ This function returns an interned Emacs symbol whose name is *name*, which shoul
 
 Together with `funcall`, described below, this function provides a means for invoking any Lisp-callable Emacs function, provided that its name is a pure ASCII string. For example, here's how to intern a symbol whose name `name_str` is non-ASCII, by calling the more powerful Emacs `intern` function (see [Creating and Interning Symbols](/docs/elisp/Creating-Symbols)):
 
-```
+```lisp
 emacs_value fintern = env->intern (env, "intern");
 emacs_value sym_name =
   env->make_string (env, name_str, strlen (name_str));

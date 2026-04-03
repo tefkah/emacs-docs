@@ -16,7 +16,7 @@ Emacs can be configured with support for viewing SVG image files by means of the
 
 As the XDG `shared-mime-info` tools must be available to generate such a database, it is recommended to produce this database in a temporary directory on a GNU/Linux or Unix system, before transferring the same to the recipient Android device. With the latest release of `shared-mime-info` installed, create a temporary directory in which to generate the MIME database, copy the default `freedesktop.org.in` MIME catalog to a directory named `packages`, and execute `update-mime-info` to generate the database:
 
-```
+```lisp
 $ mkdir -p my-mime-database/packages
 $ cp /usr/share/mime/packages/freedesktop.org.xml my-mime-database/packages
 $ update-mime-info my-mime-database
@@ -25,7 +25,7 @@ $ update-mime-info my-mime-database
 
 This may print a series of notices stating that the MIME database specified is not in the search path on your host system, which are of no consequence. Proceed by transferring the contents of the MIME database to the recipient system, e.g., to `/sdcard/Download/my-mime-database.tar.gz`:
 
-```
+```lisp
 $ cd; mkdir -p .local/share
 $ tar xfz /sdcard/Download/my-mime-database.tar.gz
 $ mv my-mime-database .local/share/mime

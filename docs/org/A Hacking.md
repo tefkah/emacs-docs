@@ -20,7 +20,7 @@ Various authors wrote a large number of add-on packages for Org. Some of these p
 
 Org has many built-in hyperlink types (see [Hyperlinks](/docs/org/Hyperlinks)), and an interface for adding new link types. The following example shows the process of adding Org links to Unix man pages, which look like this
 
-```
+```lisp
 [[man:printf][The printf manual]]
 
 ```
@@ -132,7 +132,7 @@ Radio tables are target locations for translated tables that are not near their 
 
 The key to finding the target location is the magic words '`BEGIN/END RECEIVE ORGTBL`'. They have to appear as comments in the current mode. If the mode is C, then:
 
-```
+```lisp
 /* BEGIN RECEIVE ORGTBL table_name */
 /* END RECEIVE ORGTBL table_name */
 
@@ -140,7 +140,7 @@ The key to finding the target location is the magic words '`BEGIN/END RECEIVE OR
 
 At the location of source, Org needs a special line to direct Orgtbl to translate and to find the target for inserting the translated table. For example:
 
-```
+```lisp
 #+ORGTBL: SEND table_name translation_function arguments ...
 
 ```
@@ -167,7 +167,7 @@ To keep the source table intact in the buffer without being disturbed when the s
 
 To wrap a source table in LaTeX, use the '`comment`' environment provided by '`comment.sty`'\[^169]. To activate it, put `\usepackage{comment}` in the document header. Orgtbl mode inserts a radio table skeleton\[^170] with the command `M-x orgtbl-insert-radio-table`, which prompts for a table name. For example, if '`salesfigures`' is the name, the template inserts:
 
-```
+```lisp
 % BEGIN RECEIVE ORGTBL salesfigures
 % END RECEIVE ORGTBL salesfigures
 \begin{comment}
@@ -179,7 +179,7 @@ To wrap a source table in LaTeX, use the '`comment`' environment provided by '`c
 
 The line '`#+ORGTBL: SEND`' tells Orgtbl mode to use the function `orgtbl-to-latex` to convert the table to LaTeX format, then insert the table at the target (receive) location named '`salesfigures`'. Now the table is ready for data entry. It can even use spreadsheet features\[^171]:
 
-```
+```lisp
 % BEGIN RECEIVE ORGTBL salesfigures
 % END RECEIVE ORGTBL salesfigures
 \begin{comment}
@@ -199,7 +199,7 @@ After editing, `C-c C-c` inserts the translated table at the target location, be
 
 For hand-made custom tables, note that the translator needs to skip the first two lines of the source table. Also the command has to *splice* out the target table without the header and footer.
 
-```
+```lisp
 \begin{tabular}{lrrr}
 Month & \multicolumn{1}{c}{Days} & Nr.\ sold & per day\\
 % BEGIN RECEIVE ORGTBL salesfigures
@@ -240,7 +240,7 @@ Orgtbl mode has built-in translator functions: `orgtbl-to-csv` (comma-separated 
 
 Properties passed to the function through the '`ORGTBL SEND`' line take precedence over properties defined inside the function. For example, this overrides the default LaTeX line endings, `\\`, with `\\[2mm]`:
 
-```
+```lisp
 #+ORGTBL: SEND test orgtbl-to-latex :lend " \\\\[2mm]"
 
 ```
@@ -272,7 +272,7 @@ You can insert a dynamic block with `org-dynamic-block-insert-dblock`, which is 
 
 Dynamic blocks can have names and function parameters. The syntax is similar to source code block specifications:
 
-```
+```lisp
 #+BEGIN: myblock :parameter1 value1 :parameter2 value2 ...
   ...
 #+END:
@@ -295,7 +295,7 @@ The syntax for naming a writer function with a dynamic block labeled '`myblock`'
 
 The following is an example of a dynamic block and a block writer function that updates the time when the function was last run:
 
-```
+```lisp
 #+BEGIN: block-update-time :format "on %m/%d/%Y at %H:%M"
   ...
 #+END:
@@ -452,14 +452,14 @@ Org provides commands to access agendas through Emacs batch mode. Through this c
 
 This example command line directly prints the TODO list to the printer:
 
-```
+```lisp
 emacs -batch -l ~/.emacs -eval '(org-batch-agenda "t")' | lpr
 
 ```
 
 When the string parameter length is two or more characters, Org matches it with tags/TODO strings. For example, this example command line prints items tagged with '`shop`', but excludes items tagged with '`NewYork`':
 
-```
+```lisp
 emacs -batch -l ~/.emacs                                      \
       -eval '(org-batch-agenda "+shop-NewYork")' | lpr
 
@@ -467,7 +467,7 @@ emacs -batch -l ~/.emacs                                      \
 
 An example showing on-the-fly parameter modifications:
 
-```
+```lisp
 emacs -batch -l ~/.emacs                                      \
    -eval '(org-batch-agenda "a"                               \
            org-agenda-span (quote month)                      \
@@ -540,7 +540,7 @@ If the selection of the agenda item was based on a timestamp (or deadline/schedu
 
 Here is an example of a post-processing script in Perl. It takes the CSV output from Emacs and prints with a checkbox:
 
-```
+```lisp
 #!/usr/bin/perl
 
 # define the Emacs command to run

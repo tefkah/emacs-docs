@@ -8,7 +8,7 @@ See [International Support on MS-DOS](/docs/emacs/MS_002dDOS-and-MULE), later in
 
 When Emacs starts, it changes the cursor shape to a solid box. This is for compatibility with other systems, where the box cursor is the default in Emacs. This default shape can be changed to a bar by specifying the `cursor-type` parameter in the variable `default-frame-alist` (see [Creating Frames](/docs/emacs/Creating-Frames)). The MS-DOS terminal doesn't support a vertical-bar cursor, so the bar cursor is horizontal, and the `width` parameter, if specified by the frame parameters, actually determines its height. For this reason, the `bar` and `hbar` cursor types produce the same effect on MS-DOS. As an extension, the bar cursor specification can include the starting scan line of the cursor as well as its width, like this:
 
-```
+```lisp
  '(cursor-type bar width . start)
 
 ```
@@ -21,7 +21,7 @@ The `dos-mode4350` command switches the display to 43 or 50 lines, depending on 
 
 By default, Emacs only knows how to set screen sizes of 80 columns by 25, 28, 35, 40, 43 or 50 rows. However, if your video adapter has special video modes that will switch the display to other sizes, you can have Emacs support those too. When you ask Emacs to switch the frame to *n* rows by *m* columns dimensions, it checks if there is a variable called `screen-dimensions-nxm`, and if so, uses its value (which must be an integer) as the video mode to switch to. (Emacs switches to that video mode by calling the BIOS `Set Video Mode` function with the value of `screen-dimensions-nxm` in the `AL` register.) For example, suppose your adapter will switch to 66x80 dimensions when put into video mode 85. Then you can make Emacs support this screen size by putting the following into your `_emacs` file:
 
-```
+```lisp
 (setq screen-dimensions-66x80 85)
 
 ```

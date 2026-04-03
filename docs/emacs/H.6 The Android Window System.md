@@ -35,7 +35,7 @@ The volume keys are normally reserved by Emacs and used to provide the ability t
 
 Emacs is unable to display dialog boxes (see [Using Dialog Boxes](/docs/emacs/Dialog-Boxes)) while it does not have the input focus on Android 6.0 or later. If this is important to you, this capability can be restored by granting Emacs permission to display over other programs. On most systems, this can be done from the following Settings menu:
 
-```
+```lisp
 System -> Apps -> Emacs -> More -> Display over other apps
 
 ```

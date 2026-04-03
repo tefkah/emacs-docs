@@ -22,7 +22,7 @@ This command runs a garbage collection, and returns information on the amount of
 
 `garbage-collect` returns a list with information on amount of space in use, where each entry has the form '`(name size used)`' or '`(name size used free)`'. In the entry, *name* is a symbol describing the kind of objects this entry represents, *size* is the number of bytes used by each one, *used* is the number of those objects that were found live in the heap, and optional *free* is the number of those objects that are not live but that Emacs keeps around for future allocations. So an overall result is:
 
-```
+```lisp
 ((conses cons-size used-conses free-conses)
  (symbols symbol-size used-symbols free-symbols)
  (strings string-size used-strings free-strings)
@@ -38,7 +38,7 @@ This command runs a garbage collection, and returns information on the amount of
 
 Here is an example:
 
-```
+```lisp
 (garbage-collect)
       ⇒ ((conses 16 49126 8058) (symbols 48 14607 0)
                  (strings 32 2942 2607)

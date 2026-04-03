@@ -14,7 +14,7 @@ The `/assets` directory containing Emacs start-up files is meant to be inaccessi
 
 Even when the location of the `libandroid-emacs.so` command is known in advance, special preparation is required to run Emacs from elsewhere than a subprocess of an existing Emacs session, as it must be made to understand the location of resources and shared libraries in or extracted from the installed application package. The OS command `pm path org.gnu.emacs` will print the location of the application package, though the said command must be invoked in a peculiar manner to satisfy system restrictions on communication between pseudoterminal devices created by user applications and system services such as the package manager, which is to say, with the standard IO streams redirected to a real file or a pipe. This value, once established, must be specified in the environment variables `EMACS_CLASS_PATH`, so that this sample shell script may be installed as `emacs` in any location that is accessible:
 
-```
+```lisp
 #!/system/bin/sh
 
 package_name=`pm path org.gnu.emacs 2>/dev/null </dev/null \
@@ -44,7 +44,7 @@ In addition, Android 12 also terminates subprocesses which are consuming CPU whi
 
 Android 12.1 and Android 13 provide an option to disable this behavior; to use it, enable "USB debugging" (see [Starting Emacs on Android](/docs/emacs/Android-Startup)) connect the Android system to another computer, and run:
 
-```
+```lisp
 $ adb shell "settings put global settings_enable_monitor_phantom_procs false"
 
 ```

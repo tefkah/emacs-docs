@@ -8,7 +8,7 @@ We recommend these conventions for comments:
 
 Comments that start with a single semicolon, '`;`', should all be aligned to the same column on the right of the source code. Such comments usually explain how the code on that line does its job. For example:
 
-```
+```lisp
 (setq base-version-list                 ; There was a base
       (assoc (substring fn 0 start-vn)  ; version to which
              file-version-assoc-list))  ; this looks like
@@ -20,7 +20,7 @@ Comments that start with a single semicolon, '`;`', should all be aligned to the
 
 Comments that start with two semicolons, '`;;`', should be aligned to the same level of indentation as the code. Such comments usually describe the purpose of the following lines or the state of the program at that point. For example:
 
-```
+```lisp
 (prog1 (setq auto-fill-function
              ...
              ...
@@ -31,7 +31,7 @@ Comments that start with two semicolons, '`;;`', should be aligned to the same l
 
 We also normally use two semicolons for comments outside functions.
 
-```
+```lisp
 ;; This Lisp code is run in Emacs when it is to operate as
 ;; a server for other processes.
 
@@ -49,7 +49,7 @@ Three semicolons are used for top-level sections, four for sub-sections, five fo
 
 Typically libraries have at least four top-level sections. For example when the bodies of all of these sections are hidden:
 
-```
+```lisp
 ;;; backquote.el --- implement the ` Lisp construct...
 ;;; Commentary:...
 ;;; Code:...

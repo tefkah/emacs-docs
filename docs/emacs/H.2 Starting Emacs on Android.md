@@ -10,7 +10,7 @@ During startup, Emacs will display messages in the system log buffer; reading th
 
 After enabling the "USB Debugging" feature on the Android system, and connecting it via USB to another system with the `adb` utility installed, the log can be viewed by running the following command on that other system:
 
-```
+```lisp
 $ adb logcat | grep -E "(android_run_debug_thread|[Ee]macs)"
 
 ```

@@ -33,7 +33,7 @@ On Android 11 and later, the Android system restricts applications from accessin
 
 This restriction is known as "Scoped Storage", and supposedly makes the system more secure. Unfortunately, it also means that Emacs cannot access files in those directories, despite holding the necessary permissions. Thankfully, the Open Handset Alliance's version of Android allows this restriction to be disabled on a per-program basis; the corresponding option in the system settings panel is:
 
-```
+```lisp
 System -> Apps -> Special App Access -> All files access -> Emacs
 
 ```

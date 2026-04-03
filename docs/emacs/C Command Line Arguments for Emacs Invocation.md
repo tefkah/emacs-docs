@@ -138,7 +138,7 @@ Run Emacs in batch mode, like '`--batch`', and then read and execute the Lisp co
 
 The normal use of this option is in executable script files that run Emacs. They can start with this text on the first line
 
-```
+```lisp
 #!/usr/bin/emacs --script
 
 ```
@@ -149,7 +149,7 @@ which will invoke Emacs with '`--script`' and supply the name of the script file
 
 This option can only be used in executable script files, and should be invoked like this:
 
-```
+```lisp
 #!/usr/bin/emacs -x
 
 ```
@@ -232,7 +232,7 @@ Load the dumped Emacs state from the named *file*. By default, an installed Emac
 
 Here is an example of using Emacs with arguments and options. It assumes you have a Lisp program file called `hack-c.el` which, when loaded, performs some useful operation on the current buffer, expected to be a C program.
 
-```
+```lisp
 emacs --batch foo.c -l hack-c -f save-buffer >& log
 
 ```
@@ -251,14 +251,14 @@ Inside Emacs, the command `M-x getenv` reads the name of an environment variable
 
 The way to set environment variables outside of Emacs depends on the operating system, and especially the shell that you are using. For example, here's how to set the environment variable `ORGANIZATION` to '`not very much`' using Bash:
 
-```
+```lisp
 export ORGANIZATION="not very much"
 
 ```
 
 and here's how to do it in csh or tcsh:
 
-```
+```lisp
 setenv ORGANIZATION "not very much"
 
 ```
@@ -491,7 +491,7 @@ For example, if your host is named '`glasperle`' and your server is the first (o
 
 You can specify the display name explicitly when you run Emacs, either by changing the `DISPLAY` variable, or with the option '`-d display`' or '`--display=display`'. Here is an example:
 
-```
+```lisp
 emacs --display=glasperle:0 &
 
 ```
@@ -500,7 +500,7 @@ You can inhibit the use of the X window system with the '`-nw`' option. Then Ema
 
 Sometimes, security arrangements prevent a program on a remote system from displaying on your local system. In this case, trying to run Emacs produces messages like this:
 
-```
+```lisp
 Xlib:  connection to "glasperle:0.0" refused by server
 
 ```
@@ -521,7 +521,7 @@ Use *font* as the default font.
 
 When passing a font name to Emacs on the command line, you may need to quote it, by enclosing it in quotation marks, if it contains characters that the shell treats specially (e.g., spaces). For example:
 
-```
+```lisp
 emacs -fn "DejaVu Sans Mono-12"
 
 ```
@@ -608,7 +608,7 @@ The color mode can be changed dynamically during a running Emacs session: the cu
 
 For example, to use a coral mouse cursor and a slate blue text cursor, enter:
 
-```
+```lisp
 emacs -ms coral -cr 'slate blue' &
 
 ```

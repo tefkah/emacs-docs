@@ -16,14 +16,14 @@ To visit a file and specify whether it uses DOS-style or Unix-style end-of-line,
 
 When you use NFS, Samba, or some other similar method to access file systems that reside on computers using GNU or Unix systems, Emacs should not perform end-of-line translation on any files in these file systems---not even when you create a new file. To request this, designate these file systems as *untranslated* file systems by calling the function `w32-add-untranslated-filesystem`. It takes one argument: the file system name, including a drive letter and optionally a directory. For example,
 
-```
+```lisp
 (w32-add-untranslated-filesystem "Z:")
 
 ```
 
 designates drive Z as an untranslated file system, and
 
-```
+```lisp
 (w32-add-untranslated-filesystem "Z:\\foo")
 
 ```

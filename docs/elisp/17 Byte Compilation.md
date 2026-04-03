@@ -10,7 +10,7 @@ In general, any version of Emacs can run byte-compiled code produced by recent e
 
 If you do not want a Lisp file to be compiled, ever, put a file-local variable binding for `no-byte-compile` into it, like this:
 
-```
+```lisp
 ;; -*-no-byte-compile: t; -*-
 
 ```

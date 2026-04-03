@@ -4,7 +4,7 @@ slug: Windows-Fonts
 
 Fonts are specified by their name, size and optional properties. The format for specifying fonts comes from the fontconfig library used in modern Free desktops:
 
-```
+```lisp
   [Family[-PointSize]][:Option1=Value1[:Option2=Value2[...]]]
 
 ```

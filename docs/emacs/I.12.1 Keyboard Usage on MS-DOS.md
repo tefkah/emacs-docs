@@ -10,7 +10,7 @@ The PC keyboard maps use the left `Alt` key as the `Meta` key. You have two choi
 
 The variable `dos-keypad-mode` is a flag variable that controls what key codes are returned by keys in the numeric keypad. You can also define the keypad `ENTER` key to act like `C-j`, by putting the following line into your `_emacs` file:
 
-```
+```lisp
 ;; Make the ENTER key from the numeric keypad act as C-j.
 (keymap-set function-key-map "<kp-enter>" "C-j")
 

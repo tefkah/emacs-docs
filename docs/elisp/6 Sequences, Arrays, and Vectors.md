@@ -10,7 +10,7 @@ A list is a sequence of elements, but it is not a single primitive object; it is
 
 The following diagram shows the relationship between these types:
 
-```
+```lisp
           _____________________________________________
          |                                             |
          |          Sequence                           |

@@ -4,7 +4,7 @@ slug: Warning-Tips
 
 - Try to avoid compiler warnings about undefined free variables, by adding dummy `defvar` definitions for these variables, like this:
 
-  ```
+  ```lisp
   (defvar foo)
 
   ```
@@ -15,14 +15,14 @@ slug: Warning-Tips
 
 - If you use many functions, macros, and variables from a certain file, you can add a `require` (see [require](/docs/elisp/Named-Features)) for that package to avoid compilation warnings for them, like this:
 
-  ```
+  ```lisp
   (require 'foo)
 
   ```
 
   If you need only macros from some file, you can require it only at compile time (see [Evaluation During Compilation](/docs/elisp/Eval-During-Compile)). For instance,
 
-  ```
+  ```lisp
   (eval-when-compile
     (require 'foo))
 

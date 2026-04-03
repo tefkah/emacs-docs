@@ -24,14 +24,14 @@ Here are some tips and conventions for the writing of documentation strings. You
 
 - When a function's documentation string mentions the value of an argument of the function, use the argument name in capital letters as if it were a name for that value. Thus, the documentation string of the function `eval` refers to its first argument as '`FORM`', because the actual argument name is `form`:
 
-  ```
+  ```lisp
   Evaluate FORM and return its value.
 
   ```
 
   Also write metasyntactic variables in capital letters, such as when you show the decomposition of a list or vector into subunits, some of which may vary. '`KEY`' and '`VALUE`' in the following example illustrate this practice:
 
-  ```
+  ```lisp
   The argument TABLE should be an alist whose elements
   have the form (KEY . VALUE).  Here, KEY is ...
 
@@ -53,7 +53,7 @@ Here are some tips and conventions for the writing of documentation strings. You
 
 - When a documentation string refers to a Lisp symbol, write it as it would be printed (which usually means in lower case), with a grave accent '`` ` ``' before and apostrophe '`'`' after it. There are two exceptions: write `t` and `nil` without surrounding punctuation. For example:
 
-  ```
+  ```lisp
   CODE can be `lambda', nil, or t.
 
   ```
@@ -62,7 +62,7 @@ Here are some tips and conventions for the writing of documentation strings. You
 
   Help mode automatically creates a hyperlink when a documentation string uses a single-quoted symbol name, if the symbol has either a function or a variable definition. You do not need to do anything special to make use of this feature. However, when a symbol has both a function definition and a variable definition, and you want to refer to just one of them, you can specify which one by writing one of the words '`variable`', '`option`', '`function`', or '`command`', immediately before the symbol name. (Case makes no difference in recognizing these indicator words.) For example, if you write
 
-  ```
+  ```lisp
   This function sets the variable `buffer-file-name'.
 
   ```
@@ -71,7 +71,7 @@ Here are some tips and conventions for the writing of documentation strings. You
 
   If a symbol has a function definition and/or a variable definition, but those are irrelevant to the use of the symbol that you are documenting, you can write the words '`symbol`' or '`program`' before the symbol name to prevent making any hyperlink. For example,
 
-  ```
+  ```lisp
   If the argument KIND-OF-RESULT is the symbol `list',
   this function returns a list of all the objects
   that satisfy the criterion.
@@ -86,14 +86,14 @@ Here are some tips and conventions for the writing of documentation strings. You
 
   To make a hyperlink to Info documentation, write the single-quoted name of the Info node (or anchor), preceded by '`info node`', '`Info node`', '`info anchor`' or '`Info anchor`'. The Info file name defaults to '`emacs`'. For example,
 
-  ```
+  ```lisp
   See Info node `Font Lock' and Info node `(elisp)Font Lock Basics'.
 
   ```
 
   To make a hyperlink to a man page, write the single-quoted name of the man page, preceded by '`Man page`', '`man page`', or '`man page for`'. For example,
 
-  ```
+  ```lisp
   See the man page `chmod(1)' for details.
 
   ```
@@ -102,14 +102,14 @@ Here are some tips and conventions for the writing of documentation strings. You
 
   To link to a customization group, write the single-quoted name of the group, preceded by '`customization group`' (the first character in each word is case-insensitive). For example,
 
-  ```
+  ```lisp
   See the customization group `whitespace' for details.
 
   ```
 
   Finally, to create a hyperlink to URLs, write the single-quoted URL, preceded by '`URL`'. For example,
 
-  ```
+  ```lisp
   The GNU project website has more information (see URL
   `https://www.gnu.org/').
 
@@ -134,7 +134,7 @@ Here are some tips and conventions for the writing of documentation strings. You
 - Try to avoid using abbreviations such as "e.g." (for "for example"), "i.e." (for "that is"), "no." (for "number"), "cf." (for "compare"/"see also") and "w\.r.t." (for "with respect to") as much as possible. It is almost always clearer and easier to read the expanded version.\[^36]
 
 - When a command is meaningful only in a certain mode or situation, do mention that in the documentation string. For example, the documentation of `dired-find-file` is:
-  ```
+  ```lisp
   In Dired, visit the file or directory named on this line.
 
   ```
@@ -145,7 +145,7 @@ Here are some tips and conventions for the writing of documentation strings. You
 
 - If a line in a documentation string begins with an open-parenthesis, consider writing a backslash before the open-parenthesis, like this:
 
-  ```
+  ```lisp
   The argument FOO can be either a number
   \(a buffer position) or a string (a file name).
 

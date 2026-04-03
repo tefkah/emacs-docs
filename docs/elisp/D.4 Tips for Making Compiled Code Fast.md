@@ -14,7 +14,7 @@ Here are ways of improving the execution speed of byte-compiled Lisp programs.
 
   For example, the following input will show you that `aref` is compiled specially (see [Functions that Operate on Arrays](/docs/elisp/Array-Functions)):
 
-  ```
+  ```lisp
   (get 'aref 'byte-compile)
        ⇒ byte-compile-two-args
 

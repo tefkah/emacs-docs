@@ -10,14 +10,14 @@ To run a command by name, start with `M-x`, type the command name, then terminat
 
 You can use completion to enter the command name. For example, to invoke the command `forward-char`, you can type
 
-```
+```lisp
 M-x forward-char RET
 
 ```
 
 or
 
-```
+```lisp
 M-x forw TAB c RET
 
 ```

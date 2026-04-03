@@ -6,7 +6,7 @@ Source code here refers to any plain text collection of computer instructions, p
 
 Here is an example source code block in the Emacs Lisp language:
 
-```
+```lisp
 #+BEGIN_SRC emacs-lisp
   (defun org-xor (a b)
      "Exclusive or."

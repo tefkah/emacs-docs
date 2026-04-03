@@ -20,3 +20,4 @@ yarn-debug.log*
 yarn-error.log*
 
 _docs
+/raw_manuals

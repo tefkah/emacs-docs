@@ -6,7 +6,7 @@ You can use the desktop library to save the state of Emacs from one session to a
 
 To enable this feature, use the Customization buffer (see [Easy Customization Interface](/docs/emacs/Easy-Customization)) to set `desktop-save-mode` to `t` for future sessions, or add this line in your init file (see [The Emacs Initialization File](/docs/emacs/Init-File)):
 
-```
+```lisp
 (desktop-save-mode 1)
 
 ```

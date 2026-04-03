@@ -128,7 +128,7 @@ This flag indicates that the buffer should not run the hooks `kill-buffer-hook`,
 
 A Lisp string that names the buffer. It is guaranteed to be unique. See [Buffer Names](/docs/elisp/Buffer-Names). This and the following fields have their names in the C struct definition end in a `_` to indicate that they should not be accessed directly, but via the `BVAR` macro, like this:
 
-```
+```lisp
   Lisp_Object buf_name = BVAR (buffer, name);
 
 ```

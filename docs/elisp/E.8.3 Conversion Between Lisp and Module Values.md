@@ -6,7 +6,7 @@ With very few exceptions, most modules need to exchange data with Lisp programs 
 
 All of the functions described below are actually *function pointers* provided via the pointer to the environment which every module function accepts. Therefore, module code should call these functions through the environment pointer, like this:
 
-```
+```lisp
 emacs_env *env;  /* the environment pointer */
 env->some_function (arguments...);
 
@@ -90,7 +90,7 @@ This function, which is available since Emacs 27, takes an arbitrary-sized integ
 
 The following example uses the GNU Multiprecision Library (GMP) to calculate the next probable prime after a given integer. See [(gmp)Top](https://www.gmplib.org/manual/index.html#Top), for a general overview of GMP, and see [(gmp)Integer Import and Export](https://www.gmplib.org/manual/Integer-Import-and-Export.html#Integer-Import-and-Export) for how to convert the `magnitude` array to and from GMP `mpz_t` values.
 
-```
+```lisp
 #include <emacs-module.h>
 int plugin_is_GPL_compatible;
 
@@ -230,7 +230,7 @@ An alternative to keeping around C data structures that need to be passed to mod
 
 This function creates and returns a `user-ptr` object which wraps the C pointer *ptr*. The finalizer function *fin* can be a `NULL` pointer (meaning no finalizer), or it can be a function of the following signature:
 
-```
+```lisp
 typedef void (*emacs_finalizer) (void *ptr);
 
 ```

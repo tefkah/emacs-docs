@@ -14,7 +14,7 @@ You can solve this problem by setting up Emacs as an *edit server*, so that it "
 
 - If your operating system uses `systemd` to manage startup, you can automatically start Emacs in daemon mode when you login using the supplied *systemd unit file*. To activate this:
 
-  ```
+  ```lisp
   systemctl --user enable emacs
 
   ```
@@ -25,7 +25,7 @@ You can solve this problem by setting up Emacs as an *edit server*, so that it "
 
   `~/.config/systemd/user/emacs.socket`:
 
-  ```
+  ```lisp
   [Socket]
   ListenStream=/path/to/.emacs.socket
   DirectoryMode=0700
@@ -45,7 +45,7 @@ You can run multiple Emacs servers on the same machine by giving each one a uniq
 
 If you want to run multiple Emacs daemons (see [Initial Options](/docs/emacs/Initial-Options)), you can give each daemon its own server name like this:
 
-```
+```lisp
   emacs --daemon=foo
 
 ```

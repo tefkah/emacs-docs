@@ -18,7 +18,7 @@ Settings specified via X resources in general override the equivalent settings i
 
 Each line in the X resource file specifies a value for one option or for a collection of related options. The order in which the lines appear in the file does not matter. Each resource specification consists of a *program name* and a *resource name*. Case distinctions are significant in each of these names. Here is an example:
 
-```
+```lisp
 emacs.cursorColor: dark green
 
 ```
@@ -29,7 +29,7 @@ The resource name is the name of a program setting. For instance, Emacs recogniz
 
 Resources are grouped into named classes. For instance, the '`Foreground`' class contains the '`cursorColor`', '`foreground`' and '`pointerColor`' resources (see [Table of X Resources for Emacs](/docs/emacs/Table-of-Resources)). Instead of using a resource name, you can use a class name to specify the default value for all resources in that class, like this:
 
-```
+```lisp
 emacs.Foreground: dark green
 
 ```
@@ -262,7 +262,7 @@ If Emacs is compiled with the X toolkit support using Lucid widgets, you can use
 
 For example, to display menu bar entries with the '`Courier-12`' font (see [Fonts](/docs/emacs/Fonts)), write this:
 
-```
+```lisp
 Emacs.pane.menubar.font: Courier-12
 
 ```
@@ -339,7 +339,7 @@ If Emacs is compiled with the X toolkit support using Motif or LessTif widgets, 
 
 The resource names for the menu bar are in the '`pane.menubar`' class, and they must be specified in this form:
 
-```
+```lisp
 Emacs.pane.menubar.subwidget.resource: value
 
 ```
@@ -348,35 +348,35 @@ For pop-up menus, the resources are in the '`menu*`' class, instead of '`pane.me
 
 Typically, you want to specify the same resources for the whole menu bar. To do this, use '`*`' instead of a specific subwidget name. For example, to specify the font '`8x16`' for all menu bar items, including submenus, write this:
 
-```
+```lisp
 Emacs.pane.menubar.*.fontList: 8x16
 
 ```
 
 Each item in a submenu also has its own name for X resources; for example, the '`File`' submenu has an item named '`Save (current buffer)`'. A resource specification for a submenu item looks like this:
 
-```
+```lisp
 Emacs.pane.menubar.popup_*.menu.item.resource: value
 
 ```
 
 For example, here's how to specify the font for the '`Save (current buffer)`' item:
 
-```
+```lisp
 Emacs.pane.menubar.popup_*.File.Save (current buffer).fontList: 8x16
 
 ```
 
 For an item in a second-level submenu, such as '`Complete Word`' under '`Spell Checking`' under '`Tools`', the resource fits this template:
 
-```
+```lisp
 Emacs.pane.menubar.popup_*.popup_*.menu.resource: value
 
 ```
 
 For example,
 
-```
+```lisp
 Emacs.pane.menubar.popup_*.popup_*.Spell Checking.Complete Word: value
 
 ```
@@ -385,7 +385,7 @@ Emacs.pane.menubar.popup_*.popup_*.Spell Checking.Complete Word: value
 
 If you want the submenu items to look different from the menu bar itself, you must first specify the resource for all of them, then override the value for submenus alone. Here is an example:
 
-```
+```lisp
 Emacs.pane.menubar.*.fontList: 9x18
 Emacs.pane.menubar.popup_*.fontList: 8x16
 
@@ -393,7 +393,7 @@ Emacs.pane.menubar.popup_*.fontList: 8x16
 
 To specify resources for the LessTif file-selection box, use '`fsb*`', like this:
 
-```
+```lisp
 Emacs.fsb*.fontList: 8x16
 
 ```
@@ -461,7 +461,7 @@ In GTK+ version 3, GTK+ resources have been replaced by a completely different s
 
 In a GTK+ 2 resource file (usually `~/.emacs.d/gtkrc`), the simplest kind of a resource setting simply assigns a value to a variable. For example, putting the following line in the resource file changes the font on all GTK+ widgets to '`courier-12`':
 
-```
+```lisp
 gtk-font-name = "courier 12"
 
 ```
@@ -470,7 +470,7 @@ Note that in this case the font name must be supplied as a GTK font pattern (als
 
 To customize widgets you first define a *style*, and then apply the style to the widgets. Here is an example that sets the font for menus ('`#`' characters indicate comments):
 
-```
+```lisp
 # Define the style 'my_style'.
 style "my_style"
 {
@@ -484,14 +484,14 @@ widget "*emacs-menuitem*" style "my_style"
 
 The widget name in this example contains wildcards, so the style is applied to all widgets matching '`*emacs-menuitem*`'. The widgets are named by the way they are contained, from the outer widget to the inner widget. Here is another example that applies '`my_style`' specifically to the Emacs menu bar:
 
-```
+```lisp
 widget "Emacs.pane.menubar.*" style "my_style"
 
 ```
 
 Here is a more elaborate example, showing how to change the parts of the scroll bar:
 
-```
+```lisp
 style "scroll"
 {
   fg[NORMAL] = "red"     # Arrow color.
@@ -526,7 +526,7 @@ See the previous subsection for examples of using the `widget` command; the `wid
 
 As previously noted, you may specify a widget name or class with shell wildcard syntax: '`*`' matches zero or more characters and '`?`' matches one character. This example assigns a style to all widgets:
 
-```
+```lisp
 widget "*" style "my_style"
 
 ```
@@ -559,7 +559,7 @@ The contents of Emacs windows are drawn in the `emacs` widget. Note that even if
 
 For example, here are two different ways to set the menu bar style:
 
-```
+```lisp
 widget "Emacs.pane.menubar.*" style "my_style"
 widget_class "GtkWindow.GtkVBox.GtkMenuBar.*" style "my_style"
 
@@ -569,7 +569,7 @@ For GTK+ dialogs, Emacs uses a widget named `emacs-dialog`, of class `GtkDialog`
 
 Because the widgets for pop-up menus and dialogs are free-standing windows and not contained in the `Emacs` widget, their GTK+ absolute names do not start with '`Emacs`'. To customize these widgets, use wildcards like this:
 
-```
+```lisp
 widget "*emacs-dialog*" style "my_dialog_style"
 widget "*emacs-filedialog* style "my_file_style"
 widget "*emacs-menuitem* style "my_menu_style"
@@ -578,7 +578,7 @@ widget "*emacs-menuitem* style "my_menu_style"
 
 If you want to apply a style to all menus in Emacs, use this:
 
-```
+```lisp
 widget_class "*Menu*" style "my_menu_style"
 
 ```
@@ -589,7 +589,7 @@ widget_class "*Menu*" style "my_menu_style"
 
 Here is an example of two GTK+ style declarations:
 
-```
+```lisp
 pixmap_path "/usr/share/pixmaps:/usr/include/X11/pixmaps"
 
 style "default"
@@ -665,7 +665,7 @@ This specifies an image background (instead of a background color). *pixmap* sho
 
 You can't specify the file by its absolute file name. GTK+ looks for the pixmap file in directories specified in `pixmap_path`. `pixmap_path` is a colon-separated list of directories within double quotes, specified at the top level in a `gtkrc` file (i.e., not inside a style definition; see example above):
 
-```
+```lisp
 pixmap_path "/usr/share/pixmaps:/usr/include/X11/pixmaps"
 
 ```

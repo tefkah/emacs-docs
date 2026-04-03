@@ -122,13 +122,13 @@ const config = {
 						label: "AUCTeX",
 						className: "auctex",
 					},
-					// {
-					//   type: 'doc',
-					//   docId: 'magit/Magit User Manual',
-					//   position: 'right',
-					//   label: 'Magit',
-					//   className: 'magit',
-					// },
+					{
+						type: "doc",
+						docId: "magit/Magit User Manual",
+						position: "right",
+						label: "Magit",
+						className: "magit",
+					},
 					{
 						href: "https://github.com/ThomasFKJorna/emacs-docs",
 						className: "github-icon",
@@ -148,7 +148,7 @@ const config = {
 							{ label: "Elisp", to: "/docs/elisp/Emacs-Lisp" },
 							{ label: "Org-Mode", to: "/docs/org/The-Org-Manual" },
 							{ label: "AUCTeX", to: "/docs/auctex/Top" },
-							// { label: "Magit", to: "/docs/magit/Magit-User-Manual" },
+							{ label: "Magit", to: "/docs/magit/Magit-User-Manual" },
 						],
 					},
 					{
@@ -400,7 +400,7 @@ function createSidebarDirs(numberPrefixParser, unsortedItems) {
 	});
 
 	const firstItems = [
-		"The Emacs Editor.md",
+		"The Emacs Editor",
 		"The Org Manual",
 		"Emacs Lisp",
 		"Table of Contents",

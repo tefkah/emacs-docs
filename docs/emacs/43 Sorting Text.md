@@ -38,7 +38,7 @@ Reverse the order of the lines in the region. This is useful for sorting into de
 
 For example, if the buffer contains this:
 
-```
+```lisp
 On systems where clash detection (locking of files being edited) is
 implemented, Emacs also checks the first time you modify a buffer
 whether the file has changed on disk since it was last visited or
@@ -49,7 +49,7 @@ the buffer.
 
 applying `M-x sort-lines` to the entire buffer produces this:
 
-```
+```lisp
 On systems where clash detection (locking of files being edited) is
 implemented, Emacs also checks the first time you modify a buffer
 saved.  If it has, you are asked to confirm that you want to change
@@ -60,7 +60,7 @@ whether the file has changed on disk since it was last visited or
 
 where the upper-case '`O`' sorts before all lower-case letters. If you use `C-u 2 M-x sort-fields` instead, you get this:
 
-```
+```lisp
 implemented, Emacs also checks the first time you modify a buffer
 saved.  If it has, you are asked to confirm that you want to change
 the buffer.

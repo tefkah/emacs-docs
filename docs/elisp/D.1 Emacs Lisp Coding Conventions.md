@@ -24,7 +24,7 @@ Here are conventions that you should follow when writing Emacs Lisp code intende
 
 - If a file *foo* uses a macro defined in another file *bar*, but does not use any functions or variables defined in *bar*, then *foo* should contain the following expression:
 
-  ```
+  ```lisp
   (eval-when-compile (require 'bar))
 
   ```
@@ -48,7 +48,7 @@ Here are conventions that you should follow when writing Emacs Lisp code intende
 - It is a bad idea to define aliases for the Emacs primitives. Normally you should use the standard names instead. The case where an alias may be useful is where it facilitates backwards compatibility or portability.
 
 - If a package needs to define an alias or a new function for compatibility with some other version of Emacs, name it with the package prefix, not with the raw name with which it occurs in the other version. Here is an example from Gnus, which provides many examples of such compatibility issues.
-  ```
+  ```lisp
   (defalias 'gnus-point-at-bol
     (if (fboundp 'point-at-bol)
         'point-at-bol

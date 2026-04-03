@@ -157,7 +157,7 @@ of this license document, but changing it is not allowed.
 
 To use this License in a document you have written, include a copy of the License in the document and put the following copyright and license notices just after the title page:
 
-```
+```lisp
   Copyright (C)  year  your name.
   Permission is granted to copy, distribute and/or modify this document
   under the terms of the GNU Free Documentation License, Version 1.3
@@ -170,7 +170,7 @@ To use this License in a document you have written, include a copy of the Licens
 
 If you have Invariant Sections, Front-Cover Texts and Back-Cover Texts, replace the "with...Texts." line with this:
 
-```
+```lisp
     with the Invariant Sections being list their titles, with
     the Front-Cover Texts being list, and with the Back-Cover Texts
     being list.
@@ -391,7 +391,7 @@ The following sections describe future development of AUCTeX. Besides mid-term g
 
    Second, you can try to figure out if something in your personal or site configuration triggers the error by starting Emacs without such customizations. You can do this by invoking Emacs with the following command line:
 
-   ```
+   ```lisp
    emacs -q -no-site-file --eval "(progn (setq package-load-list '((auctex
    t))) (package-initialize))"
 
@@ -410,7 +410,7 @@ The following sections describe future development of AUCTeX. Besides mid-term g
    - Upgrade stops with error and doesn't complete.
    - Upgrade falls in infinite loop and doesn't terminate. You have to interrupt it with `C-g` and upgrade doesn't complete.
    - It looks like upgrade finishes successfully but afterwards AUCTeX breaks with mysterious error like:
-     ```
+     ```lisp
      TeX-command-expand: Wrong type argument: stringp, nil
 
      ```

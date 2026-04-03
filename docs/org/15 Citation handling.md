@@ -6,7 +6,7 @@ While links (see [Hyperlinks](/docs/org/Hyperlinks)) are often sufficient to ref
 
 Org mode provides a more sophisticated markup to "cite" external resources. For example, consider the following Org mode snippet
 
-```
+```lisp
 #+bibliography: citationdata.bib
 
 Org mode is used by various communities [cite:teaching: @orgteaching;
@@ -20,7 +20,7 @@ experiment with Org babel to improve teaching.
 
 Org mode will gather citation metadata from the '`#+bibliography`' database and use it to typeset the exported document in arbitrary formats. For example, the snippet below shows ASCII export output.
 
-```
+```lisp
 Org mode is used by various communities (teaching: Birkenkrahe, Marcus,
 2023, and TeX: Somma, Emmanuele F, 2023).  Somma, Emmanuele F uses Org
 mode to simplify writing scientific publications, while Birkenkrahe,
